@@ -51,7 +51,7 @@ export default function PortfolioGrid({ items, onSelect, className = "" }: Props
                 }`}
               >
                 <img
-                  src={item.captures[0]}
+                  src={item.captures[1] || item.captures[0]}
                   alt={item.alt || t?.(item.titleKey) || ""}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"

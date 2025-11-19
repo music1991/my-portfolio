@@ -11,6 +11,7 @@ export interface PortfolioItem {
   note: boolean;
   company?: string;
   technologies: string[];
+  link?: string;
 }
 
 export const DATA: PortfolioItem[] = [
@@ -24,6 +25,18 @@ export const DATA: PortfolioItem[] = [
     shortDescription: "projects.items.teamsImprove.shortDescription",
     note: false,
     technologies: ["React", "TypeScript", "Next", "Node", "PostgreSQL", "Code generation con AI", "Vercel", "Neon Storage"]
+  },
+    {
+    id: "speak",
+    year: "2025",
+    category: "",
+    captures: ["/images/projects/project_08_1.png", "/images/projects/project_08_2.png", "/images/projects/project_08_3.png"],
+    titleKey: "projects.items.speak.title",
+    detailsKey: "projects.items.speak.details", 
+    shortDescription: "projects.items.speak.shortDescription",
+    note: false,
+    technologies: ["React", "TypeScript", "Code generation con AI", "Vercel"],
+    link: "https://listen-and-speak.vercel.app"
   },
   {
     id: "complianceAutomation",

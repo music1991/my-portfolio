@@ -7,7 +7,8 @@
     "contact": "Contacto",
     "portfolio": "Portafolio",
     "backToTop": "Volver arriba",
-    "year": "Año"
+    "year": "Año",
+    "app": "Aplicación"
   },
   "aboutMe": {
     "text": "Sobre Mi",
@@ -138,6 +139,11 @@
         "title": "Teams Improve",
         "shortDescription": "Plataforma de gestión y análisis de rendimiento de equipos",
         "details": "Plataforma moderna para la gestión, análisis y mejora del rendimiento de equipos y usuarios, con dashboards interactivos y métricas en tiempo real."
+      },
+      "speak": {
+        "title": "Escucha y Habla",
+        "shortDescription": "Plataforma de entrenamiento de pronunciación en tiempo real",
+        "details": "Plataforma web interactiva que permite escuchar la pronunciación de letras del abecedario, palabras de ejemplo por cada letra, y textos personalizados. Incluye palabras comunes precargadas y función para que los usuarios ingresen cualquier texto y escuchen su pronunciación correcta en tiempo real en Español o Inglés."
       },
       "complianceAutomation": {
         "title": "Automatización Sistema de Compliance",

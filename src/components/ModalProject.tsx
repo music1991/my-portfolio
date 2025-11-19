@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import type { PortfolioItem } from "../entities/lib/projects";
+import { Link } from "react-router";
+import { ArrowUpRight } from "lucide-react";
 
 type ModalProjectProps = {
 	item: PortfolioItem | null;
@@ -62,11 +64,16 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 								<p className="text-gray-700 text-lg leading-relaxed mb-4">
 									{t(item.detailsKey)}
 								</p>
-								{/* <div className="flex items-end justify-end">
-									<span className="text-sm font-medium text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
-										{t?.("general.year")}: {item.year}
-									</span>
-								</div> */}
+								{item.link && <div className="flex items-center justify-center">
+									<a
+										href={item.link}
+										target="_blank"
+										className="inline-flex items-center gap-2 text-blue-600 hover:text-purple-600 font-medium text-lg transition-all duration-300 hover:translate-x-1"
+									>
+										<span>{t("general.app")}</span>
+										<ArrowUpRight className="w-5 h-5" />
+									</a>
+								</div>}
 							</div>
 						)}
 

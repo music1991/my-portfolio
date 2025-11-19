@@ -7,7 +7,8 @@
     "contact": "Contact",
     "portfolio": "Portfolio",
     "backToTop": "Back to top",
-    "year": "Year"
+    "year": "Year",
+    "app": "Application"
   },
   "aboutMe": {
     "text": "About Me",
@@ -138,6 +139,11 @@
         "title": "Teams Improve",
         "shortDescription": "Platform for team and user performance management and analysis",
         "details": "A modern platform for managing, analyzing, and enhancing team and user performance with interactive dashboards and real-time metrics."
+      },
+      "speak": {
+        "title": "Listen & Speak",
+        "shortDescription": "Interactive pronunciation coach for language learners of all ages",
+        "details": "Interactive web platform that allows users to listen to alphabet letter pronunciations, example words for each letter, and custom texts. Includes preloaded common words and a feature for users to input any text and hear its correct pronunciation in real-time in English or Spanish."
       },
       "complianceAutomation": {
         "title": "Compliance Automation Engine",
