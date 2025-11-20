@@ -132,7 +132,7 @@
   },
   "projects": {
     "text": "Proyectos",
-    "note": "SNota: \nLas siguientes imágenes y detalles específicos son representativos y se han recreado para ilustrar la funcionalidad del sistema. \n(Detalles específicos protegidos por '{company}')",
+    "note": "Nota: \nLas siguientes imágenes y detalles específicos son representativos y se han recreado para ilustrar la funcionalidad del sistema. \n(Detalles específicos protegidos por '{company}')",
     "tecnologies": "Tecnologías y Herramientas",
     "items": {
       "teamsImprove": {
@@ -150,10 +150,15 @@
         "shortDescription": "Plataforma centralizada de automatización para seguridad y cumplimiento",
         "details": "Participé en el desarrollo de una plataforma centralizada para el departamento de Seguridad y Cumplimiento. La solución automatizó flujos de trabajo manuales críticos, incluyendo revisiones de excepciones de políticas, campañas de certificación de acceso y recolección de evidencias de auditoría. Al digitalizar y optimizar estos procesos, redujimos los tiempos promedio de ciclo de revisión y aprobación en un 40%, disminuyendo significativamente el riesgo operativo y asegurando una postura de cumplimiento más ágil y demostrable."
       },  
-      "productModernization": {
-        "title": "Modernización de Productos",
+      "productModernizationweb": {
+        "title": "Actualización Técnica \nRenovación UI/UX\n Web Billetera",
         "shortDescription": "Lanzamiento de Nuevo Diseño y Funcionalidades Principales",
-        "details": "Contribuí al rediseño completo de la billetera web y móvil de la empresa, modernizando código legacy y aplicando las mejores prácticas en React Native y React JS. Estas mejoras y refactorizaciones de deuda técnica mejoraron significativamente la experiencia del usuario, haciendo que las aplicaciones fueran más rápidas, fluidas, estables y visualmente atractivas, con menos errores y una navegación más clara e intuitiva."
+        "details": "Contribuí a la modernización de una aplicación móvil mejorando el rendimiento, estabilizando los flujos principales y optimizando la interfaz y experiencia de usuario (UI/UX). Colaboré en la integración de más de 10 API REST, el desarrollo de componentes de interfaz reutilizables y la refactorización de lógica heredada con un manejo de errores más robusto. Participé en la implementación de funcionalidades offline-first y en la optimización de la gestión del estado, lo que ayudó a reducir los fallos y a mejorar el rendimiento de renderizado en aproximadamente un 30%. Como resultado del trabajo en equipo, entregamos una experiencia de usuario más fluida, rápida y confiable en todos los dispositivos."
+      },
+      "productModernizationapp": {
+        "title": "Refactorización de Código\n Adición de Modulos y Funcionalidades\n App Billetera",
+        "shortDescription": "Lanzamiento de Nuevo Diseño y Funcionalidades Principales",
+        "details": "Participé en la modernización total de la billetera móvil, renovando su diseño y actualizando la base de código mediante buenas prácticas en React Native. Estas mejoras incrementaron la fluidez, estabilidad y rendimiento general de la aplicación, ofreciendo a los usuarios una experiencia más moderna, atractiva y libre de fricciones."
       },
       "prepaidCard": {
         "title": "Modulo de Tarjeta Prepaga",
@@ -169,6 +174,11 @@
         "title": "Trackeo con Códigos QR",
         "shortDescription": "Sistema de gestión y seguimiento de paquetes con QR",
         "details": "Diseñé e implementé el sistema 'ScanFlow', una plataforma integral de gestión de paquetes que utiliza tecnología de código QR. La solución incluyó la generación de etiquetas con códigos QR únicos para cada envío y su escaneo en cada punto de control (recepción, en tránsito, entrega). Esta automatización de extremo a extremo del ciclo de vida del paquete eliminó por completo los errores de entrada manual de datos y redujo los tiempos de consulta de gestión y seguimiento en un 70%, revolucionando la operación logística."
+      },
+      "automated": {
+        "title": "Control de Asistencia y Nómina Biométrica",
+        "shortDescription": "Automatización integral de asistencia y nómina biométrica",
+        "details": "Implementé un sistema integral de control de asistencia y nómina del personal que, utilizando datos biométricos de un escáner de huellas dactilares, automatiza completamente la gestión de la fuerza laboral. \nEl sistema procesa los datos para evaluar en tiempo real la puntualidad, asistencia, horas extras, bonos de productividad y deducciones por ausencias. Como resultado final, genera automáticamente informes detallados de los días trabajados y el cálculo preciso de los haberes salariales, eliminando errores manuales y mejorando la eficiencia administrativa en más de un 60 %."
       }
     }
   },

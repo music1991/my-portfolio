@@ -46,7 +46,7 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 			/>
 			<div className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col z-10">
 				<div className="relative flex items-center justify-center p-5 border-b border-gray-200">
-					<h3 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center px-12">
+					<h3 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center px-12 whitespace-pre-line">
 						{t(item.titleKey)}
 					</h3>
 					<button

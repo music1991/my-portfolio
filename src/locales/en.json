@@ -150,10 +150,15 @@
         "shortDescription": "Centralized automation platform for security and compliance",
         "details": "I participated in developing a centralized platform for the Security and Compliance department. The solution automated critical manual workflows, including policy exception reviews, access certification campaigns, and audit evidence collection. By digitizing and streamlining these processes, we slashed average review and approval cycle times by 40%, significantly reducing operational risk and ensuring a more agile and demonstrable compliance posture."
       },
-      "productModernization": {
-        "title": "Products Modernization",
+      "productModernizationweb": {
+        "title": "UI/UX Refresh & Technical Upgrade \nWeb Wallet",
         "shortDescription": "Launching a New Design and Core Functionalities",
-        "details": "Contributed to the full redesign of the company’s web and mobile wallet, modernizing legacy code and applying best practices in React Native and React JS. These improvements and technical debt refactors significantly enhanced user experience, making the applications faster, smoother, more stable, and visually engaging, with fewer errors and a clearer, more intuitive navigation."
+        "details": "Contributed to the complete redesign of the company’s web wallet, modernizing legacy code and applying best practices in React JS. These improvements and technical-debt refactors significantly enhanced the user experience, resulting in a faster, more stable, visually appealing platform with fewer errors and a clearer, more intuitive navigation flow."
+      },
+      "productModernizationapp": {
+        "title": "Update Codebase & Feature Additions \nApp Wallet",
+        "shortDescription": "Launching a New Design and Core Functionalities",
+        "details": "Contributed to the modernization of a mobile app by improving performance, stabilizing core flows, and enhancing UI/UX. Collaborated on integrating 10+ REST APIs, building reusable UI components, and refactoring legacy logic with stronger error handling. Played a key role in implementing offline-first features and optimizing state management, which helped reduce crashes and improve rendering performance by ~30%. Through team effort, delivered a smoother, faster, and more reliable user experience across devices."
       },
       "prepaidCard": {
         "title": "Prepaid Cards Module",
@@ -169,6 +174,11 @@
         "title": "QR Tracked",
         "shortDescription": "QR code-based package tracking and management system",
         "details": "Designed and implemented the 'ScanFlow' system, a comprehensive package management platform utilizing QR code technology. The solution featured the generation of unique QR code labels for each shipment and their scanning at every checkpoints (receiving, in-transit, delivery). This end-to-end automation of the package lifecycle completely eliminated manual data entry errors and slashed management and tracking query times by 70%, revolutionizing the logistics operation."
+      },
+      "automated": {
+        "title": "Automated Time Management",
+        "shortDescription": "Comprehensive automation of biometric attendance and payroll",
+        "details": "Implemented a comprehensive staff attendance and payroll control system that, using biometric data from a fingerprint scanner, fully automates workforce management.\n The system processes the data to evaluate in real-time punctuality, attendance, overtime, productivity bonuses, and absence deductions. As a final output, it automatically generates detailed reports of days worked and the precise calculation of payroll dues, eliminating manual errors and improving administrative efficiency by over 60%."
       }
     }
   },

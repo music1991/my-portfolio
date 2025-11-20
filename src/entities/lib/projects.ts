@@ -19,7 +19,7 @@ export const DATA: PortfolioItem[] = [
     id: "teamsImprove",
     year: "2025",
     category: "",
-    captures: ["/images/projects/project_01_1.png", "/images/projects/project_01_2.png", "/images/projects/project_01_3.png"],
+    captures: ["/images/projects/project_01_1.png"],
     titleKey: "projects.items.teamsImprove.title",
     detailsKey: "projects.items.teamsImprove.details",
     shortDescription: "projects.items.teamsImprove.shortDescription",
@@ -52,16 +52,28 @@ export const DATA: PortfolioItem[] = [
     technologies: ["React", "TypeScript", "C#", "Figma",  "Bitbucket",  "SCRUM"]
   },
   {
-    id: "productModernization",
+    id: "productModernizationweb",
     year: "2025",
     category: "",
-    captures: ["/images/projects/project_03_1.png"],
-    titleKey: "projects.items.productModernization.title",
-    detailsKey: "projects.items.productModernization.details",
-    shortDescription: "projects.items.productModernization.shortDescription",
+    captures: ["/images/projects/project_11_1.png", "/images/projects/project_11_2.png"],
+    titleKey: "projects.items.productModernizationweb.title",
+    detailsKey: "projects.items.productModernizationweb.details",
+    shortDescription: "projects.items.productModernizationweb.shortDescription",
     note: true,
     company: "totalcoin",
-    technologies: ["React", "React Native", "TypeScript", "C#", "Figma",  "Bitbucket",  "SCRUM", "iOS", "Android", "SQL Server"]
+    technologies: ["React", "TypeScript", "C#", "Figma",  "Bitbucket",  "SCRUM", "SQL Server"]
+  },
+    {
+    id: "productModernizationapp",
+    year: "2025",
+    category: "",
+    captures: ["/images/projects/project_10_1.png", "/images/projects/project_10_2.png"],
+    titleKey: "projects.items.productModernizationapp.title",
+    detailsKey: "projects.items.productModernizationapp.details",
+    shortDescription: "projects.items.productModernizationapp.shortDescription",
+    note: true,
+    company: "totalcoin",
+    technologies: ["React Native", "TypeScript", "C#", "Figma",  "Bitbucket",  "SCRUM", "iOS", "Android", "SQL Server"]
   },
   {
     id: "prepaidCard",
@@ -99,14 +111,15 @@ export const DATA: PortfolioItem[] = [
     company: "FLASH Servicios Postales",
     technologies: ["JavaScript", "HTML", "CSS", "PHP",  "Microsoft Excel", "SQL Server"]
   },
-  // {
-  //   id: "",
-  //   year: "",
-  //   category: "",
-  //   captures: [""],
-  //   titleKey: "projects.items. .title",
-  //   detailsKey: "projects.items. .details",
-  //   note: "projects.items. .note",
-  //   technologies: [""]
-  // },
+  {
+    id: "automated",
+    year: "2025",
+    category: "",
+    captures: ["/images/projects/project_09_1.png", "/images/projects/project_09_2.png"],
+    titleKey: "projects.items.automated.title",
+    detailsKey: "projects.items.automated.details",
+    shortDescription: "projects.items.automated.shortDescription",
+    note: false,
+    technologies: ["JavaScript", "HTML", "CSS", "PHP",  "Microsoft Excel", "SQL Server"]
+  },
 ];
