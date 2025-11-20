@@ -24,7 +24,8 @@ export const DATA: PortfolioItem[] = [
     detailsKey: "projects.items.teamsImprove.details",
     shortDescription: "projects.items.teamsImprove.shortDescription",
     note: false,
-    technologies: ["React", "TypeScript", "Next", "Node", "PostgreSQL", "Code generation con AI", "Vercel", "Neon Storage"]
+    technologies: ["React", "TypeScript", "Next", "Node", "PostgreSQL", "Code generation con AI", "Vercel", "Neon Storage"],
+    link: "https://auth-app-demo-delta.vercel.app/login"
   },
     {
     id: "speak",
