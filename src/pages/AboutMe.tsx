@@ -93,9 +93,7 @@ const AboutPage: React.FC = () => {
                   {job.details.map((d, i) => <li key={i}>{d}</li>)}
                 </ul>
                 {job.tecnologies && <div className="w-full mt-6">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                    {t?.("projects.tecnologies")}
-                  </h2>
+                  <h3 className="list-disc list-inside text-gray-700 my-3 space-y-1">{t?.("projects.tecnologies")}</h3>
 
                   <div className="flex flex-wrap gap-2">
                     {job.tecnologies.map((tech, index) => (
