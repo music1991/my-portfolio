@@ -49,7 +49,7 @@ const AboutPage: React.FC = () => {
 
   type LangItem = { name: string; level: string };
   type EduItem = { degree: string; institution: string; year: string };
-  type JobItem = { role: string; company: string; period: string; details: string[] };
+  type JobItem = { role: string; company: string; period: string; details: string[], tecnologies: string[] };
 
   const jobs = tObj<JobItem[]>("profile.experience.jobs") ?? [];
   const langs = tObj<LangItem[]>("profile.languages.list") ?? [];
@@ -92,6 +92,22 @@ const AboutPage: React.FC = () => {
                 <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
                   {job.details.map((d, i) => <li key={i}>{d}</li>)}
                 </ul>
+                {job.tecnologies && <div className="w-full mt-6">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                    Technologies & Tools
+                  </h2>
+
+                  <div className="flex flex-wrap gap-2">
+                    {job.tecnologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 text-sm text-blue-700 rounded-full border"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>}
               </div>
             ))}
           </div>

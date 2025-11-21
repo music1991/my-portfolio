@@ -61,6 +61,21 @@
             "Collaborated with the team to develop solutions for the Security and Compliance department, automating processes and reducing review and approval times by 40%.",
             "Leveraged AI to automate repetitive coding tasks, cutting development time by half and increasing efficiency and product quality.",
             "Promoted a collaborative and empathetic work environment, encouraging open communication, cooperation, and continuous improvement within the team."
+          ],
+          "tecnologies": [
+            "React Native",
+            "React JS",
+            "C#",
+            "Node",
+            "SQL Server",
+            "RESTful WebServices",
+            "Git",
+            "Figma",
+            "NPM",
+            "Yarn",
+            "Bitbucket",
+            "Jira",
+            "Scrum"
           ]
         },
         {
@@ -72,6 +87,19 @@
             "Developed a platform using Google Maps API to monitor routes and deliveries in real time, improving timing and optimization of shipments and tracking.",
             "Implemented a staff attendance control system that automated the calculation of schedules, attendance, and absences, improving administrative management by over 60%.",
             "Applied the SCRUM methodology throughout the software development lifecycle, ensuring proper planning, control, and continuous improvement in projects."
+          ],
+          "tecnologies": [
+            "PHP",
+            "HTML",
+            "SQL",
+            "Python",
+            "JavaScript",
+            "AJAX",
+            "Desing UX UI",
+            "CSS",
+            "JQuery",
+            "Microsoft Excel",
+            "Microsoft Access"
           ]
         },
         {
@@ -82,6 +110,41 @@
             "Provided technical support for Internet, TV, and telephony services.",
             "Developed assertive communication, empathy, and effective problem-solving skills under pressure.",
             "Achieved high levels of customer satisfaction and consistently met performance metrics."
+          ],
+          "tecnologies": [
+            "Tools from the company"
+          ]
+        },
+        {
+          "role": "Developer / Administrative",
+          "company": "Instituto de Informaciones Comerciales - Federación Económica de Tucumán (Internship)",
+          "period": "Nov 2015 - Mar 2017",
+          "details": [
+            "Development of some modules of the Institute's Web Page, for the administrator and for the client",
+            "Development of scripts for data cleansing, debugging and segmentation.",
+            "Data loading, debugging and administration.",
+            "Communication, contact and publicity with Companies/Customers",
+            "General office tasks"
+          ],
+          "tecnologies": [
+            "Genexus",
+            "Python",
+            "Java",
+            "Microsoft Excel",
+            "Microsoft Access"
+          ]
+        },
+        {
+          "role": "Administrative",
+          "company": "UTN – Facultad Regional Tucumán (Internship)",
+          "period": "Apr 2011 - Dec 2013",
+          "details": [
+            "Organization and management of the library, ensuring accurate cataloging and classification of materials.",
+            "Implementation and control of the inventory to optimize resource location and lending processes.",
+            "Management of physical and digital files, ensuring proper classification and regular updating.",
+            "Data entry and updates in internal systems, ensuring accuracy and accessibility of information.",
+            "Customer service by providing guidance, clear answers, and quick solutions to user inquiries.",
+            "Maintaining a professional and friendly service environment to ensure a positive user experience."
           ]
         }
       ]

@@ -61,6 +61,21 @@
             "A través del uso de IA para automatizar código repetitivo, logramos reducir los tiempos de desarrollo a la mitad, aumentando la eficiencia y calidad del producto final.",
             "Promoví entornos colaborativos y empáticos, fomentando la comunicación abierta, la cooperación y la mejora continua dentro del equipo.",
             "Trabajé junto al área de diseño UX, utilizando Figma para implementar mejoras de interfaz y experiencia, y de forma coordinada con los desarrolladores backend, realizando code reviews y revisión de pull requests para mantener la calidad y consistencia del código."
+          ],
+          "tecnologies": [
+            "React Native",
+            "React JS",
+            "C#",
+            "Node",
+            "SQL Server",
+            "RESTful WebServices",
+            "Git",
+            "Figma",
+            "NPM",
+            "Yarn",
+            "Bitbucket",
+            "Jira",
+            "Scrum"
           ]
         },
         {
@@ -72,6 +87,19 @@
             "Desarrollé una plataforma con Google Maps API para monitorear rutas y recorridos en tiempo real, mejorando los tiempos y optimizando los procesos de envío y seguimiento.",
             "Implementé un sistema de control de asistencia del personal del correo, que automatizó el cálculo de horarios, presentismo y ausencias, optimizando la gestión administrativa en más de un 60%.",
             "Se aplicó la metodología SCRUM durante el ciclo de vida del desarrollo de software, asegurando planificación, control y mejora continua en los proyectos."
+          ],
+          "tecnologies": [
+            "PHP",
+            "HTML",
+            "SQL",
+            "Python",
+            "JavaScript",
+            "AJAX",
+            "Desing UX UI",
+            "CSS",
+            "JQuery",
+            "Microsoft Excel",
+            "Microsoft Access"
           ]
         },
         {
@@ -82,6 +110,41 @@
             "Brindé soporte técnico en servicios de Internet, TV y telefonía.",
             "Desarrollé habilidades de comunicación asertiva, empatía y resolución efectiva de problemas bajo presión.",
             "Alcancé altos niveles de satisfacción del cliente y cumplimiento de métricas de eficiencia."
+          ],
+          "tecnologies": [
+            "Tools from the company"
+          ]
+        },
+        {
+          "role": "Administrativo / Programador",
+          "company": "Instituto de Informaciones Comerciales - Federación Económica de Tucumán (Pasantia)",
+          "period": "Nov 2015 - Mar 2017",
+          "details": [
+            "Desarrollo de algunos módulos de la página web del Instituto, tanto para el administrador como para el cliente.",
+            "Desarrollo de scripts para la limpieza, depuración y segmentación de datos.",
+            "Carga, depuración y administración de datos.",
+            "Comunicación, contacto y publicidad con empresas/clientes.",
+            "Tareas administrativas generales."
+          ],
+          "tecnologies": [
+            "Genexus",
+            "Python",
+            "Java",
+            "Microsoft Excel",
+            "Microsoft Access"
+          ]
+        },
+        {
+          "role": "Administrativo",
+          "company": "UTN – Facultad Regional Tucumán (Internship)",
+          "period": "Abr 2011 - Dic 2013",
+          "details": [
+            "Organización y gestión de la biblioteca, asegurando la correcta catalogación y clasificación de materiales.",
+            "Implementación y control del inventario para optimizar la localización y el préstamo de recursos.",
+            "Administración de archivos físicos y digitales, garantizando su correcta clasificación y actualización.",
+            "Carga y actualización de datos en sistemas internos, asegurando precisión y accesibilidad.",
+            "Atención al cliente, brindando orientación, respuestas claras y soluciones rápidas.",
+            "Creación de un ambiente de servicio profesional y amable para ofrecer una experiencia positiva al usuario."
           ]
         }
       ]
