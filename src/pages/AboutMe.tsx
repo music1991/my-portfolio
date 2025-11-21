@@ -94,7 +94,7 @@ const AboutPage: React.FC = () => {
                 </ul>
                 {job.tecnologies && <div className="w-full mt-6">
                   <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                    Technologies & Tools
+                    {t?.("projects.tecnologies")}
                   </h2>
 
                   <div className="flex flex-wrap gap-2">
