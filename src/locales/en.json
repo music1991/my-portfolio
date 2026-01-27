@@ -198,6 +198,11 @@
     "note": "Note: \nThe following images and specific details are representative and have been recreated to illustrate the system's functionality.\n(Specific details protected by '{company}')",
     "tecnologies": "Technologies & Tools",
     "items": {
+      "24Studio": {
+        "title": "24Studio (In progress...)",
+        "shortDescription": "Platform for software factory",
+        "details": "The upcoming launch and deployment phase of 24Studio, a next-generation Software Factory engineered for high-impact digital solutions. Currently in pre-operational status, the platform establishes a robust production framework that bridges the gap between initial business briefs and scalable architecture. We are finalizing our core technology stack, integrating automated Hardening protocols, and standardized Staging environments to ensure seamless delivery. 24Studio is set to begin operations soon."
+      },
       "teamsImprove": {
         "title": "Teams Improve (In progress...)",
         "shortDescription": "Platform for team and user performance management and analysis",

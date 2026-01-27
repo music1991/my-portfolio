@@ -198,6 +198,11 @@
     "note": "Nota: \nLas siguientes imágenes y detalles específicos son representativos y se han recreado para ilustrar la funcionalidad del sistema. \n(Detalles específicos protegidos por '{company}')",
     "tecnologies": "Tecnologías y Herramientas",
     "items": {
+      "24Studio": {
+        "title": "24Studio (En progreso...)",
+        "shortDescription": "Plataforma para software factory",
+        "details": "Fase de lanzamiento y despliegue de 24Studio, una Software Factory de próxima generación diseñada para soluciones digitales de alto impacto. Actualmente en estado pre-operativo, la plataforma establece un marco de producción robusto que cierra la brecha entre los briefs de negocio iniciales y la arquitectura escalable. Estamos finalizando nuestro stack tecnológico principal, integrando protocolos de Hardening automatizados y entornos de Staging estandarizados para garantizar una entrega sin fisuras. 24Studio comenzará sus operaciones próximamente."
+      },
       "teamsImprove": {
         "title": "Teams Improve (En progreso...)",
         "shortDescription": "Plataforma de gestión y análisis de rendimiento de equipos",

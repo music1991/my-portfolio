@@ -16,6 +16,18 @@ export interface PortfolioItem {
 
 export const DATA: PortfolioItem[] = [
   {
+    id: "24Studio",
+    year: "2026",
+    category: "",
+    captures: ["/images/projects/project_12_4.png", "/images/projects/project_12_5.png", "/images/projects/project_12_2.png", "/images/projects/project_12_3.png", "/images/projects/project_12_1.png", ],
+    titleKey: "projects.items.24Studio.title",
+    detailsKey: "projects.items.24Studio.details",
+    shortDescription: "projects.items.24Studio.shortDescription",
+    note: false,
+    technologies: ["React", "TypeScript","Vercel"],
+    link: "https://24-studio.vercel.app"
+  },
+  {
     id: "teamsImprove",
     year: "2025",
     category: "",
