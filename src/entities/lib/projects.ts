@@ -25,7 +25,7 @@ export const DATA: PortfolioItem[] = [
     shortDescription: "projects.items.24Studio.shortDescription",
     note: false,
     technologies: ["React", "TypeScript","Vercel"],
-    link: "https://24-studio.vercel.app"
+    link: "https://24studio.net"
   },
   {
     id: "teamsImprove",
