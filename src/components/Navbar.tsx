@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { id: 0, title: t("general.home"), to: "/"}, 
     { id: 1, title: t("projects.text"), section: "projects" }, 
-    // { id: 2, title: "CV", url: "/cv/cv_file.pdf", newTab: true },
+    // { id: 2, title: "CV", url: "/cv/Soraire_Sebastian_CV.pdf", newTab: true },
     { id: 3, title: "LinkedIn", url: "https://www.linkedin.com/in/sebastian-soraire-developer/" },
     { id: 4, title: "GitHub", url: "https://github.com/music1991" },
     { id: 5, title: t('aboutMe.text'), section: 'about' },
