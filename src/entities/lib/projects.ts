@@ -16,6 +16,30 @@ export interface PortfolioItem {
 
 export const DATA: PortfolioItem[] = [
   {
+    id: "ecommerce",
+    year: "2026",
+    category: "",
+    captures: ["/images/projects/project_13_1.png", "/images/projects/project_13_2.png", "/images/projects/project_13_3.png", "/images/projects/project_13_4.png", "/images/projects/project_13_5.png", "/images/projects/project_13_6.png", "/images/projects/project_13_7.png", "/images/projects/project_13_8.png", "/images/projects/project_13_9.png", "/images/projects/project_13_10.png"],
+    titleKey: "projects.items.ecommerce.title",
+    detailsKey: "projects.items.ecommerce.details",
+    shortDescription: "projects.items.ecommerce.shortDescription",
+    note: false,
+    technologies: ["React", "TypeScript","Vercel", "SQL Server", "Laravel", "AI code generation"],
+    link: "https://ecommerce.24studio.net"
+  },
+  {
+    id: "pwa",
+    year: "2025",
+    category: "",
+    captures: ["/images/projects/project_14_1.png", "/images/projects/project_14_2.png", "/images/projects/project_14_3.png", "/images/projects/project_14_4.png"],
+    titleKey: "projects.items.pwa.title",
+    detailsKey: "projects.items.pwa.details",
+    shortDescription: "projects.items.pwa.shortDescription",
+    note: false,
+    technologies: ["React", "TypeScript", "Vercel"],
+    link: "https://shared-pwa-frontend.vercel.app"
+  },
+  {
     id: "24Studio",
     year: "2026",
     category: "",

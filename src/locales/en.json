@@ -198,13 +198,23 @@
     "note": "Note: \nThe following images and specific details are representative and have been recreated to illustrate the system's functionality.\n(Specific details protected by '{company}')",
     "tecnologies": "Technologies & Tools",
     "items": {
+      "ecommerce": {
+        "title": "Online Store",
+        "shortDescription": "Integral platform for product management, sales, and online catalog.",
+        "details": "System composed of an Online Store and a Commercial Management System (SGC). Allows managing a detailed catalog with retail, wholesale, and promotional prices, handling the status of each product. The SGC facilitates sales registration with automatic total calculation and allows applying manual discounts, either by item or on the total operation, being registered in the history. The purchase price is reserved for internal use, ensuring the privacy of costs in front of the final customer. It also includes tools for employee management."
+      },
+      "pwa": {
+        "title": "Progressive Web App",
+        "shortDescription": "MVP for testing push notifications and notification segmentation",
+        "details": "This PWA functions as an MVP designed to improve retention and conversion through direct push notifications. The system allows segmenting users based on their preferences or behavior, achieving more relevant and personalized communications. As a progressive web application, it offers an experience similar to a native app, enabling quick installation on mobile devices without going through stores, facilitating constant access to promotions and commercial news in an efficient and scalable manner."
+      },
       "24Studio": {
-        "title": "24Studio (In progress...)",
+        "title": "24 Studio",
         "shortDescription": "Platform for software factory",
         "details": "The upcoming launch and deployment phase of 24Studio, a next-generation Software Factory engineered for high-impact digital solutions. Currently in pre-operational status, the platform establishes a robust production framework that bridges the gap between initial business briefs and scalable architecture. We are finalizing our core technology stack, integrating automated Hardening protocols, and standardized Staging environments to ensure seamless delivery. 24Studio is set to begin operations soon."
       },
       "teamsImprove": {
-        "title": "Teams Improve (In progress...)",
+        "title": "Team's Improve",
         "shortDescription": "Platform for team and user performance management and analysis",
         "details": "A modern platform for managing, analyzing, and enhancing team and user performance with interactive dashboards and real-time metrics."
       },

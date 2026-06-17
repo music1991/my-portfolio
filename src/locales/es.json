@@ -198,13 +198,23 @@
     "note": "Nota: \nLas siguientes imágenes y detalles específicos son representativos y se han recreado para ilustrar la funcionalidad del sistema. \n(Detalles específicos protegidos por '{company}')",
     "tecnologies": "Tecnologías y Herramientas",
     "items": {
+      "ecommerce": {
+        "title": "Tienda Online",
+        "shortDescription": "Plataforma integral para gestión de productos, ventas y catálogo online.",
+        "details": "Sistema compuesto por una Tienda Online y un Sistema de Gestión Comercial (SGC). Permite administrar un catálogo detallado con precios minoristas, mayoristas y de oferta, gestionando el estado de cada producto. El SGC facilita el registro de ventas con cálculo automático de totales y permite aplicar descuentos manuales, ya sea por ítem o sobre el total de la operación, quedando registrados en el historial. El precio de compra se reserva para uso interno, garantizando la privacidad de los costos frente al cliente final. Incluye además herramientas de gestión de empleados."
+      },
+      "pwa": {
+        "title": "Progressive Web App",
+        "shortDescription": "MVP para probar notificacion push y segmentacion de notificaciones",
+        "details": "Esta PWA funciona como un MVP diseñado para mejorar la retención y conversión mediante notificaciones push directas. El sistema permite segmentar a los usuarios basándose en sus preferencias o comportamiento, logrando comunicaciones más relevantes y personalizadas. Al ser una aplicación web progresiva, ofrece una experiencia similar a una app nativa, permitiendo una instalación rápida en dispositivos móviles sin pasar por tiendas, facilitando el acceso constante a promociones y novedades comerciales de manera eficiente y escalable."
+      },
       "24Studio": {
-        "title": "24Studio (En progreso...)",
+        "title": "24 Studio",
         "shortDescription": "Plataforma para software factory",
         "details": "Fase de lanzamiento y despliegue de 24Studio, una Software Factory de próxima generación diseñada para soluciones digitales de alto impacto. Actualmente en estado pre-operativo, la plataforma establece un marco de producción robusto que cierra la brecha entre los briefs de negocio iniciales y la arquitectura escalable. Estamos finalizando nuestro stack tecnológico principal, integrando protocolos de Hardening automatizados y entornos de Staging estandarizados para garantizar una entrega sin fisuras. 24Studio comenzará sus operaciones próximamente."
       },
       "teamsImprove": {
-        "title": "Teams Improve (En progreso...)",
+        "title": "Team's Improve",
         "shortDescription": "Plataforma de gestión y análisis de rendimiento de equipos",
         "details": "Plataforma moderna para la gestión, análisis y mejora del rendimiento de equipos y usuarios, con dashboards interactivos y métricas en tiempo real."
       },
