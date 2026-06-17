@@ -31,7 +31,7 @@ export const DATA: PortfolioItem[] = [
     id: "pwa",
     year: "2025",
     category: "",
-    captures: ["/images/projects/project_14_1.png", "/images/projects/project_14_2.png", "/images/projects/project_14_3.png", "/images/projects/project_14_4.png"],
+    captures: ["/images/projects/project_14_4.png", "/images/projects/project_14_3.png", "/images/projects/project_14_2.png", "/images/projects/project_14_1.png"],
     titleKey: "projects.items.pwa.title",
     detailsKey: "projects.items.pwa.details",
     shortDescription: "projects.items.pwa.shortDescription",
