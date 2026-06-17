@@ -19,7 +19,7 @@ export const DATA: PortfolioItem[] = [
     id: "ecommerce",
     year: "2026",
     category: "",
-    captures: ["/images/projects/project_13_1.png", "/images/projects/project_13_2.png", "/images/projects/project_13_3.png", "/images/projects/project_13_4.png", "/images/projects/project_13_5.png", "/images/projects/project_13_6.png", "/images/projects/project_13_7.png", "/images/projects/project_13_8.png", "/images/projects/project_13_9.png", "/images/projects/project_13_10.png"],
+    captures: ["/images/projects/project_13_1.png", "/images/projects/project_13_5.png", "/images/projects/project_13_3.png", "/images/projects/project_13_4.png", "/images/projects/project_13_2.png", "/images/projects/project_13_6.png", "/images/projects/project_13_7.png"],
     titleKey: "projects.items.ecommerce.title",
     detailsKey: "projects.items.ecommerce.details",
     shortDescription: "projects.items.ecommerce.shortDescription",
