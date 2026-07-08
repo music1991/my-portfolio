@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { PortfolioItem } from "../entities/lib/projects";
 import { ArrowUpRight } from "lucide-react";
 
@@ -9,12 +9,18 @@ type ModalProjectProps = {
 	t: (key: string) => string | undefined;
 };
 
+const MODAL_TITLE_ID = "modal-project-title";
+
 export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectProps) {
 	const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+	const dialogRef = useRef<HTMLDivElement>(null);
+	const triggerElementRef = useRef<Element | null>(null);
 
 	useEffect(() => {
 		if (isOpen) {
+			triggerElementRef.current = document.activeElement;
 			document.body.style.overflow = 'hidden';
+			dialogRef.current?.focus();
 
 			const handleEscape = (e: KeyboardEvent) => {
 				if (e.key === 'Escape') {
@@ -27,6 +33,7 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 				document.body.style.overflow = 'unset';
 				document.removeEventListener('keydown', handleEscape);
 				setSelectedImageIndex(0);
+				(triggerElementRef.current as HTMLElement | null)?.focus?.();
 			};
 		}
 	}, [isOpen]);
@@ -43,13 +50,21 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 				className="absolute inset-0 bg-black/70 backdrop-blur-sm"
 				onClick={handleClose}
 			/>
-			<div className="relative bg-card rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col z-10">
+			<div
+				ref={dialogRef}
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby={MODAL_TITLE_ID}
+				tabIndex={-1}
+				className="relative bg-card rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col z-10 outline-none"
+			>
 				<div className="relative flex items-center justify-center p-5 border-b border-border">
-					<h3 className="text-2xl md:text-3xl font-semibold text-card-foreground text-center px-12 whitespace-pre-line">
+					<h3 id={MODAL_TITLE_ID} className="text-2xl md:text-3xl font-semibold text-card-foreground text-center px-12 whitespace-pre-line">
 						{t(item.titleKey)}
 					</h3>
 					<button
 						onClick={handleClose}
+						aria-label={t("general.close")}
 						className="absolute right-6 h-11 w-11 grid place-items-center text-muted-foreground hover:text-card-foreground text-3xl font-bold cursor-pointer"
 					>
 						×
@@ -67,7 +82,7 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 									<a
 										href={item.link}
 										target="_blank"
-										className="inline-flex items-center gap-2 text-accent hover:text-indigo-500 font-medium text-lg transition-all duration-300 hover:translate-x-1"
+										className="inline-flex items-center gap-2 text-accent hover:text-primary font-medium text-lg transition-all duration-300 hover:translate-x-1"
 									>
 										<span>{t("general.app")}</span>
 										<ArrowUpRight className="w-5 h-5" />
@@ -76,8 +91,8 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 							</div>
 						)}
 
-						{item.note && <div className="mb-6">
-							<span className="text-sm font-medium text-muted-foreground py-2 rounded-full whitespace-pre-line">
+						{item.note && <div className="mb-6 flex justify-center">
+							<span className="px-3 py-1.5 text-sm font-medium text-accent bg-accent/10 border border-accent/20 rounded-full whitespace-pre-line">
 								{t?.("projects.note")?.replace("{company}", item.company || "the company")}
 							</span>
 						</div>}
@@ -122,7 +137,7 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 										tech.trim() && (
 											<span
 												key={index}
-												className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-accent text-white rounded-full text-sm font-medium shadow-sm"
+												className="px-4 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full text-sm font-medium shadow-sm"
 											>
 												{tech}
 											</span>

@@ -19,6 +19,18 @@ export default function TypewriterLines({
   const [current, setCurrent] = useState("");
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) {
+      setPrinted(lines);
+      setCurrent("");
+      setCharIndex(0);
+      setLineIndex(lines.length);
+      return;
+    }
+
     setLineIndex(0);
     setCharIndex(0);
     setPrinted([]);

@@ -14,6 +14,7 @@ export const LanguageSelector = () => {
                             language === lang ? "font-bold text-accent" : "font-normal text-muted-foreground"
                         }`}
                         onClick={() => setLanguage(lang as Language)}
+                        aria-pressed={language === lang}
                     >
                         {lang.toUpperCase()}
                     </button>

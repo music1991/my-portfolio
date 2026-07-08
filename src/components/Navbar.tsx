@@ -25,13 +25,21 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          setIsMobileMenuOpen(false);
+        }
+      };
+
+      document.addEventListener('keydown', handleEscape);
+      return () => {
+        document.body.style.overflow = 'unset';
+        document.removeEventListener('keydown', handleEscape);
+      };
     } else {
       document.body.style.overflow = 'unset';
     }
-    
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isMobileMenuOpen]);
 
   const scrollToSection = (id: string) => {
@@ -60,12 +68,6 @@ const Navbar: React.FC = () => {
       }
     } else if (item.section) {
       goToSectionOnHome(item.section);
-    } else if (item.url) {
-      if (item.newTab) {
-        window.open(item.url, "_blank", "noopener,noreferrer");
-      } else {
-        window.open(item.url, "_blank");
-      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -89,22 +91,37 @@ const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex justify-between items-center h-full">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-accent bg-clip-text text-transparent z-50">
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent z-50">
               {t("general.portfolio")}
-            </h2>
+            </span>
 
             <div className="hidden md:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => handleNavItemClick(item)}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.96 }}
-                  className="flex items-center px-4 py-2 rounded-lg text-foreground hover:text-accent font-semibold text-sm transition-colors cursor-pointer"
-                >
-                  {item.title}
-                </motion.button>
-              ))}
+              {navItems.map((item) =>
+                item.url ? (
+                  <motion.a
+                    key={item.id}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.96 }}
+                    className="flex items-center px-4 py-2 rounded-lg text-foreground hover:text-accent font-semibold text-sm transition-colors cursor-pointer"
+                  >
+                    {item.title}
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => handleNavItemClick(item)}
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.96 }}
+                    className="flex items-center px-4 py-2 rounded-lg text-foreground hover:text-accent font-semibold text-sm transition-colors cursor-pointer"
+                  >
+                    {item.title}
+                  </motion.button>
+                )
+              )}
             </div>
 
             <div className="flex items-center space-x-3">
@@ -153,6 +170,9 @@ const Navbar: React.FC = () => {
             />
 
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label={t("general.portfolio")}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -161,19 +181,36 @@ const Navbar: React.FC = () => {
             >
               <div className="flex flex-col h-full pt-24 px-6">
                 <div className="flex flex-col space-y-2">
-                  {navItems.map((item, i) => (
-                    <motion.button
-                      key={item.id}
-                      onClick={() => handleNavItemClick(item)}
-                      initial={{ opacity: 0, x: 16 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.05 * i, duration: 0.25 }}
-                      whileTap={{ scale: 0.97 }}
-                      className="min-h-[44px] text-left text-card-foreground hover:text-accent font-semibold text-lg py-2 border-b border-border transition-colors cursor-pointer"
-                    >
-                      {item.title}
-                    </motion.button>
-                  ))}
+                  {navItems.map((item, i) =>
+                    item.url ? (
+                      <motion.a
+                        key={item.id}
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        initial={{ opacity: 0, x: 16 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.05 * i, duration: 0.25 }}
+                        whileTap={{ scale: 0.97 }}
+                        className="min-h-[44px] text-left text-card-foreground hover:text-accent font-semibold text-lg py-2 border-b border-border transition-colors cursor-pointer"
+                      >
+                        {item.title}
+                      </motion.a>
+                    ) : (
+                      <motion.button
+                        key={item.id}
+                        onClick={() => handleNavItemClick(item)}
+                        initial={{ opacity: 0, x: 16 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.05 * i, duration: 0.25 }}
+                        whileTap={{ scale: 0.97 }}
+                        className="min-h-[44px] text-left text-card-foreground hover:text-accent font-semibold text-lg py-2 border-b border-border transition-colors cursor-pointer"
+                      >
+                        {item.title}
+                      </motion.button>
+                    )
+                  )}
                   <div className="pt-4 sm:hidden">
                     <LanguageSelector />
                   </div>

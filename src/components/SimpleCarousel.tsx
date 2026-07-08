@@ -64,7 +64,10 @@ export default function SimpleCarousel({ items, autoPlayMs = 3000 }: Props) {
   }, [autoPlayMs]);
 
   useEffect(() => {
-    if (!slider.current || items.length <= 1) return;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (reduceMotion || !slider.current || items.length <= 1) return;
     restartProgress();
 
     return () => {
@@ -76,6 +79,22 @@ export default function SimpleCarousel({ items, autoPlayMs = 3000 }: Props) {
   const onMouseLeave = () => {
     pausedRef.current = false;
   };
+  const onFocus = () => (pausedRef.current = true);
+  const onBlur = (e: React.FocusEvent<HTMLElement>) => {
+    if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+      pausedRef.current = false;
+    }
+  };
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      prev();
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      next();
+    }
+  };
 
   const title = (i: number) => t?.(items[i]?.titleKey) ?? "";
   const details = (i: number) => t?.(items[i]?.shortDescription) ?? "";
@@ -85,6 +104,12 @@ export default function SimpleCarousel({ items, autoPlayMs = 3000 }: Props) {
       className="relative w-full min-h-[375px] md:min-h-[675px] flex items-center justify-center overflow-hidden"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onKeyDown={onKeyDown}
+      tabIndex={0}
+      role="region"
+      aria-roledescription="carousel"
     >
       <div className="relative z-10 w-full max-w-7xl">
         <div
@@ -105,16 +130,16 @@ export default function SimpleCarousel({ items, autoPlayMs = 3000 }: Props) {
 
         <button
           onClick={prev}
-          aria-label="Previous"
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 grid place-items-center h-11 w-11 rounded-full bg-white/30 hover:bg-white/50 active:bg-white/60 text-slate-900 backdrop-blur-md shadow-lg disabled:opacity-40"
+          aria-label={t?.("carousel.previous") ?? "Previous"}
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 grid place-items-center h-11 w-11 rounded-full bg-background/30 hover:bg-background/50 active:bg-background/60 text-foreground backdrop-blur-md shadow-lg disabled:opacity-40"
         >
           ‹
         </button>
 
         <button
           onClick={next}
-          aria-label="Next"
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 grid place-items-center h-11 w-11 rounded-full bg-white/30 hover:bg-white/50 active:bg-white/60 text-slate-900 backdrop-blur-md shadow-lg disabled:opacity-40"
+          aria-label={t?.("carousel.next") ?? "Next"}
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 grid place-items-center h-11 w-11 rounded-full bg-background/30 hover:bg-background/50 active:bg-background/60 text-foreground backdrop-blur-md shadow-lg disabled:opacity-40"
         >
           ›
         </button>
@@ -130,6 +155,28 @@ export default function SimpleCarousel({ items, autoPlayMs = 3000 }: Props) {
             </p>
           </div>
         </div>
+
+        {items.length > 1 && (
+          <div className="absolute top-3 right-3 z-30 flex items-center gap-2 md:hidden">
+            {items.map((it, i) => (
+              <button
+                key={it.id ?? i}
+                onClick={() => {
+                  sliderRef.current?.current?.moveToIdx(i);
+                  restartProgress();
+                }}
+                aria-label={
+                  t?.("carousel.goToSlide")?.replace("{number}", String(i + 1)) ??
+                  `Go to slide ${i + 1}`
+                }
+                aria-current={current === i}
+                className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                  current === i ? "bg-white" : "bg-white/40 hover:bg-white/60"
+                }`}
+              />
+            ))}
+          </div>
+        )}
 
         <div className="absolute left-1/4 bottom-6 -translate-x-1/2 z-30 w-40 hidden md:block">
           <div className="h-1.5 rounded-full bg-white/30 overflow-hidden">

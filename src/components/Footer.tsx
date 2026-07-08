@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <div className="order-3 md:order-1">
-          <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-accent bg-clip-text text-transparent">
+          <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             {t("general.portfolio")}
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-indigo-500 via-accent to-indigo-400 opacity-60" />
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary via-accent to-secondary opacity-60" />
     </footer>
   );
 }

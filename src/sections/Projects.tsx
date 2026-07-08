@@ -27,7 +27,7 @@ export default function PortfolioGrid({ items, onSelect, className = "" }: Props
 
   return (
     <div className="mt-28 md:mt-30 relative max-w-[1200px] min-h-[520px] m-auto">
-      <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-indigo-500 to-accent bg-clip-text text-transparent">
+      <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
         {t?.("projects.text")}
       </h2>
 

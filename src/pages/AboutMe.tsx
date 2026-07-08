@@ -56,7 +56,8 @@ const AboutPage: React.FC = () => {
 
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
-      <header className="text-center py-10 bg-gradient-to-r from-indigo-500 to-accent text-white shadow-md">
+      <header className="text-center py-10 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md">
+        <h1 className="sr-only">{t("aboutMe.text")}</h1>
         <p className="text-lg opacity-90 mt-20">{t("profile.header.subtitle")}</p>
       </header>
 
@@ -78,7 +79,7 @@ const AboutPage: React.FC = () => {
 
         <section id="experience" className="scroll-mt-20">
           <div className="flex items-center gap-3 mb-6">
-            <Briefcase className="w-7 h-7 text-indigo-500" />
+            <Briefcase className="w-7 h-7 text-primary" />
             <h2 className="text-2xl font-semibold text-foreground">
               {t("profile.experience.title")}
             </h2>
@@ -113,7 +114,7 @@ const AboutPage: React.FC = () => {
 
         <section id="education" className="scroll-mt-20">
           <div className="flex items-center gap-3 mb-6">
-            <GraduationCap className="w-7 h-7 text-indigo-500" />
+            <GraduationCap className="w-7 h-7 text-primary" />
             <h2 className="text-2xl font-semibold text-foreground">
               {t("profile.education.title")}
             </h2>

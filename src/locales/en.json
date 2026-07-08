@@ -8,7 +8,13 @@
     "portfolio": "Portfolio",
     "backToTop": "Back to top",
     "year": "Year",
-    "app": "Application"
+    "app": "Application",
+    "close": "Close"
+  },
+  "carousel": {
+    "previous": "Previous",
+    "next": "Next",
+    "goToSlide": "Go to slide {number}"
   },
   "aboutMe": {
     "text": "About Me",
@@ -366,7 +372,9 @@
       },
       "errors": {
         "generic": "Could not send the message",
-        "network": "Network error"
+        "network": "Network error",
+        "required": "This field is required",
+        "invalidEmail": "Enter a valid email address"
       }
     },
     "mailto": {

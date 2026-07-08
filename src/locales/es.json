@@ -8,7 +8,13 @@
     "portfolio": "Portafolio",
     "backToTop": "Volver arriba",
     "year": "Año",
-    "app": "Aplicación"
+    "app": "Aplicación",
+    "close": "Cerrar"
+  },
+  "carousel": {
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "goToSlide": "Ir a la diapositiva {number}"
   },
   "aboutMe": {
     "text": "Sobre Mi",
@@ -366,7 +372,9 @@
       },
       "errors": {
         "generic": "No se pudo enviar el mensaje",
-        "network": "Error de red"
+        "network": "Error de red",
+        "required": "Este campo es obligatorio",
+        "invalidEmail": "Ingresá un email válido"
       }
     },
     "mailto": {

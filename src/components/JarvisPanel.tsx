@@ -22,7 +22,7 @@ export default function JarvisHoverFrame({
                    group-hover:opacity-50 transition-opacity duration-500"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(34,211,238,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.08) 1px, transparent 1px)",
+            "linear-gradient(rgb(var(--color-accent) / 0.08) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--color-accent) / 0.08) 1px, transparent 1px)",
           backgroundSize: "20px 20px, 20px 20px",
           animation: "gridShift 22s linear infinite",
         }}
@@ -34,7 +34,7 @@ export default function JarvisHoverFrame({
             className="absolute inset-0 rounded-full"
             style={{
               background:
-                "conic-gradient(from 0deg, rgba(34,211,238,0) 0%, rgba(34,211,238,0.45) 12%, rgba(34,211,238,0) 24%)",
+                "conic-gradient(from 0deg, rgb(var(--color-accent) / 0) 0%, rgb(var(--color-accent) / 0.45) 12%, rgb(var(--color-accent) / 0) 24%)",
               mask:
                 "radial-gradient(circle at center, transparent 46%, black 47%)",
               WebkitMask:
@@ -47,7 +47,7 @@ export default function JarvisHoverFrame({
             className="absolute inset-0 rounded-full"
             style={{
               background:
-                "conic-gradient(from 90deg, rgba(34,211,238,0) 0%, rgba(34,211,238,0.4) 10%, rgba(34,211,238,0) 22%)",
+                "conic-gradient(from 90deg, rgb(var(--color-accent) / 0) 0%, rgb(var(--color-accent) / 0.4) 10%, rgb(var(--color-accent) / 0) 22%)",
               mask:
                 "radial-gradient(circle at center, transparent 58%, black 59%)",
               WebkitMask:
@@ -63,7 +63,7 @@ export default function JarvisHoverFrame({
         className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-90 transition-opacity duration-500"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(34,211,238,0.12), transparent 50%)",
+            "radial-gradient(ellipse at center, rgb(var(--color-accent) / 0.12), transparent 50%)",
           animation: "pulseGlow 2.4s ease-in-out infinite",
         }}
       />
@@ -72,11 +72,11 @@ export default function JarvisHoverFrame({
         {[...Array(8)].map((_, i) => (
           <span
             key={i}
-            className="absolute w-[2px] h-[2px] rounded-full bg-cyan-300/70"
+            className="absolute w-[2px] h-[2px] rounded-full bg-accent/70"
             style={{
               left: `${(i * 67) % 100}%`,
               top: `${(i * 41) % 100}%`,
-              filter: "drop-shadow(0 0 4px rgba(34,211,238,0.8))",
+              filter: "drop-shadow(0 0 4px rgb(var(--color-accent) / 0.8))",
               animation: `floatDot ${5 + (i % 4)}s ease-in-out infinite ${i * 0.25}s`,
             }}
           />

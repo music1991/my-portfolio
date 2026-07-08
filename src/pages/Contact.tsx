@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Mail, Phone, ArrowUpRight,
   Calendar, DollarSign, Briefcase, Building2
@@ -19,6 +19,10 @@ type FormState = {
 
 type ApiResp = { ok: boolean; id?: string | null; error?: string };
 
+type FormErrors = Partial<Record<"name" | "email" | "message", string>>;
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const initialState: FormState = {
   name: "",
   email: "",
@@ -38,16 +42,49 @@ const ContactPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FormErrors>({});
+
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const messageInputRef = useRef<HTMLTextAreaElement>(null);
 
   const onChange =
     (k: keyof FormState) =>
-      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setForm((s) => ({ ...s, [k]: e.target.value }));
+        if (k === "name" || k === "email" || k === "message") {
+          setFieldErrors((s) => ({ ...s, [k]: undefined }));
+        }
+      };
+
+  function validate(): FormErrors {
+    const errors: FormErrors = {};
+    if (!form.name.trim()) errors.name = t("contact.form.errors.required");
+    if (!form.email.trim()) errors.email = t("contact.form.errors.required");
+    else if (!EMAIL_PATTERN.test(form.email.trim())) errors.email = t("contact.form.errors.invalidEmail");
+    if (!form.message.trim()) errors.message = t("contact.form.errors.required");
+    return errors;
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
     setSubmitted(false);
+
+    const errors = validate();
+    setFieldErrors(errors);
+    if (errors.name) {
+      nameInputRef.current?.focus();
+      return;
+    }
+    if (errors.email) {
+      emailInputRef.current?.focus();
+      return;
+    }
+    if (errors.message) {
+      messageInputRef.current?.focus();
+      return;
+    }
 
     // honeypot
     if (form.website && form.website.trim().length > 0) return;
@@ -73,6 +110,7 @@ const ContactPage: React.FC = () => {
 
       setSubmitted(true);
       setForm(initialState);
+      setFieldErrors({});
     } catch (err: any) {
       setError(err?.message || t("contact.form.errors.network"));
     } finally {
@@ -89,7 +127,7 @@ const ContactPage: React.FC = () => {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <section className="py-36 md:py-40 bg-gradient-to-r from-indigo-500 to-accent text-white">
+      <section className="py-36 md:py-40 bg-gradient-to-r from-primary to-accent text-primary-foreground">
         <div className="max-w-5xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
             {t("contact.hero.title")}
@@ -118,10 +156,10 @@ const ContactPage: React.FC = () => {
               <div className="mt-6 h-px bg-border" />
 
               <div className="mt-6 space-y-3">
-                <a href={mailTo()} className="flex items-center gap-2 min-h-[44px] text-accent hover:text-indigo-500">
+                <a href={mailTo()} className="flex items-center gap-2 min-h-[44px] text-accent hover:text-primary">
                   <Mail className="w-5 h-5" /> {t("contact.left.actions.email")} <ArrowUpRight className="w-4 h-4" />
                 </a>
-                <a href="tel:+5493815606434" className="flex items-center gap-2 min-h-[44px] text-accent hover:text-indigo-500">
+                <a href="tel:+5493815606434" className="flex items-center gap-2 min-h-[44px] text-accent hover:text-primary">
                   <Phone className="w-5 h-5" /> {t("contact.left.actions.phone")}
                 </a>
               </div>
@@ -135,31 +173,50 @@ const ContactPage: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-4 mt-6">
                 <div>
-                  <label className="text-sm text-muted-foreground">{t("contact.form.labels.name")} *</label>
+                  <label htmlFor="contact-name" className="text-sm text-muted-foreground">{t("contact.form.labels.name")} *</label>
                   <input
+                    id="contact-name"
+                    ref={nameInputRef}
                     required
                     value={form.name}
                     onChange={onChange("name")}
+                    aria-invalid={!!fieldErrors.name}
+                    aria-describedby={fieldErrors.name ? "contact-name-error" : undefined}
                     className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                     placeholder={t("contact.form.placeholders.name")}
                   />
+                  {fieldErrors.name && (
+                    <p id="contact-name-error" role="alert" className="mt-1 text-sm text-destructive">
+                      {fieldErrors.name}
+                    </p>
+                  )}
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground">{t("contact.form.labels.email")} *</label>
+                  <label htmlFor="contact-email" className="text-sm text-muted-foreground">{t("contact.form.labels.email")} *</label>
                   <input
+                    id="contact-email"
+                    ref={emailInputRef}
                     required
                     type="email"
                     value={form.email}
                     onChange={onChange("email")}
+                    aria-invalid={!!fieldErrors.email}
+                    aria-describedby={fieldErrors.email ? "contact-email-error" : undefined}
                     className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                     placeholder={t("contact.form.placeholders.email")}
                   />
+                  {fieldErrors.email && (
+                    <p id="contact-email-error" role="alert" className="mt-1 text-sm text-destructive">
+                      {fieldErrors.email}
+                    </p>
+                  )}
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground flex items-center gap-2">
+                  <label htmlFor="contact-company" className="text-sm text-muted-foreground flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-muted-foreground" /> {t("contact.form.labels.company")}
                   </label>
                   <input
+                    id="contact-company"
                     value={form.company}
                     onChange={onChange("company")}
                     className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
@@ -167,10 +224,11 @@ const ContactPage: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground flex items-center gap-2">
+                  <label htmlFor="contact-project-type" className="text-sm text-muted-foreground flex items-center gap-2">
                     <Briefcase className="w-4 h-4 text-muted-foreground" /> {t("contact.form.labels.projectType")}
                   </label>
                   <select
+                    id="contact-project-type"
                     value={form.projectType}
                     onChange={onChange("projectType")}
                     className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
@@ -183,10 +241,11 @@ const ContactPage: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground flex items-center gap-2">
+                  <label htmlFor="contact-budget" className="text-sm text-muted-foreground flex items-center gap-2">
                     <DollarSign className="w-4 h-4 text-muted-foreground" /> {t("contact.form.labels.budget")}
                   </label>
                   <select
+                    id="contact-budget"
                     value={form.budget}
                     onChange={onChange("budget")}
                     className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
@@ -199,10 +258,11 @@ const ContactPage: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground flex items-center gap-2">
+                  <label htmlFor="contact-timeline" className="text-sm text-muted-foreground flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-muted-foreground" /> {t("contact.form.labels.timeline")}
                   </label>
                   <select
+                    id="contact-timeline"
                     value={form.timeline}
                     onChange={onChange("timeline")}
                     className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
@@ -215,20 +275,30 @@ const ContactPage: React.FC = () => {
                   </select>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="text-sm text-muted-foreground">{t("contact.form.labels.message")} *</label>
+                  <label htmlFor="contact-message" className="text-sm text-muted-foreground">{t("contact.form.labels.message")} *</label>
                   <textarea
+                    id="contact-message"
+                    ref={messageInputRef}
                     required
                     value={form.message}
                     onChange={onChange("message")}
                     rows={5}
+                    aria-invalid={!!fieldErrors.message}
+                    aria-describedby={fieldErrors.message ? "contact-message-error" : undefined}
                     className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                     placeholder={t("contact.form.placeholders.message")}
                   />
+                  {fieldErrors.message && (
+                    <p id="contact-message-error" role="alert" className="mt-1 text-sm text-destructive">
+                      {fieldErrors.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="hidden" aria-hidden="true">
-                  <label>{t("contact.form.labels.website")}</label>
+                  <label htmlFor="contact-website">{t("contact.form.labels.website")}</label>
                   <input
+                    id="contact-website"
                     tabIndex={-1}
                     autoComplete="off"
                     value={form.website}
@@ -246,14 +316,14 @@ const ContactPage: React.FC = () => {
                   {loading ? t("contact.form.actions.sending") : t("contact.form.actions.send")}
                 </button>
                 {error && (
-                  <span className="text-sm text-destructive">
+                  <span role="alert" className="text-sm text-destructive">
                     {error}
                   </span>
                 )}
               </div>
 
               {submitted && (
-                <div className="mt-4 text-sm text-accent bg-accent/10 border border-accent/20 rounded-lg px-3 py-2">
+                <div role="status" aria-live="polite" className="mt-4 text-sm text-accent bg-accent/10 border border-accent/20 rounded-lg px-3 py-2">
                   {t("contact.form.feedback.success")}
                 </div>
               )}

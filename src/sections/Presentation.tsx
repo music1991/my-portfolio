@@ -15,7 +15,7 @@ export default function Presentation() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="max-w-2xl mx-auto font-sans text-foreground leading-relaxed px-6 md:px-20"
     >
-      <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-indigo-500 to-accent bg-clip-text text-transparent">
+      <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
         {t("aboutMe.title")}
       </h1>
 
@@ -47,7 +47,7 @@ export default function Presentation() {
       <div className="mt-8 text-center">
         <Link
           to="/about"
-          className="inline-flex items-center gap-2 min-h-[44px] text-accent hover:text-indigo-500 font-medium text-lg transition-all duration-300 hover:translate-x-1"
+          className="inline-flex items-center gap-2 min-h-[44px] text-accent hover:text-primary font-medium text-lg transition-all duration-300 hover:translate-x-1"
         >
           {t("aboutMe.more")}
           <ArrowUpRight className="w-5 h-5" />

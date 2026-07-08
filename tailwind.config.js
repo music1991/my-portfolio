@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["Archivo", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         background: "rgb(var(--color-background) / <alpha-value>)",

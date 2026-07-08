@@ -4,7 +4,7 @@ import JarvisHoverFrame from "../components/JarvisPanel";
 import { STACK_LIST, type Skill, type Mode } from "../entities/lib/stack";
 
 const BlinkingCursor: React.FC = () => (
-  <span className="inline-block w-0.5 h-5 bg-cyan-400 ml-0 cursor-blink align-middle" />
+  <span className="inline-block w-0.5 h-5 bg-accent ml-0 cursor-blink align-middle" />
 );
 
 const SectionTitle: React.FC<{
@@ -18,7 +18,7 @@ const SectionTitle: React.FC<{
       isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none",
     ].join(" ")}
   >
-    <span className="text-cyan-300 font-mono text-lg font-bold tracking-wider">
+    <span className="text-accent font-mono text-lg font-bold tracking-wider">
       {children}
       {showCursor && <BlinkingCursor />}
     </span>
@@ -27,7 +27,7 @@ const SectionTitle: React.FC<{
 
 const PulsingLine: React.FC = () => (
   <div
-    className="absolute left-0 right-0 -translate-y-1/2 h-[3px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent animate-pulseLine rounded-full shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+    className="absolute left-0 right-0 -translate-y-1/2 h-[3px] bg-gradient-to-r from-transparent via-accent/60 to-transparent animate-pulseLine rounded-full shadow-[0_0_15px_rgb(var(--color-accent)/0.3)]"
     style={{ filter: "blur(0.5px)", top: "40%" }}
   />
 );
@@ -60,7 +60,7 @@ const RoadmapItem: React.FC<{
             {children}
           </div>
           <div
-            className="w-px h-0 bg-cyan-400/80 shadow-[0_0_8px_rgba(34,211,238,0.6)] group-hover:h-8 transition-[height] duration-300"
+            className="w-px h-0 bg-accent/80 shadow-[0_0_8px_rgb(var(--color-accent)/0.6)] group-hover:h-8 transition-[height] duration-300"
             style={{ transitionDelay: `${dLine}ms` }}
           />
         </>
@@ -68,7 +68,7 @@ const RoadmapItem: React.FC<{
       {position === "bottom" && (
         <>
           <div
-            className="w-px h-0 bg-cyan-400/80 shadow-[0_0_8px_rgba(34,211,238,0.6)] group-hover:h-8 transition-[height] duration-300"
+            className="w-px h-0 bg-accent/80 shadow-[0_0_8px_rgb(var(--color-accent)/0.6)] group-hover:h-8 transition-[height] duration-300"
             style={{ transitionDelay: `${dLine}ms` }}
           />
           <div
@@ -154,7 +154,7 @@ export const SkillsSection: React.FC = () => {
 
   return (
     <section className="max-w-6xl mx-auto mt-20 md:mt-40">
-      <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-indigo-500 to-accent bg-clip-text text-transparent mb-8 md:mb-10">
+      <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-8 md:mb-10">
         {t?.("skills.title") ?? "Technical Skills"}
       </h2>
 
@@ -262,8 +262,8 @@ export const SkillsSection: React.FC = () => {
         .cursor-blink { animation: blink 1s step-end infinite; }
 
         @keyframes pulseLine {
-          0%, 100% { opacity: 0.4; box-shadow: 0 0 0 rgba(34,211,238,0.0); }
-          50% { opacity: 1; box-shadow: 0 0 25px rgba(34,211,238,0.6); }
+          0%, 100% { opacity: 0.4; box-shadow: 0 0 0 rgb(var(--color-accent) / 0); }
+          50% { opacity: 1; box-shadow: 0 0 25px rgb(var(--color-accent) / 0.6); }
         }
         .animate-pulseLine { animation: pulseLine 2s ease-in-out infinite; }
       `}</style>
