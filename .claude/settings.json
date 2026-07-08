@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\(JSON.stringify\\(p.pnpm, null, 2\\)\\)\")",
+      "Bash(pnpm help *)",
+      "Bash(pnpm approve-builds *)",
+      "Bash(pnpm config *)",
+      "Bash(pnpm install *)",
+      "Bash(timeout 20 pnpm run dev)",
+      "Bash(pnpm exec *)"
+    ]
+  }
+}

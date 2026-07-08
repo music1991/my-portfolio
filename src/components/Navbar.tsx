@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../context/Language";
 import { LanguageSelector } from "../components/LanguajeSelector";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const { t } = useLanguage();

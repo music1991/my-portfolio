@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { PortfolioItem } from "../entities/lib/projects";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 type ModalProjectProps = {
