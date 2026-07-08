@@ -26,7 +26,16 @@
       "Bash(node_modules/.bin/tsc.cmd)",
       "Read(//d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli/dist/**)",
       "Bash(node \"/d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli/dist/index.js\" init --ai claude --offline --force)",
-      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio developer creative 3D motion-driven\" --domain product -n 1)"
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio developer creative 3D motion-driven\" --domain product -n 1)",
+      "Bash(pnpm add *)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"developer portfolio software engineer tech modern dark 3D\" --design-system --variance 6 --motion 7 --stack react -p \"Mi Portfolio\")",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --yes playwright install chromium)",
+      "Bash(node \"C:\\\\Users\\\\pilot\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--Work-Respositorios-Portafolio-my-portfolio\\\\35c4db8d-1f10-4013-95f8-661b31f96325\\\\scratchpad\\\\check-theme.mjs\")",
+      "Bash(npm init *)",
+      "Bash(node check-theme.mjs)"
     ]
   }
 }

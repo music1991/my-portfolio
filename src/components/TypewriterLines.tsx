@@ -55,17 +55,17 @@ export default function TypewriterLines({
   return (
     <div aria-live="polite" aria-atomic="false">
       {printed.map((p, i) => (
-        <p key={`p-${i}`} className="mb-4 text-gray-800">
+        <p key={`p-${i}`} className="mb-4 text-foreground">
           {p}
         </p>
       ))}
 
       {lineIndex < lines.length && (
-        <p className="mb-4 text-gray-800">
+        <p className="mb-4 text-foreground">
           {current}
           {showCursor && (
             <span
-              className="inline-block w-2 h-5 align-[-2px] bg-gray-900 ml-0.5"
+              className="inline-block w-2 h-5 align-[-2px] bg-foreground ml-0.5"
               style={{
                 animation: "tw-blink 1s steps(1, start) infinite",
               }}

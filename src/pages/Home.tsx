@@ -7,7 +7,7 @@ import HeroSlider from '../components/HeroSlider';
 
 const HomePage: React.FC = () => {
   return (
-    <main className="min-h-screen bg-gray-50 w-full overflow-x-hidden">
+    <main className="min-h-screen bg-background w-full overflow-x-hidden">
       
       <div className="w-full">
         <section id="hero" className="w-full">

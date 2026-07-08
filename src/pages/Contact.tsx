@@ -88,8 +88,8 @@ const ContactPage: React.FC = () => {
   }, [submitted]);
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800">
-      <section className="py-36 md:py-40 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <main className="min-h-screen bg-background text-foreground">
+      <section className="py-36 md:py-40 bg-gradient-to-r from-indigo-500 to-accent text-white">
         <div className="max-w-5xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
             {t("contact.hero.title")}
@@ -108,20 +108,20 @@ const ContactPage: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 md:px-8 -mt-10 pb-20">
         <div className="grid md:grid-cols-5 gap-8">
           <aside className="md:col-span-2">
-            <div className="p-6 rounded-2xl bg-white shadow-sm border border-gray-100">
-              <h2 className="text-xl font-semibold">{t("contact.left.title")}</h2>
-              <ul className="mt-4 space-y-3 text-gray-600">
-                <li className="flex gap-2"><Briefcase className="w-5 h-5 text-blue-600" /> {t("contact.left.points.value")}</li>
-                <li className="flex gap-2"><Building2 className="w-5 h-5 text-blue-600" /> {t("contact.left.points.comms")}</li>
+            <div className="p-6 rounded-2xl bg-card shadow-sm border border-border">
+              <h2 className="text-xl font-semibold text-card-foreground">{t("contact.left.title")}</h2>
+              <ul className="mt-4 space-y-3 text-muted-foreground">
+                <li className="flex gap-2"><Briefcase className="w-5 h-5 text-accent" /> {t("contact.left.points.value")}</li>
+                <li className="flex gap-2"><Building2 className="w-5 h-5 text-accent" /> {t("contact.left.points.comms")}</li>
               </ul>
 
-              <div className="mt-6 h-px bg-gray-100" />
+              <div className="mt-6 h-px bg-border" />
 
               <div className="mt-6 space-y-3">
-                <a href={mailTo()} className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
+                <a href={mailTo()} className="flex items-center gap-2 min-h-[44px] text-accent hover:text-indigo-500">
                   <Mail className="w-5 h-5" /> {t("contact.left.actions.email")} <ArrowUpRight className="w-4 h-4" />
                 </a>
-                <a href="tel:+5493815606434" className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
+                <a href="tel:+5493815606434" className="flex items-center gap-2 min-h-[44px] text-accent hover:text-indigo-500">
                   <Phone className="w-5 h-5" /> {t("contact.left.actions.phone")}
                 </a>
               </div>
@@ -129,51 +129,51 @@ const ContactPage: React.FC = () => {
           </aside>
 
           <div className="md:col-span-3">
-            <form onSubmit={handleSubmit} className="p-6 rounded-2xl bg-white shadow-sm border border-gray-100" noValidate>
-              <h2 className="text-xl font-semibold">{t("contact.form.title")}</h2>
-              <p className="text-gray-600 mt-1">{t("contact.form.subtitle")}</p>
+            <form onSubmit={handleSubmit} className="p-6 rounded-2xl bg-card shadow-sm border border-border" noValidate>
+              <h2 className="text-xl font-semibold text-card-foreground">{t("contact.form.title")}</h2>
+              <p className="text-muted-foreground mt-1">{t("contact.form.subtitle")}</p>
 
               <div className="grid md:grid-cols-2 gap-4 mt-6">
                 <div>
-                  <label className="text-sm text-gray-600">{t("contact.form.labels.name")} *</label>
+                  <label className="text-sm text-muted-foreground">{t("contact.form.labels.name")} *</label>
                   <input
                     required
                     value={form.name}
                     onChange={onChange("name")}
-                    className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                     placeholder={t("contact.form.placeholders.name")}
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-gray-600">{t("contact.form.labels.email")} *</label>
+                  <label className="text-sm text-muted-foreground">{t("contact.form.labels.email")} *</label>
                   <input
                     required
                     type="email"
                     value={form.email}
                     onChange={onChange("email")}
-                    className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                     placeholder={t("contact.form.placeholders.email")}
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-gray-600 flex items-center gap-2">
-                    <Building2 className="w-4 h-4 text-gray-500" /> {t("contact.form.labels.company")}
+                  <label className="text-sm text-muted-foreground flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-muted-foreground" /> {t("contact.form.labels.company")}
                   </label>
                   <input
                     value={form.company}
                     onChange={onChange("company")}
-                    className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                     placeholder={t("contact.form.placeholders.company")}
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-gray-600 flex items-center gap-2">
-                    <Briefcase className="w-4 h-4 text-gray-500" /> {t("contact.form.labels.projectType")}
+                  <label className="text-sm text-muted-foreground flex items-center gap-2">
+                    <Briefcase className="w-4 h-4 text-muted-foreground" /> {t("contact.form.labels.projectType")}
                   </label>
                   <select
                     value={form.projectType}
                     onChange={onChange("projectType")}
-                    className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                    className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                   >
                     <option value="">{t("contact.form.selects.projectType.placeholder")}</option>
                     <option>{t("contact.form.selects.projectType.landing")}</option>
@@ -183,13 +183,13 @@ const ContactPage: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-sm text-gray-600 flex items-center gap-2">
-                    <DollarSign className="w-4 h-4 text-gray-500" /> {t("contact.form.labels.budget")}
+                  <label className="text-sm text-muted-foreground flex items-center gap-2">
+                    <DollarSign className="w-4 h-4 text-muted-foreground" /> {t("contact.form.labels.budget")}
                   </label>
                   <select
                     value={form.budget}
                     onChange={onChange("budget")}
-                    className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                    className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                   >
                     <option value="">{t("contact.form.selects.budget.placeholder")}</option>
                     <option>{t("contact.form.selects.budget.b1")}</option>
@@ -199,13 +199,13 @@ const ContactPage: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-sm text-gray-600 flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-gray-500" /> {t("contact.form.labels.timeline")}
+                  <label className="text-sm text-muted-foreground flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-muted-foreground" /> {t("contact.form.labels.timeline")}
                   </label>
                   <select
                     value={form.timeline}
                     onChange={onChange("timeline")}
-                    className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                    className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                   >
                     <option value="">{t("contact.form.selects.timeline.placeholder")}</option>
                     <option>{t("contact.form.selects.timeline.asap")}</option>
@@ -215,13 +215,13 @@ const ContactPage: React.FC = () => {
                   </select>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="text-sm text-gray-600">{t("contact.form.labels.message")} *</label>
+                  <label className="text-sm text-muted-foreground">{t("contact.form.labels.message")} *</label>
                   <textarea
                     required
                     value={form.message}
                     onChange={onChange("message")}
                     rows={5}
-                    className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 w-full rounded-lg border border-border px-3 py-2 outline-none focus:ring-2 focus:ring-ring bg-card text-card-foreground"
                     placeholder={t("contact.form.placeholders.message")}
                   />
                 </div>
@@ -241,19 +241,19 @@ const ContactPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-64 px-6 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 active:bg-blue-800 transition disabled:opacity-60"
+                  className="w-64 min-h-[44px] px-6 py-3 rounded-xl bg-accent text-accent-foreground font-medium hover:bg-accent/90 active:bg-accent/80 transition disabled:opacity-60 cursor-pointer"
                 >
                   {loading ? t("contact.form.actions.sending") : t("contact.form.actions.send")}
                 </button>
                 {error && (
-                  <span className="text-sm text-red-600">
+                  <span className="text-sm text-destructive">
                     {error}
                   </span>
                 )}
               </div>
 
               {submitted && (
-                <div className="mt-4 text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-3 py-2">
+                <div className="mt-4 text-sm text-accent bg-accent/10 border border-accent/20 rounded-lg px-3 py-2">
                   {t("contact.form.feedback.success")}
                 </div>
               )}

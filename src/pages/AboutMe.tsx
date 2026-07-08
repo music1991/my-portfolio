@@ -11,7 +11,7 @@ const exercisePics = images.motivation.exercisePics ?? [];
 
 const Polaroid: React.FC<{ src: string; caption?: string; rotate?: number }> = ({ src, caption, rotate = 0 }) => (
   <figure
-    className={`relative bg-white rounded-sm shadow-xl ring-1 ring-black/10 p-3 w-44 sm:w-52 md:w-56
+    className={`relative bg-card rounded-sm shadow-xl ring-1 ring-border p-3 w-44 sm:w-52 md:w-56
                 transition-transform duration-300 hover:-translate-y-1`}
     style={{ transform: `rotate(${rotate}deg)` }}
   >
@@ -22,7 +22,7 @@ const Polaroid: React.FC<{ src: string; caption?: string; rotate?: number }> = (
       draggable={false}
     />
     {caption && (
-      <figcaption className="mt-2 text-[12px] text-gray-700 text-center">
+      <figcaption className="mt-2 text-[12px] text-muted-foreground text-center">
         {caption}
       </figcaption>
     )}
@@ -55,15 +55,15 @@ const AboutPage: React.FC = () => {
   const langs = tObj<LangItem[]>("profile.languages.list") ?? [];
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800 font-sans">
-      <header className="text-center py-10 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md">
+    <main className="min-h-screen bg-background text-foreground font-sans">
+      <header className="text-center py-10 bg-gradient-to-r from-indigo-500 to-accent text-white shadow-md">
         <p className="text-lg opacity-90 mt-20">{t("profile.header.subtitle")}</p>
       </header>
 
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-20 space-y-24">
         <section id="about" className="scroll-mt-20">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+          <div className="bg-card rounded-2xl shadow-sm border border-border p-8 md:p-10">
+            <h2 className="text-2xl font-semibold text-card-foreground mb-6">
               {t("profile.about.heading")}
             </h2>
             <div className="prose prose-gray max-w-none leading-relaxed">
@@ -78,28 +78,28 @@ const AboutPage: React.FC = () => {
 
         <section id="experience" className="scroll-mt-20">
           <div className="flex items-center gap-3 mb-6">
-            <Briefcase className="w-7 h-7 text-purple-600" />
-            <h2 className="text-2xl font-semibold text-gray-900">
+            <Briefcase className="w-7 h-7 text-indigo-500" />
+            <h2 className="text-2xl font-semibold text-foreground">
               {t("profile.experience.title")}
             </h2>
           </div>
-          <div className="space-y-8 border-l-2 border-purple-100 pl-6">
+          <div className="space-y-8 border-l-2 border-border pl-6">
             {jobs.map((job) => (
               <div key={`${job.company}-${job.role}`}>
-                <h3 className="text-lg font-bold text-gray-900">{job.role}</h3>
-                <p className="text-gray-600">{job.company}</p>
-                <p className="text-sm text-gray-500 mt-1">{job.period}</p>
-                <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <h3 className="text-lg font-bold text-foreground">{job.role}</h3>
+                <p className="text-muted-foreground">{job.company}</p>
+                <p className="text-sm text-muted-foreground mt-1">{job.period}</p>
+                <ul className="list-disc list-inside text-foreground/90 mt-2 space-y-1">
                   {job.details.map((d, i) => <li key={i}>{d}</li>)}
                 </ul>
                 {job.tecnologies && <div className="w-full mt-6">
-                  <h3 className="list-disc list-inside text-gray-700 my-3 space-y-1">{t?.("projects.tecnologies")}</h3>
+                  <h3 className="list-disc list-inside text-foreground/90 my-3 space-y-1">{t?.("projects.tecnologies")}</h3>
 
                   <div className="flex flex-wrap gap-2">
                     {job.tecnologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 text-sm text-blue-700 rounded-full border"
+                        className="px-3 py-1 text-sm text-accent rounded-full border border-border"
                       >
                         {tech}
                       </span>
@@ -113,17 +113,17 @@ const AboutPage: React.FC = () => {
 
         <section id="education" className="scroll-mt-20">
           <div className="flex items-center gap-3 mb-6">
-            <GraduationCap className="w-7 h-7 text-blue-600" />
-            <h2 className="text-2xl font-semibold text-gray-900">
+            <GraduationCap className="w-7 h-7 text-indigo-500" />
+            <h2 className="text-2xl font-semibold text-foreground">
               {t("profile.education.title")}
             </h2>
           </div>
-          <ul className="space-y-6 border-l-2 border-blue-100 pl-6">
+          <ul className="space-y-6 border-l-2 border-border pl-6">
             {tObj<EduItem[]>("profile.education.items")?.map((edu) => (
               <li key={`${edu.degree}-${edu.institution}`}>
-                <h3 className="text-lg font-bold text-gray-900">{edu.degree}</h3>
-                <p className="text-gray-600">{edu.institution}</p>
-                <p className="text-sm text-gray-500">{edu.year}</p>
+                <h3 className="text-lg font-bold text-foreground">{edu.degree}</h3>
+                <p className="text-muted-foreground">{edu.institution}</p>
+                <p className="text-sm text-muted-foreground">{edu.year}</p>
               </li>
             ))}
           </ul>
@@ -131,16 +131,16 @@ const AboutPage: React.FC = () => {
 
         <section id="languages" className="scroll-mt-20">
           <div className="flex items-center gap-3 mb-6">
-            <Languages className="w-7 h-7 text-emerald-600" />
-            <h2 className="text-2xl font-semibold text-gray-900">
+            <Languages className="w-7 h-7 text-accent" />
+            <h2 className="text-2xl font-semibold text-foreground">
               {t("profile.languages.title")}
             </h2>
           </div>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {langs.map((lang) => (
-              <li key={lang.name} className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">{lang.name}</h3>
-                <p className="text-gray-600 text-sm">{lang.level}</p>
+              <li key={lang.name} className="p-6 bg-card rounded-xl shadow-sm border border-border hover:shadow-md transition-all duration-300">
+                <h3 className="text-lg font-semibold text-card-foreground mb-1">{lang.name}</h3>
+                <p className="text-muted-foreground text-sm">{lang.level}</p>
               </li>
             ))}
           </ul>
@@ -148,29 +148,29 @@ const AboutPage: React.FC = () => {
 
         <section id="motivations" className="scroll-mt-20">
           <div className="flex items-center gap-3 mb-6">
-            <Heart className="w-7 h-7 text-rose-600" />
-            <h2 className="text-2xl font-semibold text-gray-900">
+            <Heart className="w-7 h-7 text-destructive" />
+            <h2 className="text-2xl font-semibold text-foreground">
               {t?.("profile.motivations.title") ?? ""}
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all sm:col-span-2">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
+              <h3 className="text-lg font-semibold text-card-foreground mb-2">
                 {t?.("profile.motivations.volunteer.title") ?? ""}
               </h3>
               <PolaroidRow images={volunteerPics} />
-              <p className="list-disc list-inside text-gray-700 mt-10 mb-5 space-y-1 whitespace-pre-line">
+              <p className="list-disc list-inside text-foreground/90 mt-10 mb-5 space-y-1 whitespace-pre-line">
                 {t?.("profile.motivations.volunteer.desc") ?? ""}
               </p>
             </div>
 
-            <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all sm:col-span-2">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
+              <h3 className="text-lg font-semibold text-card-foreground mb-2">
                 {t?.("profile.motivations.theater.title") ?? ""}
               </h3>
               <PolaroidRow images={theaterPics} />
-              <p className="list-disc list-inside text-gray-700 mt-10 mb-5 space-y-1">
+              <p className="list-disc list-inside text-foreground/90 mt-10 mb-5 space-y-1">
                 {t?.("profile.motivations.theater.desc") ?? ""}
               </p>
           {/* <div className="flex flex-wrap gap-2">
@@ -186,25 +186,25 @@ const AboutPage: React.FC = () => {
               </div> */}
             </div>
 
-            <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all sm:col-span-2">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
+              <h3 className="text-lg font-semibold text-card-foreground mb-2">
                 {t?.("profile.motivations.exercise.title") ?? ""}
               </h3>
               <PolaroidRow images={exercisePics} />
-              <p className="list-disc list-inside text-gray-700 mt-10 mb-5 space-y-1">
+              <p className="list-disc list-inside text-foreground/90 mt-10 mb-5 space-y-1">
                 {t?.("profile.motivations.exercise.desc") ?? ""}
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1.5 text-sm rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                <span className="px-3 py-1.5 text-sm rounded-full bg-accent/10 text-accent border border-accent/20">
                   {t?.("profile.motivations.exercise.bike") ?? ""}
                 </span>
-                <span className="px-3 py-1.5 text-sm rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                <span className="px-3 py-1.5 text-sm rounded-full bg-accent/10 text-accent border border-accent/20">
                   {t?.("profile.motivations.exercise.run") ?? ""}
                 </span>
-                <span className="px-3 py-1.5 text-sm rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                <span className="px-3 py-1.5 text-sm rounded-full bg-accent/10 text-accent border border-accent/20">
                   {t?.("profile.motivations.exercise.gym") ?? ""}
                 </span>
-                <span className="px-3 py-1.5 text-sm rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                <span className="px-3 py-1.5 text-sm rounded-full bg-accent/10 text-accent border border-accent/20">
                   {t?.("profile.motivations.exercise.other")}
                 </span>
               </div>

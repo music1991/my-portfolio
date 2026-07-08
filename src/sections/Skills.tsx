@@ -54,7 +54,7 @@ const RoadmapItem: React.FC<{
       {position === "top" && (
         <>
           <div
-            className="min-w-[12rem] sm:min-w-[14rem] max-w-[16rem] text-[11px] sm:text-xs font-medium leading-snug text-gray-600 opacity-0 mb-3 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-normal text-center px-2"
+            className="min-w-[12rem] sm:min-w-[14rem] max-w-[16rem] text-[11px] sm:text-xs font-medium leading-snug text-muted-foreground opacity-0 mb-3 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-normal text-center px-2"
             style={{ transitionDelay: `${dText}ms` }}
           >
             {children}
@@ -72,7 +72,7 @@ const RoadmapItem: React.FC<{
             style={{ transitionDelay: `${dLine}ms` }}
           />
           <div
-            className="mt-2 min-w-[12rem] sm:min-w-[14rem] max-w-[16rem] text-[11px] sm:text-xs font-medium leading-snug text-gray-600 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-normal text-center px-2"
+            className="mt-2 min-w-[12rem] sm:min-w-[14rem] max-w-[16rem] text-[11px] sm:text-xs font-medium leading-snug text-muted-foreground opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-normal text-center px-2"
             style={{ transitionDelay: `${dText}ms` }}
           >
             {children}
@@ -88,7 +88,7 @@ const RoadmapItem: React.FC<{
 
       {/* Ícono */}
       <div
-        className="relative w-16 h-16 sm:w-18 sm:h-18 rounded-xl grid place-items-center bg-white/60 border border-black/5 shadow-sm transition-transform duration-300 group-hover:scale-105"
+        className="relative w-16 h-16 sm:w-18 sm:h-18 rounded-xl grid place-items-center bg-card/70 border border-border shadow-sm transition-transform duration-300 group-hover:scale-105"
         title={item.name}
       >
         <img
@@ -99,7 +99,7 @@ const RoadmapItem: React.FC<{
       </div>
 
       <div
-        className="mt-4 text-[11px] sm:text-xs font-medium text-gray-500 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-nowrap"
+        className="mt-4 text-[11px] sm:text-xs font-medium text-muted-foreground opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-nowrap"
         style={{ transitionDelay: `${dText}ms` }}
       >
         {item.name}
@@ -112,14 +112,14 @@ const RoadmapItem: React.FC<{
 
 const SkillMini: React.FC<{ item: Skill }> = ({ item }) => (
   <div className="flex flex-col items-center gap-2">
-    <div className="w-12 h-12 rounded-xl grid place-items-center bg-white/70 border border-black/5 shadow-sm">
+    <div className="w-12 h-12 rounded-xl grid place-items-center bg-card/70 border border-border shadow-sm">
       <img
         src={`/images/tech-icons/${item.id}.png`}
         className="w-8 h-8 object-contain"
         onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = "none")}
       />
     </div>
-    <span className="text-[11px] sm:text-xs text-gray-600 text-center whitespace-normal leading-snug">
+    <span className="text-[11px] sm:text-xs text-muted-foreground text-center whitespace-normal leading-snug">
       {item.name}
     </span>
   </div>
@@ -154,13 +154,13 @@ export const SkillsSection: React.FC = () => {
 
   return (
     <section className="max-w-6xl mx-auto mt-20 md:mt-40">
-      <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8 md:mb-10">
+      <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-indigo-500 to-accent bg-clip-text text-transparent mb-8 md:mb-10">
         {t?.("skills.title") ?? "Technical Skills"}
       </h2>
 
       <div className="md:hidden px-4 space-y-8">
         <div>
-          <h3 className="text-sm font-semibold text-cyan-600 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
             {frontendLabel}
           </h3>
           <div className="grid grid-cols-4 gap-4">
@@ -170,7 +170,7 @@ export const SkillsSection: React.FC = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-cyan-600 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
             {backendLabel}
           </h3>
           <div className="grid grid-cols-4 gap-4">
@@ -180,7 +180,7 @@ export const SkillsSection: React.FC = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-cyan-600 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
             {databaseLabel}
           </h3>
           <div className="grid grid-cols-4 gap-4">

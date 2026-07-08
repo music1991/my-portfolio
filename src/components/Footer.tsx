@@ -1,5 +1,6 @@
 import { useLanguage } from "../context/Language";
 import { Mail, ArrowUp } from "lucide-react";
+import { motion } from "framer-motion";
 import { mailTo } from "./Mail";
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="relative border-t border-gray-200 bg-gray-50 mt-20">
+    <footer className="relative border-t border-border bg-background mt-20">
       <div className="
         max-w-7xl mx-auto px-6 md:px-10 py-10
         flex flex-col md:flex-row items-center md:items-start
@@ -16,15 +17,20 @@ export default function Footer() {
         text-center md:text-left
       ">
         <div className="order-1 md:order-2">
-          <a href={mailTo()} className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
+          <motion.a
+            href={mailTo()}
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center justify-center h-11 w-11 rounded-full text-accent hover:text-accent/80"
+          >
             <Mail className="w-7 h-7" />
-          </a>
+          </motion.a>
         </div>
 
         <div className="order-2 md:order-3">
           <button
             onClick={scrollTop}
-            className="group flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600 transition-all"
+            className="group flex items-center gap-1 text-sm text-muted-foreground hover:text-accent transition-colors cursor-pointer"
           >
             <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
             {t("general.backToTop") ?? "Back to top"}
@@ -32,16 +38,16 @@ export default function Footer() {
         </div>
 
         <div className="order-3 md:order-1">
-          <h2 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-accent bg-clip-text text-transparent">
             {t("general.portfolio")}
           </h2>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             © {year} Soraire Sebastián
           </p>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 opacity-60" />
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-indigo-500 via-accent to-indigo-400 opacity-60" />
     </footer>
   );
 }

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import type { PortfolioItem } from "../entities/lib/projects";
-import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 type ModalProjectProps = {
@@ -44,14 +43,14 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 				className="absolute inset-0 bg-black/70 backdrop-blur-sm"
 				onClick={handleClose}
 			/>
-			<div className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col z-10">
-				<div className="relative flex items-center justify-center p-5 border-b border-gray-200">
-					<h3 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center px-12 whitespace-pre-line">
+			<div className="relative bg-card rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col z-10">
+				<div className="relative flex items-center justify-center p-5 border-b border-border">
+					<h3 className="text-2xl md:text-3xl font-semibold text-card-foreground text-center px-12 whitespace-pre-line">
 						{t(item.titleKey)}
 					</h3>
 					<button
 						onClick={handleClose}
-						className="absolute right-6 text-gray-400 hover:text-gray-600 text-3xl font-bold p-2"
+						className="absolute right-6 h-11 w-11 grid place-items-center text-muted-foreground hover:text-card-foreground text-3xl font-bold cursor-pointer"
 					>
 						×
 					</button>
@@ -61,14 +60,14 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 					<div className="p-6">
 						{item.detailsKey && (
 							<div className="mb-6">
-								<p className="text-gray-700 text-lg leading-relaxed mb-4">
+								<p className="text-muted-foreground text-lg leading-relaxed mb-4">
 									{t(item.detailsKey)}
 								</p>
 								{item.link && <div className="flex items-center justify-center">
 									<a
 										href={item.link}
 										target="_blank"
-										className="inline-flex items-center gap-2 text-blue-600 hover:text-purple-600 font-medium text-lg transition-all duration-300 hover:translate-x-1"
+										className="inline-flex items-center gap-2 text-accent hover:text-indigo-500 font-medium text-lg transition-all duration-300 hover:translate-x-1"
 									>
 										<span>{t("general.app")}</span>
 										<ArrowUpRight className="w-5 h-5" />
@@ -78,7 +77,7 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 						)}
 
 						{item.note && <div className="mb-6">
-							<span className="text-sm font-medium text-gray-400 py-2 rounded-full whitespace-pre-line">
+							<span className="text-sm font-medium text-muted-foreground py-2 rounded-full whitespace-pre-line">
 								{t?.("projects.note")?.replace("{company}", item.company || "the company")}
 							</span>
 						</div>}
@@ -97,9 +96,9 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 										<button
 											key={index}
 											onClick={() => setSelectedImageIndex(index)}
-											className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${selectedImageIndex === index
-												? 'border-blue-500 shadow-md'
-												: 'border-gray-200 hover:border-gray-300'
+											className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${selectedImageIndex === index
+												? 'border-accent shadow-md'
+												: 'border-border hover:border-muted-foreground'
 												}`}
 										>
 											<img
@@ -115,7 +114,7 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 
 						{item.technologies && item.technologies.length > 0 && item.technologies.some(tech => tech.trim() !== "") && (
 							<div className="mt-10">
-								<span className="text-lg font-medium text-gray-600 px-4 py-2 rounded-full">
+								<span className="text-lg font-medium text-muted-foreground px-4 py-2 rounded-full">
 									{t?.("projects.tecnologies")}
 								</span>
 								<div className="flex flex-wrap gap-4 justify-center mt-5 mb-5">
@@ -123,7 +122,7 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 										tech.trim() && (
 											<span
 												key={index}
-												className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full text-sm font-medium shadow-sm"
+												className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-accent text-white rounded-full text-sm font-medium shadow-sm"
 											>
 												{tech}
 											</span>

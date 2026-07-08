@@ -89,7 +89,7 @@ export default function SimpleCarousel({ items, autoPlayMs = 3000 }: Props) {
       <div className="relative z-10 w-full max-w-7xl">
         <div
           ref={ref}
-          className="keen-slider rounded-t-none rounded-b-2xl overflow-hidden shadow-lg ring-1 ring-white/10 bg-white/10 backdrop-blur-md"
+          className="keen-slider rounded-t-none rounded-b-2xl overflow-hidden shadow-lg ring-1 ring-border/40 bg-card/10 backdrop-blur-md"
         >
           {items.map((it, i) => (
             <div key={it.id ?? i} className="keen-slider__slide">
