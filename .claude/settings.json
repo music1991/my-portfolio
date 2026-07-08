@@ -7,7 +7,26 @@
       "Bash(pnpm config *)",
       "Bash(pnpm install *)",
       "Bash(timeout 20 pnpm run dev)",
-      "Bash(pnpm exec *)"
+      "Bash(pnpm exec *)",
+      "Bash(ls -la \"/d/Work/Projects Test/3d site/ui-ux-pro-max-skill\" 2>&1 | head -50)",
+      "Read(//d/Work/Projects Test/3d site/ui-ux-pro-max-skill/**)",
+      "Bash(claude --version)",
+      "Read(//d/Work/Projects Test/3d site/ui-ux-pro-max-skill/.claude-plugin/**)",
+      "Read(//d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli/**)",
+      "Read(//d/Work/Projects Test/3d site/ui-ux-pro-max-skill/src/**)",
+      "Bash(python3 src/ui-ux-pro-max/scripts/search.py \"portfolio personal design\" --domain product -n 2)",
+      "Bash(python src/ui-ux-pro-max/scripts/search.py \"portfolio personal design\" --domain product -n 2)",
+      "Read(//d/Work/Projects Test/3d site/ui-ux-pro-max-skill/src/ui-ux-pro-max/templates/base/**)",
+      "Bash(npm --version)",
+      "Bash(cd \"/d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli\" && npm install 2>&1 | tail -30)",
+      "Bash(cd \"/d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli\" && npm run sync:assets 2>&1 | tail -20 && npm run build 2>&1 | tail -40)",
+      "Bash(ls -la \"/d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli/dist\" 2>&1)",
+      "Read(//d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli/scripts/**)",
+      "Bash(node_modules/.bin/tsc.cmd --version)",
+      "Bash(node_modules/.bin/tsc.cmd)",
+      "Read(//d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli/dist/**)",
+      "Bash(node \"/d/Work/Projects Test/3d site/ui-ux-pro-max-skill/cli/dist/index.js\" init --ai claude --offline --force)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio developer creative 3D motion-driven\" --domain product -n 1)"
     ]
   }
 }
