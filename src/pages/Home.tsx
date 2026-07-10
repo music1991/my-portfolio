@@ -3,7 +3,7 @@ import { SkillsSection } from '../sections/Skills';
 import Presentation from '../sections/Presentation';
 import PortfolioGrid from '../sections/Projects';
 import { DATA } from '../entities/lib/projects';
-import HeroSlider from '../components/HeroSlider';
+import Hero3D from '../components/Hero3D';
 
 const HomePage: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
       
       <div className="w-full">
         <section id="hero" className="w-full">
-          <HeroSlider />
+          <Hero3D />
         </section>
 
         <section id="about" className="scroll-mt-24 md:scroll-mt-28 w-full">

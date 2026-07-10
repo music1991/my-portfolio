@@ -127,23 +127,34 @@ const ContactPage: React.FC = () => {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <section className="py-36 md:py-40 bg-gradient-to-r from-primary to-accent text-primary-foreground">
-        <div className="max-w-5xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+      <section className="relative py-32 md:py-36 bg-[#0b0b0d] text-white overflow-hidden border-b border-accent/20">
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
+          }}
+        />
+        <div className="relative max-w-5xl mx-auto px-6">
+          <p className="font-mono text-xs tracking-[0.16em] text-accent mb-4 uppercase">
+            // {t("contact.left.title")}
+          </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-heading">
             {t("contact.hero.title")}
           </h1>
-          <p className="mt-4 text-lg md:text-xl opacity-90 leading-relaxed max-w-3xl">
+          <p className="mt-4 text-lg md:text-xl text-white/60 leading-relaxed max-w-3xl">
             {t("contact.hero.subtitle")}
           </p>
-          <div className="mt-6 flex flex-wrap gap-3 text-sm">
-            <span className="px-3 py-1 rounded-full bg-white/15 border border-white/25">{t("contact.hero.tags.frontend")}</span>
-            <span className="px-3 py-1 rounded-full bg-white/15 border border-white/25">{t("contact.hero.tags.ui")}</span>
-            <span className="px-3 py-1 rounded-full bg-white/15 border border-white/25">{t("contact.hero.tags.scalable")}</span>
+          <div className="mt-7 flex flex-wrap gap-2.5 text-xs font-mono">
+            <span className="px-3 py-1.5 border border-accent/40 bg-accent/10 text-accent">{t("contact.hero.tags.frontend")}</span>
+            <span className="px-3 py-1.5 border border-accent/40 bg-accent/10 text-accent">{t("contact.hero.tags.ui")}</span>
+            <span className="px-3 py-1.5 border border-accent/40 bg-accent/10 text-accent">{t("contact.hero.tags.scalable")}</span>
           </div>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 md:px-8 -mt-10 pb-20">
+      <section className="max-w-6xl mx-auto px-6 md:px-8 pt-14 pb-20">
         <div className="grid md:grid-cols-5 gap-8">
           <aside className="md:col-span-2">
             <div className="p-6 rounded-2xl bg-card shadow-sm border border-border">

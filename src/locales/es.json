@@ -24,6 +24,16 @@
     "speak": "Mi propósito es crear un impacto tangible, aportando valor mediante soluciones tecnológicas: automatizando procesos operativos, optimizando costos y mejorando la toma de decisiones.",
     "more": "Más"
   },
+  "hero": {
+    "kicker": "Portfolio — 2026",
+    "available": "Disponible para nuevos proyectos",
+    "name": "Sebastián Soraire",
+    "role": "Analista de Sistemas · React JS & React Native",
+    "tagline": "Construyo interfaces escalables y experiencias de producto con foco en performance y resultados de negocio.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Hablemos",
+    "scroll": "Desplazate"
+  },
   "profile": {
      "motivations": {
       "title": "Motivaciones",
@@ -201,6 +211,8 @@
   },
   "projects": {
     "text": "Proyectos",
+    "kicker": "Proyectos",
+    "heading": "Una selección de productos que diseñé y construí de punta a punta.",
     "note": "Nota: \nLas siguientes imágenes y detalles específicos son representativos y se han recreado para ilustrar la funcionalidad del sistema. \n(Detalles específicos protegidos por '{company}')",
     "tecnologies": "Tecnologías y Herramientas",
     "items": {
@@ -268,6 +280,7 @@
   },
   "skills": {
     "title": "Habilidades Técnicas",
+    "dragHint": "arrastrá un anillo para girarlo",
     "frontend": "Frontend",
     "backend": "Backend",
     "database": "Database & Tools",

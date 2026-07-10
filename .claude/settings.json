@@ -57,7 +57,19 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5179/contact)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5179/about)",
       "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"reduced motion animation accessibility decorative\" --domain ux -n 8)",
-      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"reduced motion animation accessibility decorative\" --domain ux -n 8)"
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"reduced motion animation accessibility decorative\" --domain ux -n 8)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5183/)",
+      "Bash(pkill -f \"vite --port 5183\")",
+      "Bash(pkill -f \"npm run dev\")",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowTitle -eq \"\" } | Select-Object Id,ProcessName; Get-NetTCPConnection -LocalPort 5184 -ErrorAction SilentlyContinue | Select-Object OwningProcess)",
+      "PowerShell(Test-NetConnection -ComputerName localhost -Port 5184 -WarningAction SilentlyContinue)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5184 | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Get-Process -Id $_ | Select-Object Id, ProcessName, Path })",
+      "PowerShell(Stop-Process -Id 6956 -Force)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5175/ --max-time 5)",
+      "Bash(chromium-cli --session portfolio-projects)",
+      "Read(//d//**)",
+      "Bash(node \"C:/Users/pilot/AppData/Local/Temp/claude/d--Work-Respositorios-Portafolio-my-portfolio/e1246413-c1f9-45bf-b205-2b0ca3642a97/scratchpad/shot.mjs\")",
+      "Bash(node _tmp_shot.mjs)"
     ]
   }
 }

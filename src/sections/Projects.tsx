@@ -26,48 +26,70 @@ export default function PortfolioGrid({ items, onSelect, className = "" }: Props
   };
 
   return (
-    <div className="mt-28 md:mt-30 relative max-w-[1200px] min-h-[520px] m-auto">
-      <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-        {t?.("projects.text")}
+    <div className="mt-28 md:mt-30 relative max-w-6xl min-h-[520px] m-auto px-6">
+      <p className="font-mono text-xs tracking-[0.16em] text-accent mb-3 uppercase">
+        // {t?.("projects.kicker")}
+      </p>
+      <h2 className="font-heading font-extrabold text-3xl md:text-4xl lg:text-[42px] leading-tight tracking-tight max-w-2xl mb-14">
+        {t?.("projects.heading")}
       </h2>
 
-      <div className={`grid grid-cols-1 sm:grid-cols-2 gap-20 p-6 pb-20 items-center mt-10 m-auto ${className}`}>
-        {items.map((item, idx) => {
-          const row = Math.floor(idx / 2);
-          const isEvenRow = row % 2 === 0;
-          const isLeftColumn = idx % 2 === 0;
-          const isLarge = (isEvenRow && isLeftColumn) || (!isEvenRow && !isLeftColumn);
-          const scale = isLarge ? "scale-105" : "scale-95";
-
-          return (
-            <article
-              key={`${item.id}-${idx}`}
-              onClick={() => handleItemClick(item, idx)}
-              className={`relative group rounded-2xl overflow-hidden transition-all duration-300 transform ${scale} hover:scale-110 hover:-translate-y-2 hover:shadow-2xl cursor-pointer`}
-            >
-              <div
-                className={`relative w-full overflow-hidden ${
-                  isLarge ? "aspect-[1.2/1] md:aspect-[5/4]" : "aspect-[0.9/1] md:aspect-[4/5]"
-                }`}
-              >
-                <img
-                  src={item.captures[1] || item.captures[0]}
-                  alt={item.alt || t?.(item.titleKey) || ""}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-                <h3 className="pointer-events-none absolute bottom-3 left-4 text-white text-base md:text-lg font-semibold drop-shadow opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 whitespace-pre-line">
-                  {t?.(item.titleKey)}
-                </h3>
+      <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20 ${className}`}>
+        {items.map((item, idx) => (
+          <article
+            key={`${item.id}-${idx}`}
+            onClick={() => handleItemClick(item, idx)}
+            onMouseMove={(e) => {
+              const el = e.currentTarget;
+              const r = el.getBoundingClientRect();
+              const px = (e.clientX - r.left) / r.width;
+              const py = (e.clientY - r.top) / r.height;
+              const rx = (py - 0.5) * -6;
+              const ry = (px - 0.5) * 6;
+              el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0)";
+            }}
+            style={{ transformStyle: "preserve-3d", transition: "transform 150ms ease" }}
+            className="group bg-card border border-border rounded-2xl overflow-hidden cursor-pointer hover:shadow-2xl"
+          >
+            <div className="relative w-full aspect-[4/3] overflow-hidden bg-black/5">
+              {item.year && (
+                <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-black/80 text-white text-xs font-mono tracking-wide">
+                  {item.year}
+                </span>
+              )}
+              <img
+                src={item.captures[1] || item.captures[0]}
+                alt={item.alt || t?.(item.titleKey) || ""}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="font-heading font-semibold text-base md:text-lg mb-1.5">
+                {t?.(item.titleKey)}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">
+                {t?.(item.shortDescription)}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {item.technologies.slice(0, 4).map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2.5 py-1 rounded-md border border-accent/40 text-accent text-xs font-mono"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-            </article>
-          );
-        })}
+            </div>
+          </article>
+        ))}
       </div>
 
-      <ModalProject 
+      <ModalProject
         item={selectedItem}
         isOpen={isModalOpen}
         onClose={closeModal}
