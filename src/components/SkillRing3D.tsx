@@ -100,17 +100,17 @@ export default function SkillRing3D({ label, skills, speed = 0.15, startAngle = 
               onMouseEnter={() => (pausedRef.current = true)}
               onMouseLeave={() => (pausedRef.current = false)}
               className="absolute flex flex-col items-center gap-1.5 will-change-transform"
-              style={{ top: "50%", left: "50%", width: 56, margin: "-42px 0 0 -28px" }}
+              style={{ top: "50%", left: "50%", width: 64, margin: "-46px 0 0 -32px" }}
             >
-              <div className="w-12 h-12 rounded-xl bg-card border border-border shadow-md grid place-items-center">
+              <div className="w-16 h-16 grid place-items-center">
                 <img
                   src={`/images/tech-icons/${skill.id}.png`}
                   alt={skill.name}
-                  className="max-w-7 max-h-7 object-contain"
+                  className="max-w-11 max-h-11 object-contain"
                   onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = "none")}
                 />
               </div>
-              <span className="text-[10px] text-muted-foreground whitespace-nowrap bg-card/90 px-1.5 rounded">
+              <span className="text-xs text-muted-foreground whitespace-nowrap bg-card/90 px-1.5 rounded">
                 {skill.name}
               </span>
             </div>

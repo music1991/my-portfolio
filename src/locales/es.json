@@ -9,7 +9,8 @@
     "backToTop": "Volver arriba",
     "year": "Año",
     "app": "Aplicación",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "footer": "Pensado, Diseñado y Construido por Analista Soraire Sebastian"
   },
   "carousel": {
     "previous": "Anterior",
@@ -28,8 +29,9 @@
     "kicker": "Portfolio — 2026",
     "available": "Disponible para nuevos proyectos",
     "name": "Sebastián Soraire",
-    "role": "Analista de Sistemas · React JS & React Native",
-    "tagline": "Construyo interfaces escalables y experiencias de producto con foco en performance y resultados de negocio.",
+    "role": "Analista de Sistemas, especializado en JavaScript \n(React, React Native y Node).",
+    "tagline": "Integro buenas prácticas con objetivos de negocio. Desde mi expertise en la construcción de Software eficiente y escalable, creo soluciones que resuelven problemáticas específicas.",
+    "quote": "Mi propósito es crear un impacto tangible, aportando valor mediante soluciones tecnológicas: automatizando procesos operativos, optimizando costos y mejorando la toma de decisiones.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Hablemos",
     "scroll": "Desplazate"
@@ -312,6 +314,7 @@
     "emailBody": "Hola Sebastián,\n\n[Tu Cargo, si lo consideras relevante]\n[Tu LinkedIn o Sitio Web]\n[Tu Teléfono de contacto (Opcional)]"
   },
   "contact": {
+    "kicker": "contacto",
     "hero": {
       "title": "Construyamos algo asombroso juntos",
       "subtitle": "Si tenés una idea, un MVP en marcha o un producto que necesita una mejora, puedo ayudarte a diseñar y construir experiencias con React y React Native: enfocadas en performance, UX y resultados de negocio.",
@@ -377,7 +380,7 @@
         }
       },
       "actions": {
-        "send": "Enviar",
+        "send": "Enviar mensaje",
         "sending": "Enviando…"
       },
       "feedback": {

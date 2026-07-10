@@ -69,7 +69,24 @@
       "Bash(chromium-cli --session portfolio-projects)",
       "Read(//d//**)",
       "Bash(node \"C:/Users/pilot/AppData/Local/Temp/claude/d--Work-Respositorios-Portafolio-my-portfolio/e1246413-c1f9-45bf-b205-2b0ca3642a97/scratchpad/shot.mjs\")",
-      "Bash(node _tmp_shot.mjs)"
+      "Bash(node _tmp_shot.mjs)",
+      "Bash(curl -s http://localhost:5174/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5174/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5176/)",
+      "Bash(node \"C:\\\\Users\\\\pilot\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--Work-Respositorios-Portafolio-my-portfolio\\\\56e9153b-8562-4e5d-8822-1b386e7ade4f\\\\scratchpad\\\\shot.mjs\")",
+      "Bash(node ./__shot.mjs)",
+      "Bash(ls .claude/skills)",
+      "Bash(grep -Hm1 '^description:' .claude/skills/*/SKILL.md)",
+      "Bash(npm -v)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(node -e \"require.resolve\\('playwright'\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5184/contact)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5177/images/photo-white.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5177/images/photo-black.png)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 17256 //F)"
     ]
   }
 }

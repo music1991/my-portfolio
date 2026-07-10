@@ -9,7 +9,8 @@
     "backToTop": "Back to top",
     "year": "Year",
     "app": "Application",
-    "close": "Close"
+    "close": "Close",
+    "footer": "Thought, Designed and Built by Analyst Soraire Sebastian"
   },
   "carousel": {
     "previous": "Previous",
@@ -28,8 +29,9 @@
     "kicker": "Portfolio — 2026",
     "available": "Available for new projects",
     "name": "Sebastián Soraire",
-    "role": "Systems Analyst · React JS & React Native",
-    "tagline": "I build scalable interfaces and product experiences focused on performance and business results.",
+    "role": "Systems Analyst, specialized in JavaScript \n(React, React Native and Node).",
+    "tagline": "I combine best practices with business goals. From my expertise building efficient and scalable software, I deliver solutions that solve specific problems.",
+    "quote": "My purpose is to create tangible impact, adding value with technology: automating operations, optimizing costs and improving decision making.",
     "ctaProjects": "View projects",
     "ctaContact": "Let's talk",
     "scroll": "Scroll"
@@ -312,6 +314,7 @@
     "emailBody": "Hi Sebastián,\n\n[Your Role, if relevant]\n[Your LinkedIn or Website]\n[Your Phone (Optional)]"
   },
   "contact": {
+    "kicker": "contact",
     "hero": {
       "title": "Let’s build something great together",
       "subtitle": "If you have an idea, an MVP in progress, or a product that needs improvement, I can help design and build experiences with React and React Native—focused on performance, UX and business outcomes.",
@@ -377,7 +380,7 @@
         }
       },
       "actions": {
-        "send": "Send",
+        "send": "Send message",
         "sending": "Sending…"
       },
       "feedback": {

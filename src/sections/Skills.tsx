@@ -5,14 +5,14 @@ import { STACK_LIST, type Skill } from "../entities/lib/stack";
 
 const SkillMini: React.FC<{ item: Skill }> = ({ item }) => (
   <div className="flex flex-col items-center gap-2">
-    <div className="w-12 h-12 rounded-xl grid place-items-center bg-card/70 border border-border shadow-sm">
+    <div className="w-16 h-16 grid place-items-center">
       <img
         src={`/images/tech-icons/${item.id}.png`}
-        className="w-8 h-8 object-contain"
+        className="w-12 h-12 object-contain"
         onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = "none")}
       />
     </div>
-    <span className="text-[11px] sm:text-xs text-muted-foreground text-center whitespace-normal leading-snug">
+    <span className="text-sm sm:text-base text-muted-foreground text-center whitespace-normal leading-snug">
       {item.name}
     </span>
   </div>
@@ -83,7 +83,7 @@ export const SkillsSection: React.FC = () => {
 
       <div className="hidden md:block px-6">
         <p className="text-center font-mono text-xs text-muted-foreground mb-8">
-          // {t?.("skills.dragHint") ?? "arrastrá un anillo para girarlo"}
+          {t?.("skills.dragHint") ?? "arrastrá un anillo para girarlo"}
         </p>
         <div className="grid grid-cols-3 gap-0.5 max-w-5xl mx-auto bg-border">
           <SkillRing3D label={frontendLabel} skills={frontSkills} speed={0.15} startAngle={0} />
