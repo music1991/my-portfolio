@@ -1,10 +1,13 @@
-import { GraduationCap, Briefcase, Heart, Languages } from "lucide-react";
+import { GraduationCap, Briefcase, Heart, Languages, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "../context/Language";
-import TypewriterLines from "../components/TypewriterLines";
-import React, { useMemo } from "react";
+// Typewriter effect disabled: the intro is now rendered as static text (see below)
+// import TypewriterLines from "../components/TypewriterLines";
+import AboutSidebar, { type SidebarItem } from "../components/AboutSidebar";
+import React, { useMemo, useState } from "react";
 import images from "../images.json";
 
 const volunteerPics = images.motivation.volunteerPics;
+const communityPics = images.motivation.communityPics ?? [];
 const theaterPics = images.motivation.theaterPics ?? [];
 const exercisePics = images.motivation.exercisePics ?? [];
 
@@ -30,11 +33,18 @@ const Polaroid: React.FC<{ src: string; caption?: string; rotate?: number }> = (
   </figure>
 );
 
+const POLAROID_ROTATIONS = [-6, 4, -2, 5];
+
 const PolaroidRow: React.FC<{ images: { src: string; caption?: string }[] }> = ({ images }) => (
   <div className="mt-4 flex items-start justify-center gap-4 sm:gap-6 flex-wrap">
-    <Polaroid src={images[0]?.src} caption={images[0]?.caption} rotate={-6} />
-    <Polaroid src={images[1]?.src} caption={images[1]?.caption} rotate={4} />
-    {images[2] && <Polaroid src={images[2]?.src} caption={images[2]?.caption} rotate={-2} />}
+    {images.map((img, i) => (
+      <Polaroid
+        key={img.src}
+        src={img.src}
+        caption={img.caption}
+        rotate={POLAROID_ROTATIONS[i % POLAROID_ROTATIONS.length]}
+      />
+    ))}
   </div>
 );
 
@@ -48,11 +58,39 @@ const AboutPage: React.FC = () => {
   );
 
   type LangItem = { name: string; level: string };
-  type EduItem = { degree: string; institution: string; year: string };
-  type JobItem = { role: string; company: string; period: string; details: string[], tecnologies: string[] };
+  type EduItem = { degree: string; institution: string; year: string; description?: string };
+  type JobItem = { role: string; company: string; period: string; details: string[], tecnologies: string[]; link?: string };
 
-  const jobs = tObj<JobItem[]>("profile.experience.jobs") ?? [];
+  const jobs = useMemo(() => tObj<JobItem[]>("profile.experience.jobs") ?? [], [tObj]);
   const langs = tObj<LangItem[]>("profile.languages.list") ?? [];
+
+  const [sidebarOpen, setSidebarOpen] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
+  );
+
+  const sidebarItems = useMemo<SidebarItem[]>(
+    () => [
+      { id: "about", label: t("profile.nav.intro") },
+      {
+        id: "experience",
+        label: t("profile.experience.title"),
+        children: jobs.map((job, i) => ({ id: `job-${i}`, label: job.company.split(" · ")[0] })),
+      },
+      { id: "education", label: t("profile.education.title") },
+      { id: "languages", label: t("profile.languages.title") },
+      {
+        id: "motivations",
+        label: t("profile.motivations.title"),
+        children: [
+          { id: "motivation-community", label: t("profile.motivations.community.title") },
+          { id: "motivation-volunteer", label: t("profile.motivations.volunteer.title") },
+          { id: "motivation-theater", label: t("profile.motivations.theater.title") },
+          { id: "motivation-exercise", label: t("profile.motivations.exercise.title") },
+        ],
+      },
+    ],
+    [t, jobs]
+  );
 
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
@@ -61,6 +99,11 @@ const AboutPage: React.FC = () => {
         <p className="text-lg opacity-90 mt-20">{t("profile.header.subtitle")}</p>
       </header>
 
+      <AboutSidebar items={sidebarItems} open={sidebarOpen} onToggle={() => setSidebarOpen((o) => !o)} />
+
+      <div
+        className={`transition-[padding] duration-300 ease-out ${sidebarOpen ? "lg:pr-64" : ""}`}
+      >
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-20 space-y-24">
         <section id="about" className="scroll-mt-20">
           <div className="bg-card rounded-2xl shadow-sm border border-border p-8 md:p-10">
@@ -68,11 +111,16 @@ const AboutPage: React.FC = () => {
               {t("profile.about.heading")}
             </h2>
             <div className="prose prose-gray max-w-none leading-relaxed">
-              <TypewriterLines
+              {/* <TypewriterLines
                 lines={aboutLines}
                 typingSpeed={10}
                 lineDelay={200}
-              />
+              /> */}
+              {aboutLines.map((line, i) => (
+                <p key={i} className="mb-4 text-foreground">
+                  {line}
+                </p>
+              ))}
             </div>
           </div>
         </section>
@@ -85,10 +133,22 @@ const AboutPage: React.FC = () => {
             </h2>
           </div>
           <div className="space-y-8 border-l-2 border-border pl-6">
-            {jobs.map((job) => (
-              <div key={`${job.company}-${job.role}`}>
+            {jobs.map((job, i) => (
+              <div key={`${job.company}-${job.role}`} id={`job-${i}`} className="scroll-mt-24">
                 <h3 className="text-lg font-bold text-foreground">{job.role}</h3>
-                <p className="text-muted-foreground">{job.company}</p>
+                {job.link ? (
+                  <a
+                    href={job.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    {job.company}
+                    <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                  </a>
+                ) : (
+                  <p className="text-muted-foreground">{job.company}</p>
+                )}
                 <p className="text-sm text-muted-foreground mt-1">{job.period}</p>
                 <ul className="list-disc list-inside text-foreground/90 mt-2 space-y-1">
                   {job.details.map((d, i) => <li key={i}>{d}</li>)}
@@ -123,8 +183,9 @@ const AboutPage: React.FC = () => {
             {tObj<EduItem[]>("profile.education.items")?.map((edu) => (
               <li key={`${edu.degree}-${edu.institution}`}>
                 <h3 className="text-lg font-bold text-foreground">{edu.degree}</h3>
-                <p className="text-muted-foreground">{edu.institution}</p>
+                {edu.institution && <p className="text-muted-foreground">{edu.institution}</p>}
                 <p className="text-sm text-muted-foreground">{edu.year}</p>
+                {edu.description && <p className="text-foreground/90 mt-1">{edu.description}</p>}
               </li>
             ))}
           </ul>
@@ -156,7 +217,41 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            <div className="p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
+            <div id="motivation-community" className="scroll-mt-24 p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
+              <h3 className="text-lg font-semibold text-card-foreground mb-2">
+                {t("profile.motivations.community.title")}
+              </h3>
+              <PolaroidRow images={communityPics} />
+              <p className="text-foreground/90 mt-10 mb-5">
+                {t("profile.motivations.community.desc")
+                  .split(/(\{undercode\}|\{cluster\})/)
+                  .map((part, i) => {
+                    const inlineLinks: Record<string, { href: string; label: string }> = {
+                      "{undercode}": { href: t("profile.motivations.community.link"), label: "Undercode" },
+                      "{cluster}": {
+                        href: t("profile.motivations.community.clusterLink"),
+                        label: t("profile.motivations.community.cluster"),
+                      },
+                    };
+                    const link = inlineLinks[part];
+                    if (!link) return <React.Fragment key={i}>{part}</React.Fragment>;
+                    return (
+                      <a
+                        key={i}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-0.5 font-semibold text-accent hover:underline"
+                      >
+                        {link.label}
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                      </a>
+                    );
+                  })}
+              </p>
+            </div>
+
+            <div id="motivation-volunteer" className="scroll-mt-24 p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
               <h3 className="text-lg font-semibold text-card-foreground mb-2">
                 {t?.("profile.motivations.volunteer.title") ?? ""}
               </h3>
@@ -166,7 +261,7 @@ const AboutPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
+            <div id="motivation-theater" className="scroll-mt-24 p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
               <h3 className="text-lg font-semibold text-card-foreground mb-2">
                 {t?.("profile.motivations.theater.title") ?? ""}
               </h3>
@@ -187,7 +282,7 @@ const AboutPage: React.FC = () => {
               </div> */}
             </div>
 
-            <div className="p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
+            <div id="motivation-exercise" className="scroll-mt-24 p-6 bg-card rounded-2xl shadow-sm border border-border hover:shadow-md transition-all sm:col-span-2">
               <h3 className="text-lg font-semibold text-card-foreground mb-2">
                 {t?.("profile.motivations.exercise.title") ?? ""}
               </h3>
@@ -212,6 +307,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
+      </div>
       </div>
     </main>
   );

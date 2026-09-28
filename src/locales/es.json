@@ -20,7 +20,7 @@
   "aboutMe": {
     "text": "Sobre Mi",
     "languageSelector": "ES | EN | DE",
-    "title": "Analista de Sistemas Soraire Sebastián, especializado en React Js y React Native.",
+    "title": "Ingeniero en Sistemas de Información Soraire Sebastián, especializado en React Js y React Native.",
     "detail": "Integro buenas prácticas con objetivos de negocio. \nDesde mi expertise en la construcción de Software eficiente y escalable, creo soluciones que resuelven problemáticas específicas.",
     "speak": "Mi propósito es crear un impacto tangible, aportando valor mediante soluciones tecnológicas: automatizando procesos operativos, optimizando costos y mejorando la toma de decisiones.",
     "more": "Más"
@@ -28,20 +28,27 @@
   "hero": {
     "kicker": "Portfolio — 2026",
     "available": "Disponible para nuevos proyectos",
-    "name": "Sebastián Soraire",
-    "role": "Analista de Sistemas, especializado en JavaScript \n(React, React Native y Node).",
-    "tagline": "Integro buenas prácticas con objetivos de negocio. Desde mi expertise en la construcción de Software eficiente y escalable, creo soluciones que resuelven problemáticas específicas.",
-    "quote": "Mi propósito es crear un impacto tangible, aportando valor mediante soluciones tecnológicas: automatizando procesos operativos, optimizando costos y mejorando la toma de decisiones.",
+    "name": "Ingeniero en Sistemas de Información Soraire Sebastián",
+    "tagline": "Aplico la ingeniería al desarrollo de software (de la idea al producto, pasando por la arquitectura) con foco principal en el ecosistema JavaScript, y con experiencia adaptándome a diversos stacks tecnológicos.",
+    "quote": "Conecto las buenas prácticas técnicas con los objetivos de negocio para resolver problemáticas específicas y generar un impacto tangible: automatizando procesos, optimizando costos y potenciando la toma de decisiones.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Hablemos",
     "scroll": "Desplazate"
   },
   "profile": {
+    "nav": { "title": "En esta página", "intro": "Presentación", "open": "Abrir navegación", "close": "Cerrar navegación" },
      "motivations": {
       "title": "Motivaciones",
       "volunteer": {
         "title": "Voluntariado",
         "desc": "He participado en la fundación 'Un Mundo Diferente', un comedor para personas en situación de calle y merendero para niños. Además, la fundación organiza cada año el evento Una Navidad Diferente, el 24 de diciembre. \nTambién realicé un voluntariado en Brasil, fortaleciendo valores de empatía, cooperación y compromiso social."
+      },
+      "community": {
+        "title": "Comunidad Undercode",
+        "desc": "Formo parte de {undercode}, una comunidad tecnológica perteneciente al {cluster}, que busca reducir la brecha entre profesionales y estudiantes y los puestos de trabajo en empresas. Allí comparto conocimiento, aprendo de otros desarrolladores y colaboro en iniciativas que impulsan el crecimiento de la comunidad IT.",
+        "link": "https://underc0de.org/",
+        "cluster": "Cluster Tecnológico Tucumán",
+        "clusterLink": "https://clustertucuman.org.ar/"
       },
       "theater": {
         "title": "Teatro",
@@ -62,14 +69,87 @@
     },
     "about": {
       "heading": "Hola Mundo!",
-      "content": "Soy Sebastián Soraire, Analista de Sistemas, futuro Ingeniero en Sistemas y Frontend Developer React Semi-Senior. Pero más allá de los títulos, soy una persona profundamente curiosa, apasionada por la tecnología y por cómo puede mejorar la vida de las personas empleando la Ingenieria.\nHace más de seis años que trabajo en el mundo IT. Desde pequeño me fascinaba construir cosas; hoy encuentro en el desarrollo y la ingeniería ese mismo espíritu creativo, potenciado por la posibilidad de generar impacto real.\nDurante los últimos tres años formé parte de una fintech argentina, donde crecí técnica y personalmente. Mis líderes destacaron mi empatía, compromiso y proactividad, tres valores que llevo a cada proyecto que emprendo.\nActualmente me encuentro finalizando la carrera de Ingeniería en Sistemas, y sigo fortaleciendo mi stack con Node.js y Next.js. Además, estoy perfeccionando mi inglés en busqueda de la excelencia.\nMe apasiona diseñar soluciones completas: desde entender el problema, analizarlo y proponer la arquitectura adecuada, hasta implementar, testear y mejorar con metodologías ágiles (SCRUM) y feedback constante de los usuarios.\nEn los últimos años también me capacite en habilidades blandas: liderazgo, comunicación y trabajo en equipo. Aprendí sobre neurociencia y psicología, lo cual me ayudó a entender cómo las emociones, la conciencia y la empatía pueden potenciar el rendimiento colectivo.\nHoy busco nuevos desafíos donde pueda unir mis dos motores: la tecnología y el factor humano."
+      "content": "Soy Sebastián Soraire, Ingeniero en Sistemas de Información y Analista de Sistemas, especializado en el ecosistema de JavaScript: React, React Native, Node.js, Next.js y TypeScript. Pero más allá de los títulos, soy una persona profundamente curiosa, apasionada por la tecnología y por cómo puede mejorar la vida de las personas empleando la Ingenieria.\nHace más de seis años que trabajo en el mundo IT. Desde pequeño me fascinaba construir cosas; hoy encuentro en el desarrollo y la ingeniería ese mismo espíritu creativo, potenciado por la posibilidad de generar impacto real.\nDurante los últimos tres años formé parte de una fintech argentina, donde crecí técnica y personalmente. Mis líderes destacaron mi empatía, compromiso y proactividad, tres valores que llevo a cada proyecto que emprendo.\nMe recibí de Ingeniero en Sistemas de Información en la UTN y sigo formándome de manera continua. Además, estoy perfeccionando mi inglés en busqueda de la excelencia.\nMe apasiona diseñar soluciones completas: desde entender el problema, analizarlo y proponer la arquitectura adecuada, hasta implementar, testear y mejorar con metodologías ágiles (SCRUM) y feedback constante de los usuarios.\nEn los últimos años también me capacite en habilidades blandas: liderazgo, comunicación y trabajo en equipo. Aprendí sobre neurociencia y psicología, lo cual me ayudó a entender cómo las emociones, la conciencia y la empatía pueden potenciar el rendimiento colectivo.\nHoy busco nuevos desafíos donde pueda unir mis dos motores: la tecnología y el factor humano."
     },
     "experience": {
       "title": "Experiencia Profesional",
       "jobs": [
         {
+          "role": "Docente",
+          "company": "Diplomatura en Inteligencia Artificial Aplicada · UTN – Facultad Regional Tucumán · Online / Presencial",
+          "period": "Abr 2026 - Actualidad",
+          "details": [
+            "Diseñé y dicté contenidos de Fundamentos y Evaluación de IA, capacitando a profesionales en Machine Learning no-code, gobernanza ética de datos y auditoría gerencial de métricas, proveedores y soluciones tecnológicas.",
+            "Lideré la formación avanzada en IA Generativa y asistentes personalizados: Prompt Engineering práctico (framework CRAFT) y el diseño y despliegue de asistentes persistentes especializados (GPTs, Gems, Claude Projects, NotebookLM) para la gestión del conocimiento.",
+            "Enseñé automatización inteligente y adopción organizacional a profesionales de diversas industrias, abordando arquitectura RAG, agentes de IA autónomos, flujos de automatización y estrategias de gestión del cambio para la gobernanza de riesgos de IA en la empresa."
+          ],
+          "tecnologies": [
+            "Machine Learning (no-code)",
+            "Prompt Engineering",
+            "GPTs",
+            "Gems",
+            "Claude Projects",
+            "NotebookLM",
+            "RAG",
+            "AI Agents",
+            "Automation"
+          ]
+        },
+        {
+          "role": "Ingeniero de Software (Colaborador)",
+          "company": "Pampa Solutions Tech · Freelance",
+          "link": "https://pampasolutionstech.com/",
+          "period": "Feb 2026 - Actualidad",
+          "details": [
+            "Participo en el relevamiento y análisis de requerimientos junto al equipo, traduciendo necesidades del negocio en soluciones técnicas.",
+            "Colaboro en el diseño de la arquitectura y en la definición de modelos de datos, priorizando soluciones escalables y mantenibles.",
+            "Desarrollo y mantengo funcionalidades frontend y backend aplicando buenas prácticas, código limpio y patrones de diseño.",
+            "Integro APIs y servicios externos, asegurando una comunicación confiable entre los distintos componentes del sistema.",
+            "Realizo code reviews y revisión de pull requests para mantener la calidad y consistencia del código.",
+            "Contribuyo al testing, la documentación técnica y el despliegue de las soluciones.",
+            "Trabajo de forma colaborativa con metodologías ágiles, participando en la planificación, dailies y retrospectivas del equipo."
+          ],
+          "tecnologies": [
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Node.js",
+            "REST APIs",
+            "Git",
+            "Code Review",
+            "Scrum"
+          ]
+        },
+        {
+          "role": "Ingeniero de Software (Freelance)",
+          "company": "24 Studio · Independiente · Remoto",
+          "link": "https://24studio.net/",
+          "period": "Oct 2025 - Actualidad",
+          "details": [
+            "Diseñé la arquitectura y entregué aplicaciones web y mobile listas para producción, mejorando la escalabilidad y mantenibilidad de las funcionalidades mediante arquitecturas frontend modulares con React, Next.js y React Native.",
+            "Reduje los ciclos de desarrollo e iteración, acelerando el paso de prototipo a producción, integrando APIs REST, sistemas de componentes reutilizables y patrones de clean architecture.",
+            "Mejoré la calidad del código y la eficiencia del desarrollo, logrando releases más estables e implementaciones más rápidas, aplicando code reviews, prácticas de testing y estándares modernos de ingeniería de software.",
+            "Lideré el product discovery y la planificación de funcionalidades, alineando el desarrollo con los objetivos de negocio y las necesidades de los usuarios, facilitando sesiones de brainstorming y traduciendo requerimientos en soluciones técnicas.",
+            "Gestioné la relación con clientes y las negociaciones técnicas como principal punto de contacto con los stakeholders, asegurando la alineación de las entregas y la continuidad de los proyectos.",
+            "Supervisé los entornos de despliegue y producción, mejorando la confiabilidad de las aplicaciones mediante pipelines de CI/CD, prácticas de observabilidad y optimización de performance.",
+            "Colaboré en el posicionamiento del producto y la estrategia de crecimiento, traduciendo capacidades técnicas en propuestas de valor para plataformas SaaS y de analítica."
+          ],
+          "tecnologies": [
+            "React",
+            "Next.js",
+            "React Native",
+            "REST APIs",
+            "Clean Architecture",
+            "CI/CD",
+            "Code Review",
+            "Testing",
+            "Observability"
+          ]
+        },
+        {
           "role": "Frontend Developer (React Js & React Native)",
           "company": "TotalCoin",
+          "link": "https://landing.totalcoin.com",
           "period": "Jul 2022 - Ago 2025",
           "details": [
             "Implementé el módulo de gestión de tarjetas de débito, automatizando activación y operaciones desde la app, mejorando la experiencia del usuario.",
@@ -99,6 +179,7 @@
         {
           "role": "Analista de Sistemas",
           "company": "FLASH Servicios Postales",
+          "link": "https://flashlogistica.com.ar/",
           "period": "Ago 2020 - Jul 2022",
           "details": [
             "Creé un sistema de generación y lectura de códigos QR para seguimiento de paquetes, reduciendo un 70% los tiempos de gestión y eliminando errores manuales.",
@@ -123,6 +204,7 @@
         {
           "role": "Operador Telefónico",
           "company": "Teleperformance",
+          "link": "https://www.tp.com/es-ar/ubicaciones/argentina/",
           "period": "Sept 2019 - Jul 2020",
           "details": [
             "Brindé soporte técnico en servicios de Internet, TV y telefonía.",
@@ -135,7 +217,8 @@
         },
         {
           "role": "Administrativo / Programador",
-          "company": "Instituto de Informaciones Comerciales - Federación Económica de Tucumán (Pasantia)",
+          "company": "Instituto de Informaciones Comerciales - Federación Económica de Tucumán (Pasantía)",
+          "link": "https://www.fet.com.ar/",
           "period": "Nov 2015 - Mar 2017",
           "details": [
             "Desarrollo de algunos módulos de la página web del Instituto, tanto para el administrador como para el cliente.",
@@ -154,7 +237,8 @@
         },
         {
           "role": "Administrativo",
-          "company": "UTN – Facultad Regional Tucumán (Internship)",
+          "company": "UTN – Facultad Regional Tucumán (Pasantía)",
+          "link": "https://frt.utn.edu.ar/",
           "period": "Abr 2011 - Dic 2013",
           "details": [
             "Organización y gestión de la biblioteca, asegurando la correcta catalogación y clasificación de materiales.",
@@ -171,9 +255,15 @@
       "title": "Educación",
       "items": [
         {
-          "degree": "Ingeniería en Sistemas de Información (en curso)",
+          "degree": "Ingeniería en Sistemas de Información",
           "institution": "UTN – Facultad Regional Tucumán",
-          "year": "2025"
+          "year": "2026"
+        },
+        {
+          "degree": "Clases de Inglés (Online)",
+          "institution": "",
+          "year": "Feb 2025 - Actualidad",
+          "description": "Clases de inglés continuas enfocadas en writing, speaking y listening."
         },
         {
           "degree": "Capacitación en Node JS / Next JS",

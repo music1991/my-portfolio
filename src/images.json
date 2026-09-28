@@ -11,6 +11,10 @@
       { "src": "/images/motivation/fundacion_02.png", "caption": "" },
       { "src": "/images/motivation/voluntariado_03.png", "caption": "" }
     ],
+    "communityPics": [
+      { "src": "/images/motivation/under-web.jpg", "caption": "Feria de Empresas UNT" },
+      { "src": "/images/motivation/under-expo.jpeg", "caption": "ExpoCOM 2026" }
+    ],
     "theaterPics": [
       { "src": "/images/motivation/teatro_01.png", "caption": "" },
       { "src": "/images/motivation/teatro_02.png", "caption": "" }

@@ -1,4 +1,6 @@
-import { useRef, useMemo, useState, useEffect, type MouseEvent } from "react";
+// useState/useEffect were only used by the theme-based photo swap (commented out below)
+// import { useRef, useMemo, useState, useEffect, type MouseEvent } from "react";
+import { useRef, useMemo, type MouseEvent } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { motion } from "framer-motion";
@@ -74,8 +76,11 @@ function WaveGrid({
   );
 }
 
-const PROFILE_PHOTO_LIGHT = "/images/photo-white.png";
-const PROFILE_PHOTO_DARK = "/images/photo-black.png";
+const PROFILE_PHOTO = "/images/me-office.png";
+
+// Previous behavior: the photo changed with the theme.
+// const PROFILE_PHOTO_LIGHT = "/images/photo-white.png";
+// const PROFILE_PHOTO_DARK = "/images/photo-black.png";
 
 function CameraRig({ pointer }: { pointer: { x: number; y: number } }) {
   useFrame(({ camera }) => {
@@ -95,28 +100,28 @@ export default function Hero3D() {
   const layersRef = useRef<Array<HTMLDivElement | null>>([]);
   const photoRef = useRef<HTMLDivElement | null>(null);
 
-  const targetPhotoSrc = theme === "light" ? PROFILE_PHOTO_LIGHT : PROFILE_PHOTO_DARK;
-  const [photoSrc, setPhotoSrc] = useState(targetPhotoSrc);
-  const [isPhotoLoading, setIsPhotoLoading] = useState(false);
+  // const targetPhotoSrc = theme === "light" ? PROFILE_PHOTO_LIGHT : PROFILE_PHOTO_DARK;
+  // const [photoSrc, setPhotoSrc] = useState(targetPhotoSrc);
+  // const [isPhotoLoading, setIsPhotoLoading] = useState(false);
 
-  useEffect(() => {
-    if (targetPhotoSrc === photoSrc) return;
-    let cancelled = false;
-    setIsPhotoLoading(true);
-    const img = new Image();
-    img.onload = () => {
-      if (cancelled) return;
-      setPhotoSrc(targetPhotoSrc);
-      setIsPhotoLoading(false);
-    };
-    img.onerror = () => {
-      if (!cancelled) setIsPhotoLoading(false);
-    };
-    img.src = targetPhotoSrc;
-    return () => {
-      cancelled = true;
-    };
-  }, [targetPhotoSrc, photoSrc]);
+  // useEffect(() => {
+  //   if (targetPhotoSrc === photoSrc) return;
+  //   let cancelled = false;
+  //   setIsPhotoLoading(true);
+  //   const img = new Image();
+  //   img.onload = () => {
+  //     if (cancelled) return;
+  //     setPhotoSrc(targetPhotoSrc);
+  //     setIsPhotoLoading(false);
+  //   };
+  //   img.onerror = () => {
+  //     if (!cancelled) setIsPhotoLoading(false);
+  //   };
+  //   img.src = targetPhotoSrc;
+  //   return () => {
+  //     cancelled = true;
+  //   };
+  // }, [targetPhotoSrc, photoSrc]);
 
   const onMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect();
@@ -194,12 +199,9 @@ export default function Hero3D() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h1 className="font-heading font-extrabold text-foreground tracking-tight leading-[1.03] text-[40px] md:text-[52px] lg:text-[66px] mb-5">
+            <h1 className="font-heading font-extrabold text-foreground tracking-tight leading-[1.05] text-[34px] md:text-[44px] lg:text-[54px] mb-6">
               {t("hero.name")}
             </h1>
-            <p className="font-heading font-medium text-foreground/75 dark:text-foreground/90 text-lg md:text-xl mb-5 whitespace-pre-line">
-              {t("hero.role")}
-            </p>
             <p className="text-foreground/80 text-[15px] md:text-base leading-relaxed max-w-[520px] mb-6">
               {t("hero.tagline")}
             </p>
@@ -228,23 +230,23 @@ export default function Hero3D() {
             ref={photoRef}
             onMouseMove={onPhotoMove}
             onMouseLeave={onPhotoLeave}
-            className="relative w-[220px] h-[264px] md:w-[300px] md:h-[360px] border border-accent/40 p-3.5 bg-foreground/[0.04] backdrop-blur-sm transition-transform duration-150 ease-out animate-float-slow"
+            className="relative w-[300px] h-[400px] md:w-[450px] md:h-[600px] border border-accent/40 p-3.5 bg-foreground/[0.04] backdrop-blur-sm transition-transform duration-150 ease-out animate-float-slow"
           >
             <div className="absolute -top-px -left-px w-4 h-4 border-t-2 border-l-2 border-accent" />
             <div className="absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 border-accent" />
             <div className="w-full h-full overflow-hidden relative">
               <img
-                src={photoSrc}
+                src={PROFILE_PHOTO}
                 alt={images.profile.alt}
                 className="w-full h-full object-cover transition-opacity duration-300 ease-out"
                 style={{
                   filter: "grayscale(0.15) contrast(1.05)",
-                  opacity: isPhotoLoading ? 0.4 : 1,
+                  // opacity: isPhotoLoading ? 0.4 : 1,
                 }}
               />
-              {isPhotoLoading && (
+              {/* {isPhotoLoading && (
                 <div className="absolute inset-0 animate-pulse bg-foreground/10" />
-              )}
+              )} */}
             </div>
           </div>
 

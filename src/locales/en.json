@@ -20,7 +20,7 @@
   "aboutMe": {
     "text": "About Me",
     "languageSelector": "ES | EN | DE",
-    "title": "Systems Analyst Soraire Sebastián, specialized in React JS and React Native.",
+    "title": "Information Systems Engineer Soraire Sebastián, specialized in React JS and React Native.",
     "detail": "I combine best practices with business goals. From my expertise building efficient and scalable software, I deliver solutions that solve specific problems.",
     "speak": "My purpose is to create tangible impact, adding value with technology: automating operations, optimizing costs and improving decision making.",
     "more": "More"
@@ -28,20 +28,27 @@
   "hero": {
     "kicker": "Portfolio — 2026",
     "available": "Available for new projects",
-    "name": "Sebastián Soraire",
-    "role": "Systems Analyst, specialized in JavaScript \n(React, React Native and Node).",
-    "tagline": "I combine best practices with business goals. From my expertise building efficient and scalable software, I deliver solutions that solve specific problems.",
-    "quote": "My purpose is to create tangible impact, adding value with technology: automating operations, optimizing costs and improving decision making.",
+    "name": "Information Systems Engineer Soraire Sebastián",
+    "tagline": "I apply engineering to software development (from idea to product, through architecture), with a main focus on the JavaScript ecosystem and experience adapting to diverse tech stacks.",
+    "quote": "I connect sound engineering practices with business goals to solve specific problems and create tangible impact: automating processes, optimizing costs and enhancing decision-making.",
     "ctaProjects": "View projects",
     "ctaContact": "Let's talk",
     "scroll": "Scroll"
   },
   "profile": {
+    "nav": { "title": "On this page", "intro": "Introduction", "open": "Open navigation", "close": "Close navigation" },
      "motivations": {
       "title": "Motivations",
       "volunteer": {
         "title": "Volunteering",
         "desc": "I have participated in volunteer programs in Tucumán, collaborating with the foundation 'Un Mundo Diferente', a soup kitchen for homeless people and a community center for children. The foundation also organizes an annual event called A Different Christmas every December 24th. Additionally, I joined a volunteer project in Brazil, strengthening my values of empathy, teamwork, and social commitment."
+      },
+      "community": {
+        "title": "Undercode Community",
+        "desc": "I'm part of {undercode}, a tech community that belongs to the {cluster} and aims to close the gap between professionals and students and job opportunities at companies. There I share knowledge, learn from other developers and collaborate on initiatives that help the IT community grow.",
+        "link": "https://underc0de.org/",
+        "cluster": "Tucumán Technology Cluster",
+        "clusterLink": "https://clustertucuman.org.ar/"
       },
       "theater": {
         "title": "Theatre",
@@ -62,14 +69,87 @@
     },
     "about": {
       "heading": "Hello World!",
-      "content": "I'm Sebastián Soraire, Systems Analyst, future Systems Engineer and React Frontend Developer (Semi-Senior). Beyond the titles, I'm deeply curious and passionate about technology and how it can improve people's lives using Engineering.\nI've been working in IT for more than six years. Since I was a kid, I loved building things; today I find in development and engineering that same creative spirit, amplified by the ability to generate real impact.\nFor the last three years I’ve been part of an Argentinian fintech, where I grew both technically and personally. My leaders have highlighted my empathy, commitment and proactivity, values I bring to every project.\nI'm currently finishing my Systems Engineering degree and strengthening my stack with Node.js and Next.js. I’m also improving my English in pursuit of excellence.\nI’m passionate about designing complete solutions: from understanding the problem and proposing the right architecture, to implementing, testing, and iterating under agile methodologies (SCRUM) with user feedback.\nIn recent years, I’ve worked on my soft skills – leadership, communication and teamwork. Learned about neuroscience and psychology, that helped me understand how emotions, awareness and empathy enhance collective performance.\nToday I seek new challenges where I can merge my two main drives: technology and the human factor."
+      "content": "I'm Sebastián Soraire, Information Systems Engineer and Systems Analyst, specialized in the JavaScript ecosystem: React, React Native, Node.js, Next.js and TypeScript. Beyond the titles, I'm deeply curious and passionate about technology and how it can improve people's lives using Engineering.\nI've been working in IT for more than six years. Since I was a kid, I loved building things; today I find in development and engineering that same creative spirit, amplified by the ability to generate real impact.\nFor the last three years I’ve been part of an Argentinian fintech, where I grew both technically and personally. My leaders have highlighted my empathy, commitment and proactivity, values I bring to every project.\nI earned my degree in Information Systems Engineering from UTN and keep learning continuously. I’m also improving my English in pursuit of excellence.\nI’m passionate about designing complete solutions: from understanding the problem and proposing the right architecture, to implementing, testing, and iterating under agile methodologies (SCRUM) with user feedback.\nIn recent years, I’ve worked on my soft skills – leadership, communication and teamwork. Learned about neuroscience and psychology, that helped me understand how emotions, awareness and empathy enhance collective performance.\nToday I seek new challenges where I can merge my two main drives: technology and the human factor."
     },
     "experience": {
       "title": "Professional Experience",
       "jobs": [
         {
+          "role": "Teacher",
+          "company": "Diplomatura en Inteligencia Artificial Aplicada · UTN – Facultad Regional Tucumán · Online / On-site",
+          "period": "Apr 2026 - Present",
+          "details": [
+            "Designed and delivered content on AI Fundamentals & Evaluation, training professionals in no-code Machine Learning, ethical data governance and managerial auditing of metrics, vendors and technology solutions.",
+            "Led advanced training in Generative AI and custom assistants: hands-on Prompt Engineering (CRAFT framework) and the design and deployment of specialized persistent assistants (GPTs, Gems, Claude Projects, NotebookLM) for knowledge management.",
+            "Taught intelligent automation and organizational adoption to professionals from diverse industries, covering RAG architecture, autonomous AI agents, automation workflows and change-management strategies for enterprise AI risk governance."
+          ],
+          "tecnologies": [
+            "Machine Learning (no-code)",
+            "Prompt Engineering",
+            "GPTs",
+            "Gems",
+            "Claude Projects",
+            "NotebookLM",
+            "RAG",
+            "AI Agents",
+            "Automation"
+          ]
+        },
+        {
+          "role": "Software Engineer (Collaborator)",
+          "company": "Pampa Solutions Tech · Freelance",
+          "link": "https://pampasolutionstech.com/",
+          "period": "Feb 2026 - Present",
+          "details": [
+            "Take part in requirements gathering and analysis with the team, translating business needs into technical solutions.",
+            "Collaborate on architecture design and data modeling, prioritizing scalable and maintainable solutions.",
+            "Develop and maintain frontend and backend features applying best practices, clean code and design patterns.",
+            "Integrate APIs and third-party services, ensuring reliable communication between system components.",
+            "Perform code reviews and pull request reviews to keep code quality and consistency.",
+            "Contribute to testing, technical documentation and deployment of the solutions.",
+            "Work collaboratively under agile methodologies, taking part in team planning, dailies and retrospectives."
+          ],
+          "tecnologies": [
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Node.js",
+            "REST APIs",
+            "Git",
+            "Code Review",
+            "Scrum"
+          ]
+        },
+        {
+          "role": "Software Engineer (Freelancer)",
+          "company": "24 Studio · Self-employed · Remote",
+          "link": "https://24studio.net/",
+          "period": "Oct 2025 - Present",
+          "details": [
+            "Architected and delivered production-ready web and mobile applications, improving feature scalability and maintainability by implementing modular frontend architectures with React, Next.js and React Native.",
+            "Reduced development and iteration cycles, measured by faster prototype-to-production delivery, by integrating REST APIs, reusable component systems and clean architecture patterns.",
+            "Improved code quality and development efficiency, measured by more stable releases and faster feature implementation, by applying code reviews, testing practices and modern software engineering standards.",
+            "Led product discovery and feature planning, aligning development with business objectives and user needs, by facilitating brainstorming sessions and translating requirements into technical solutions.",
+            "Managed client relationships and technical negotiations, ensuring delivery alignment and project continuity by acting as primary point of contact for stakeholders.",
+            "Oversaw deployment and production environments, improving application reliability by implementing CI/CD pipelines, observability practices and performance optimization.",
+            "Collaborated on product positioning and growth strategy, translating technical capabilities into marketable value propositions for SaaS and analytics platforms."
+          ],
+          "tecnologies": [
+            "React",
+            "Next.js",
+            "React Native",
+            "REST APIs",
+            "Clean Architecture",
+            "CI/CD",
+            "Code Review",
+            "Testing",
+            "Observability"
+          ]
+        },
+        {
           "role": "Frontend Developer (React Js & React Native)",
           "company": "TotalCoin",
+          "link": "https://landing.totalcoin.com",
           "period": "Jul 2022 - Aug 2025",
           "details": [
             "Implemented the debit card management module, automating activation and operations directly from the app, improving user experience.",
@@ -99,6 +179,7 @@
         {
           "role": "Systems Analyst",
           "company": "FLASH Postal Services",
+          "link": "https://flashlogistica.com.ar/",
           "period": "Aug 2020 - Jul 2022",
           "details": [
             "Built a QR code generation and scanning system for package tracking, reducing management times by 70% and eliminating manual errors.",
@@ -123,6 +204,7 @@
         {
           "role": "Customer Support Representative",
           "company": "Teleperformance",
+          "link": "https://www.tp.com/es-ar/ubicaciones/argentina/",
           "period": "Sept 2019 - Jul 2020",
           "details": [
             "Provided technical support for Internet, TV, and telephony services.",
@@ -136,6 +218,7 @@
         {
           "role": "Developer / Administrative",
           "company": "Instituto de Informaciones Comerciales - Federación Económica de Tucumán (Internship)",
+          "link": "https://www.fet.com.ar/",
           "period": "Nov 2015 - Mar 2017",
           "details": [
             "Development of some modules of the Institute's Web Page, for the administrator and for the client",
@@ -155,6 +238,7 @@
         {
           "role": "Administrative",
           "company": "UTN – Facultad Regional Tucumán (Internship)",
+          "link": "https://frt.utn.edu.ar/",
           "period": "Apr 2011 - Dec 2013",
           "details": [
             "Organization and management of the library, ensuring accurate cataloging and classification of materials.",
@@ -171,9 +255,15 @@
       "title": "Education",
       "items": [
         {
-          "degree": "Information Systems Engineering (in progress)",
+          "degree": "Information Systems Engineering",
           "institution": "UTN – Facultad Regional Tucumán",
-          "year": "2025"
+          "year": "2026"
+        },
+        {
+          "degree": "English Classes (Online)",
+          "institution": "",
+          "year": "Feb 2025 - Present",
+          "description": "Ongoing English classes focused on writing, speaking and listening."
         },
         {
           "degree": "Node JS & Next JS Training",
