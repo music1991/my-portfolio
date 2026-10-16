@@ -152,12 +152,6 @@ const ContactPage: React.FC = () => {
               <p className="mt-4 text-lg text-foreground/60 leading-relaxed max-w-xl">
                 {t("contact.hero.subtitle")}
               </p>
-              <div className="mt-7 flex flex-wrap gap-2.5 text-xs font-mono">
-                <span className="px-3 py-1.5 border border-accent/40 bg-accent/10 text-accent">{t("contact.hero.tags.frontend")}</span>
-                <span className="px-3 py-1.5 border border-accent/40 bg-accent/10 text-accent">{t("contact.hero.tags.ui")}</span>
-                <span className="px-3 py-1.5 border border-accent/40 bg-accent/10 text-accent">{t("contact.hero.tags.scalable")}</span>
-              </div>
-
               <div className="mt-12">
                 <h2 className="text-lg font-semibold text-foreground">{t("contact.left.title")}</h2>
                 <ul className="mt-4 space-y-3">

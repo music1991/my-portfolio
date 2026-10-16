@@ -407,12 +407,7 @@
     "kicker": "contact",
     "hero": {
       "title": "Let’s build something great together",
-      "subtitle": "If you have an idea, an MVP in progress, or a product that needs improvement, I can help design and build experiences with React and React Native—focused on performance, UX and business outcomes.",
-      "tags": {
-        "frontend": "Frontend React / React Native",
-        "ui": "Modern UI",
-        "scalable": "Scalable & maintainable"
-      }
+      "subtitle": "If you have an idea, an MVP in progress, or a product that needs improvement, I can help design and build experiences with React and React Native—focused on performance, UX and business outcomes."
     },
     "left": {
       "title": "Why work with me?",
@@ -422,7 +417,7 @@
       },
       "actions": {
         "email": "Email",
-        "phone": "+54 * ** ******"
+        "phone": "+54 9 381 560-6434"
       }
     },
     "form": {

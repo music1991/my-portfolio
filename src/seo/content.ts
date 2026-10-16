@@ -149,7 +149,6 @@ const about = (lang: Language, d: Dict) => {
 const contact = (lang: Language, d: Dict) => [
   `<h1>${escape(d.contact.hero.title)}</h1>`,
   `<p>${escape(d.contact.hero.subtitle)}</p>`,
-  list(Object.values(d.contact.hero.tags).map(escape)),
   linksSection(UI[lang]),
 ]
 
