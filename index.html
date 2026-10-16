@@ -1,14 +1,101 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/maletin.png" />
+    <!-- Small icons generated from maletin.png by the "images" plugin in vite-plugins/images.ts -->
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Fonts linked here (not @import in CSS) so they download in parallel with the app -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:image" content="https://myportfolio.abouttech.org/preview.png" />
-    <meta property="og:url" content="https://myportfolio.abouttech.org/" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <title>Portfolio - Engineer Soraire</title>
+    <meta name="author" content="Sebastián Soraire" />
+    <meta name="theme-color" content="#09090b" />
+    <!-- Per-page title/description/canonical/hreflang/OG tags: filled from src/seo by the "seo" plugin in vite.config.ts -->
+    <!--seo:start-->
+    <!--seo:end-->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://ing-soraire.24studio.net/#person",
+            "name": "Sebastián Soraire",
+            "alternateName": ["Sebastian Soraire", "Ing. Soraire", "Soraire Sebastián"],
+            "url": "https://ing-soraire.24studio.net/",
+            "image": "https://ing-soraire.24studio.net/images/me-office.png",
+            "email": "mailto:sebastians201991@gmail.com",
+            "jobTitle": "Ingeniero de Software / Software Engineer",
+            "description": "Ingeniero en Sistemas de Información (UTN) especializado en el ecosistema JavaScript: React, React Native, Next.js, Node.js y TypeScript. Desarrolla aplicaciones web y móviles, MVPs y automatizaciones con Inteligencia Artificial, y es docente de la Diplomatura en IA Aplicada de la UTN.",
+            "address": { "@type": "PostalAddress", "addressRegion": "Tucumán", "addressCountry": "AR" },
+            "nationality": { "@type": "Country", "name": "Argentina" },
+            "sameAs": [
+              "https://www.linkedin.com/in/sebastian-soraire-developer/",
+              "https://github.com/music1991"
+            ],
+            "worksFor": [
+              { "@type": "Organization", "name": "24 Studio", "url": "https://24studio.net/" },
+              { "@type": "Organization", "name": "Pampa Solutions Tech", "url": "https://pampasolutionstech.com/" },
+              { "@type": "CollegeOrUniversity", "name": "UTN – Facultad Regional Tucumán", "url": "https://frt.utn.edu.ar/" }
+            ],
+            "alumniOf": [
+              { "@type": "CollegeOrUniversity", "name": "UTN – Facultad Regional Tucumán", "url": "https://frt.utn.edu.ar/" }
+            ],
+            "hasCredential": [
+              { "@type": "EducationalOccupationalCredential", "name": "Ingeniería en Sistemas de Información", "credentialCategory": "degree", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "UTN – Facultad Regional Tucumán" } },
+              { "@type": "EducationalOccupationalCredential", "name": "Analista en Sistemas de Información", "credentialCategory": "degree", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "UTN – Facultad Regional Tucumán" } }
+            ],
+            "hasOccupation": [
+              { "@type": "Occupation", "name": "Ingeniero de Software", "occupationLocation": { "@type": "Country", "name": "Argentina" }, "skills": "React, React Native, Next.js, Node.js, TypeScript, REST APIs, Clean Architecture, CI/CD, Testing" },
+              { "@type": "Occupation", "name": "Docente de Inteligencia Artificial Aplicada", "occupationLocation": { "@type": "Country", "name": "Argentina" }, "skills": "IA generativa, Prompt Engineering, RAG, Agentes de IA, Automatización, Machine Learning no-code" }
+            ],
+            "knowsAbout": [
+              "Desarrollo de software", "Ingeniería de software", "Arquitectura de software", "Desarrollo web", "Desarrollo de aplicaciones móviles",
+              "JavaScript", "TypeScript", "React", "React Native", "Next.js", "Node.js", "HTML", "C#", "Python", "PHP",
+              "SQL Server", "PostgreSQL", "Git", "Vite", "REST APIs", "Clean Architecture", "CI/CD", "Testing", "UX/UI",
+              "Inteligencia Artificial", "IA generativa", "Prompt Engineering", "RAG", "Agentes de IA", "Automatización de procesos",
+              "MVP", "Fintech", "Scrum", "Metodologías ágiles"
+            ],
+            "knowsLanguage": [
+              { "@type": "Language", "name": "Español", "alternateName": "es" },
+              { "@type": "Language", "name": "English", "alternateName": "en" },
+              { "@type": "Language", "name": "Deutsch", "alternateName": "de" }
+            ],
+            "makesOffer": {
+              "@type": "OfferCatalog",
+              "name": "Servicios",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo web", "description": "Aplicaciones web con React, Next.js y TypeScript, rápidas, escalables y mantenibles." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicaciones móviles", "description": "Apps para iOS y Android con React Native." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Backend y APIs", "description": "APIs REST con Node.js e integración de servicios externos." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "MVPs para startups", "description": "De la idea al producto en producción: discovery, arquitectura, desarrollo y despliegue." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización con IA", "description": "Automatización de procesos con Inteligencia Artificial, agentes y RAG." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Capacitación en IA", "description": "Formación en IA generativa y adopción responsable en organizaciones." } }
+              ]
+            }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://ing-soraire.24studio.net/#profile",
+            "url": "https://ing-soraire.24studio.net/",
+            "name": "Sebastián Soraire | Ingeniero de Software",
+            "inLanguage": ["es", "en"],
+            "mainEntity": { "@id": "https://ing-soraire.24studio.net/#person" },
+            "isPartOf": { "@id": "https://ing-soraire.24studio.net/#website" }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ing-soraire.24studio.net/#website",
+            "url": "https://ing-soraire.24studio.net/",
+            "name": "Sebastián Soraire",
+            "inLanguage": ["es", "en"],
+            "publisher": { "@id": "https://ing-soraire.24studio.net/#person" }
+          }
+        ]
+      }
+    </script>
     <script>
       (function () {
         try {
@@ -20,9 +107,15 @@
         } catch (e) {}
       })();
     </script>
+    <style>
+      /* Static content shown only until React mounts (and to bots that don't run JS). */
+      .seo-content { max-width: 760px; margin: 0 auto; padding: 96px 16px 48px; font-family: system-ui, sans-serif; line-height: 1.6; color: rgb(var(--color-foreground, 9 9 11)); background: rgb(var(--color-background, 250 250 250)); }
+      .seo-content a { color: rgb(var(--color-accent, 37 99 235)); }
+      .seo-content h1 { font-size: 2rem; line-height: 1.2; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--content:start--><!--content:end--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

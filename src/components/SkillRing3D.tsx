@@ -104,8 +104,10 @@ export default function SkillRing3D({ label, skills, speed = 0.15, startAngle = 
             >
               <div className="w-16 h-16 grid place-items-center">
                 <img
-                  src={`/images/tech-icons/${skill.id}.png`}
+                  src={`/images/tech-icons/${skill.id}.webp`}
                   alt={skill.name}
+                  loading="lazy"
+                  decoding="async"
                   className="max-w-11 max-h-11 object-contain"
                   onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = "none")}
                 />

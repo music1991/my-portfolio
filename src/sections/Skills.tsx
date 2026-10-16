@@ -7,7 +7,12 @@ const SkillMini: React.FC<{ item: Skill }> = ({ item }) => (
   <div className="flex flex-col items-center gap-2">
     <div className="w-16 h-16 grid place-items-center">
       <img
-        src={`/images/tech-icons/${item.id}.png`}
+        src={`/images/tech-icons/${item.id}.webp`}
+        alt=""
+        width={48}
+        height={48}
+        loading="lazy"
+        decoding="async"
         className="w-12 h-12 object-contain"
         onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = "none")}
       />

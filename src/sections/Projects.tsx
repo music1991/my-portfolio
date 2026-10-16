@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "../context/Language";
 import type { PortfolioItem } from "../entities/lib/projects";
+import { smallImage } from "../entities/lib/images";
 import ModalProject from "../components/ModalProject";
 
 type Props = {
@@ -70,10 +71,11 @@ export default function PortfolioGrid({ items, onSelect, className = "" }: Props
                   </span>
                 )}
                 <img
-                  src={item.captures[1] || item.captures[0]}
+                  src={smallImage(item.captures[1] || item.captures[0])}
                   alt={item.alt || t?.(item.titleKey) || ""}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-5">

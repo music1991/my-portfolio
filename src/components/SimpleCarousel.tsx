@@ -3,6 +3,7 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { useLanguage } from "../context/Language";
 import type { PortfolioItem } from "../entities/lib/projects";
+import { projectSrcSet } from "../entities/lib/images";
 
 type Props = {
   items: PortfolioItem[];
@@ -120,7 +121,11 @@ export default function SimpleCarousel({ items, autoPlayMs = 3000 }: Props) {
             <div key={it.id ?? i} className="keen-slider__slide">
               <img
                 src={it.captures[0]}
+                srcSet={projectSrcSet(it.captures[0])}
+                sizes="(max-width: 1280px) 100vw, 1280px"
                 alt={it.alt || title(i)}
+                loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
                 className="w-full h-[min(64vw,520px)] object-cover"
                 draggable={false}
               />

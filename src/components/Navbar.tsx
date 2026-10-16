@@ -6,7 +6,7 @@ import ThemeToggle from "../components/ThemeToggle";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, localize } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -51,20 +51,20 @@ const Navbar: React.FC = () => {
   };
 
   const goToSectionOnHome = (sectionId: string) => {
-    if (location.pathname === "/") {
+    if (location.pathname === localize("/")) {
       scrollToSection(sectionId);
     } else {
-      navigate("/");
+      navigate(localize("/"));
       setTimeout(() => scrollToSection(sectionId), 50);
     }
   };
 
   const handleNavItemClick = (item: any) => {
     if (item.to) {
-       if (item.to === "/" && location.pathname === "/") {
+       if (item.to === "/" && location.pathname === localize("/")) {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        navigate(item.to);
+        navigate(localize(item.to));
       }
     } else if (item.section) {
       goToSectionOnHome(item.section);

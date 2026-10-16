@@ -21,6 +21,8 @@ const Polaroid: React.FC<{ src: string; caption?: string; rotate?: number }> = (
     <img
       src={src}
       alt={caption ?? ""}
+      loading="lazy"
+      decoding="async"
       className="block w-full h-44 sm:h-52 md:h-56 object-cover rounded-[2px]"
       draggable={false}
     />

@@ -1,101 +1,35 @@
-// useState/useEffect were only used by the theme-based photo swap (commented out below)
-// import { useRef, useMemo, useState, useEffect, type MouseEvent } from "react";
-import { useRef, useMemo, type MouseEvent } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+// useEffect was only used by the theme-based photo swap (commented out below)
+// import { lazy, Suspense, useRef, useState, useEffect, type MouseEvent } from "react";
+import { lazy, Suspense, useRef, useState, type MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/Language";
 import { useTheme } from "../context/Theme";
 import images from "../images.json";
+import { HERO_PHOTO } from "../entities/lib/images";
 
-/**
- * Animated wireframe data-grid: a plane of points that gently undulates
- * (sine displacement) and drifts to follow the pointer, rendered behind
- * the hero copy. Colors are pulled from the design system's accent token.
- */
-function WaveGrid({
-  pointer,
-  color,
-  size,
-  opacity,
-}: {
-  pointer: { x: number; y: number };
-  color: string;
-  size: number;
-  opacity: number;
-}) {
-  const pointsRef = useRef<THREE.Points>(null);
-  const groupRef = useRef<THREE.Group>(null);
+const HeroGrid = lazy(() => import("./HeroGrid"));
 
-  const cols = 46;
-  const rows = 26;
-  const spacing = 0.32;
+type NetworkInformation = { saveData?: boolean; effectiveType?: string };
 
-  const positions = useMemo(() => {
-    const arr = new Float32Array(cols * rows * 3);
-    let i = 0;
-    for (let j = 0; j < rows; j++) {
-      for (let x = 0; x < cols; x++) {
-        arr[i * 3] = (x - (cols - 1) / 2) * spacing;
-        arr[i * 3 + 1] = 0;
-        arr[i * 3 + 2] = (j - (rows - 1) / 2) * spacing;
-        i++;
-      }
-    }
-    return arr;
-  }, []);
+/** Skip the decorative 3D background on slow/metered connections and for reduced-motion users. */
+const shouldRenderGrid = () => {
+  const connection = (navigator as Navigator & { connection?: NetworkInformation }).connection;
+  if (connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType ?? "")) return false;
+  return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+};
 
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime();
-    const geom = pointsRef.current?.geometry as THREE.BufferGeometry | undefined;
-    if (geom) {
-      const posAttr = geom.getAttribute("position") as THREE.BufferAttribute;
-      for (let k = 0; k < posAttr.count; k++) {
-        const x = posAttr.getX(k);
-        const z = posAttr.getZ(k);
-        posAttr.setY(k, Math.sin(x * 0.9 + t) * 0.28 + Math.cos(z * 0.9 + t * 0.8) * 0.28);
-      }
-      posAttr.needsUpdate = true;
-    }
-    if (groupRef.current) {
-      groupRef.current.rotation.y += (pointer.x * 0.35 - groupRef.current.rotation.y) * 0.03;
-    }
-  });
-
-  return (
-    <group ref={groupRef}>
-      <points ref={pointsRef}>
-        <bufferGeometry>
-          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
-        </bufferGeometry>
-        <pointsMaterial color={color} size={size} transparent opacity={opacity} sizeAttenuation />
-      </points>
-    </group>
-  );
-}
-
-const PROFILE_PHOTO = "/images/me-office.png";
+const PROFILE_PHOTO = HERO_PHOTO;
 
 // Previous behavior: the photo changed with the theme.
-// const PROFILE_PHOTO_LIGHT = "/images/photo-white.png";
-// const PROFILE_PHOTO_DARK = "/images/photo-black.png";
-
-function CameraRig({ pointer }: { pointer: { x: number; y: number } }) {
-  useFrame(({ camera }) => {
-    camera.position.y += (2.6 - pointer.y * 1.4 - camera.position.y) * 0.04;
-    camera.lookAt(0, 0, 0);
-  });
-  return null;
-}
+// const PROFILE_PHOTO_LIGHT = "/images/photo-white.webp";
+// const PROFILE_PHOTO_DARK = "/images/photo-black.webp";
 
 export default function Hero3D() {
-  const { t } = useLanguage();
+  const { t, localize } = useLanguage();
   const { theme } = useTheme();
-  const gridColor = theme === "dark" ? "#3b82f6" : "#2563eb";
-  const gridPointSize = theme === "dark" ? 0.045 : 0.036;
-  const gridOpacity = theme === "dark" ? 0.75 : 0.45;
+  const [showGrid] = useState(shouldRenderGrid);
   const pointer = useRef({ x: 0, y: 0 });
   const layersRef = useRef<Array<HTMLDivElement | null>>([]);
   const photoRef = useRef<HTMLDivElement | null>(null);
@@ -167,10 +101,11 @@ export default function Hero3D() {
           maskImage: "radial-gradient(65% 65% at 50% 45%, black 35%, transparent 100%)",
         }}
       >
-        <Canvas camera={{ position: [0, 2.6, 7.5], fov: 50 }}>
-          <WaveGrid pointer={pointer.current} color={gridColor} size={gridPointSize} opacity={gridOpacity} />
-          <CameraRig pointer={pointer.current} />
-        </Canvas>
+        {showGrid && (
+          <Suspense fallback={null}>
+            <HeroGrid pointer={pointer} theme={theme} />
+          </Suspense>
+        )}
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
 
@@ -216,7 +151,7 @@ export default function Hero3D() {
                 {t("hero.ctaProjects")}
               </a>
               <Link
-                to="/contact"
+                to={localize("/contact")}
                 className="inline-flex items-center gap-2 min-h-[44px] px-6 py-3 border border-foreground/20 text-foreground font-semibold text-sm hover:border-accent hover:text-accent transition-colors"
               >
                 {t("hero.ctaContact")}
@@ -238,6 +173,10 @@ export default function Hero3D() {
               <img
                 src={PROFILE_PHOTO}
                 alt={images.profile.alt}
+                width={450}
+                height={600}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-cover transition-opacity duration-300 ease-out"
                 style={{
                   filter: "grayscale(0.15) contrast(1.05)",
@@ -251,7 +190,7 @@ export default function Hero3D() {
           </div>
 
           <Link
-            to="/about"
+            to={localize("/about")}
             className="inline-flex items-center gap-2 min-h-[44px] text-foreground/70 hover:text-accent font-medium text-sm transition-all duration-300 hover:translate-x-1"
           >
             {t("aboutMe.more")}

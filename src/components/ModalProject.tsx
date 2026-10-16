@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { PortfolioItem } from "../entities/lib/projects";
+import { projectSrcSet, smallImage } from "../entities/lib/images";
 import { ArrowUpRight } from "lucide-react";
 
 type ModalProjectProps = {
@@ -99,7 +100,10 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 						<div className="mb-6 justify-center flex mt-4">
 							<img
 								src={item.captures[selectedImageIndex]}
+								srcSet={projectSrcSet(item.captures[selectedImageIndex])}
+								sizes="(max-width: 768px) 75vw, 900px"
 								alt={item.alt || t(item.titleKey) || ""}
+								decoding="async"
 								className="rounded-lg shadow-md w-3/4"
 							/>
 						</div>
@@ -117,8 +121,10 @@ export default function ModalProject({ item, isOpen, onClose, t }: ModalProjectP
 												}`}
 										>
 											<img
-												src={imageUri}
+												src={smallImage(imageUri)}
 												alt={`${t(item.titleKey)} - Miniatura ${index + 1}`}
+												loading="lazy"
+												decoding="async"
 												className="w-full h-full object-cover"
 											/>
 										</button>
