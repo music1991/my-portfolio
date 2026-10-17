@@ -2,34 +2,59 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "../context/Language";
 
+type Cue = { start: number; end: number; text: string };
+
+const toSeconds = (stamp: string) =>
+  stamp.split(":").reduce((total, part) => total * 60 + parseFloat(part), 0);
+
+/** Minimal WebVTT parser: enough for the plain "start --> end" + text cues we ship. */
+const parseVtt = (source: string): Cue[] =>
+  source
+    .replace(/\r/g, "")
+    .split(/\n{2,}/)
+    .flatMap((block) => {
+      const lines = block.split("\n");
+      const timing = lines.findIndex((line) => line.includes("-->"));
+      if (timing === -1) return [];
+      const [start, end] = lines[timing].split("-->").map((s) => toSeconds(s.trim().split(" ")[0]));
+      return [{ start, end, text: lines.slice(timing + 1).join("\n") }];
+    });
+
 /**
  * Muted, looping sketch video with handwritten subtitles.
- * The <track> stays hidden: its cues are drawn by hand so they can use the Caveat font
- * (native ::cue styling can't reliably change fonts across browsers).
+ * The cues are read from the .vtt files and drawn by hand instead of using <track>:
+ * mobile browsers (iOS Safari especially) render tracks natively even when hidden,
+ * which doubled the subtitles, and native ::cue styling can't change the font anyway.
  */
 export default function DrawMeVideo({ label }: { label: string }) {
   const { language } = useLanguage();
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [cues, setCues] = useState<Cue[]>([]);
   const [caption, setCaption] = useState("");
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`/videos/draw-me.${language === "en" ? "en" : "es"}.vtt`)
+      .then((res) => (res.ok ? res.text() : ""))
+      .then((text) => !cancelled && setCues(parseVtt(text)))
+      .catch(() => !cancelled && setCues([]));
+    return () => {
+      cancelled = true;
+    };
+  }, [language]);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const tracks = Array.from(video.textTracks);
-    const active = tracks.find((tr) => tr.language === language) ?? tracks[0];
-    tracks.forEach((tr) => {
-      tr.mode = tr === active ? "hidden" : "disabled";
-    });
-    if (!active) return;
 
-    const onCueChange = () => {
-      const cue = active.activeCues?.[0] as VTTCue | undefined;
-      setCaption(cue?.text ?? "");
+    const onTimeUpdate = () => {
+      const t = video.currentTime;
+      setCaption(cues.find((cue) => t >= cue.start && t < cue.end)?.text ?? "");
     };
-    onCueChange();
-    active.addEventListener("cuechange", onCueChange);
-    return () => active.removeEventListener("cuechange", onCueChange);
-  }, [language]);
+    onTimeUpdate();
+    video.addEventListener("timeupdate", onTimeUpdate);
+    return () => video.removeEventListener("timeupdate", onTimeUpdate);
+  }, [cues]);
 
   return (
     <figure
@@ -52,8 +77,6 @@ export default function DrawMeVideo({ label }: { label: string }) {
       >
         <source src="/videos/draw-me.av1.mp4" type='video/mp4; codecs="av01.0.08M.10"' />
         <source src="/videos/draw-me.mp4" type="video/mp4" />
-        <track kind="captions" src="/videos/draw-me.es.vtt" srcLang="es" label="Español" default={language === "es"} />
-        <track kind="captions" src="/videos/draw-me.en.vtt" srcLang="en" label="English" default={language === "en"} />
       </video>
 
       <div aria-live="polite" className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center px-3">
