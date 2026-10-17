@@ -16,6 +16,30 @@ export interface PortfolioItem {
 
 export const DATA: PortfolioItem[] = [
   {
+    id: "qrRedirect",
+    year: "2026",
+    category: "",
+    captures: ["/images/projects/project_16_1.webp"],
+    titleKey: "projects.items.qrRedirect.title",
+    detailsKey: "projects.items.qrRedirect.details",
+    shortDescription: "projects.items.qrRedirect.shortDescription",
+    note: false,
+    technologies: ["OpenCode", "Gentle AI", "Spec-Driven Development"],
+    link: "https://qrredirect.pampasolutionstech.com"
+  },
+  {
+    id: "profex",
+    year: "2026",
+    category: "",
+    captures: ["/images/projects/project_15_1.webp", "/images/projects/project_15_2.webp", "/images/projects/project_15_3.webp", "/images/projects/project_15_4.webp", "/images/projects/project_15_5.webp", "/images/projects/project_15_6.webp"],
+    titleKey: "projects.items.profex.title",
+    detailsKey: "projects.items.profex.details",
+    shortDescription: "projects.items.profex.shortDescription",
+    note: false,
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    link: "https://profex.pampasolutionstech.com"
+  },
+  {
     id: "ecommerce",
     year: "2026",
     category: "",

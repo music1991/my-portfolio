@@ -1,6 +1,6 @@
 import type { PageMeta } from './pages'
 import { pageUrlPath } from './pages'
-import { DEFAULT_LANGUAGE, LANGUAGES, OG_LOCALE, SITE_NAME, absoluteUrl } from './site'
+import { DEFAULT_LANGUAGE, LANGUAGES, OG_LOCALE, SITE_NAME, TAB_TITLE, absoluteUrl } from './site'
 
 /** Marks every tag this module owns, so <Seo /> can swap them on navigation. */
 export const SEO_ATTR = 'data-seo'
@@ -19,7 +19,7 @@ export const renderSeoTags = (page: PageMeta): string => {
   const url = absoluteUrl(pageUrlPath(page))
   const image = absoluteUrl(page.image)
   const tags = [
-    `<title ${SEO_ATTR}>${escape(page.title)}</title>`,
+    `<title ${SEO_ATTR}>${escape(TAB_TITLE)}</title>`,
     meta('name', 'description', page.description),
   ]
 

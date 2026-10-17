@@ -12,7 +12,7 @@ import type { Language } from './site'
  */
 
 export const LINKS = {
-  linkedin: 'https://www.linkedin.com/in/sebastian-soraire-developer/',
+  linkedin: 'https://www.linkedin.com/in/ingeniero-soraire/',
   github: 'https://github.com/music1991',
   whatsapp: 'https://wa.me/5493815606434',
   cv: '/cv/Soraire_Sebastian_CV.pdf',

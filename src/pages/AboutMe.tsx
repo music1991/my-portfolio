@@ -3,6 +3,7 @@ import { useLanguage } from "../context/Language";
 // Typewriter effect disabled: the intro is now rendered as static text (see below)
 // import TypewriterLines from "../components/TypewriterLines";
 import AboutSidebar, { type SidebarItem } from "../components/AboutSidebar";
+import DrawMeVideo from "../components/DrawMeVideo";
 import React, { useMemo, useState } from "react";
 import images from "../images.json";
 
@@ -108,7 +109,8 @@ const AboutPage: React.FC = () => {
       >
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-20 space-y-24">
         <section id="about" className="scroll-mt-20">
-          <div className="bg-card rounded-2xl shadow-sm border border-border p-8 md:p-10">
+          <div className="bg-card rounded-2xl shadow-sm border border-border p-8 md:p-10 flow-root">
+            <DrawMeVideo label={t("profile.about.imageAlt")} />
             <h2 className="text-2xl font-semibold text-card-foreground mb-6">
               {t("profile.about.heading")}
             </h2>

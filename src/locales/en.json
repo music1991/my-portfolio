@@ -69,6 +69,7 @@
     },
     "about": {
       "heading": "Hello World!",
+      "imageAlt": "Pencil illustration of Sebastián coding on his laptop surrounded by diagrams, APIs and databases",
       "content": "I'm Sebastián Soraire, Information Systems Engineer (UTN, 2026) and Systems Analyst. I apply engineering to software development with a main focus on the JavaScript ecosystem (React, React Native, Next.js, Node.js and TypeScript), adapting to whatever stack each project needs. Beyond the titles, I'm a deeply curious person, passionate about technology and about how engineering can improve people's lives.\nI've been working in IT for more than six years. Since I was a kid, I loved building things; today I find that same creative spirit in software development, amplified by the chance to generate real impact.\nFor three years I was part of an Argentinian fintech, where I grew both technically and personally. My leaders highlighted my empathy, commitment and proactivity, three values I bring to every project I take on.\nToday I work as a freelance Software Engineer at 24 Studio and Pampa Solutions Tech, owning each project end to end: from understanding the problem and the business, analyzing it and proposing the right architecture, to implementing, testing, deploying and continuously improving it with agile methodologies and user feedback.\nI'm also a lecturer in UTN's Applied Artificial Intelligence Diploma, where I train professionals from different industries in generative AI, automation and the responsible adoption of these tools within organizations. Teaching pushes me to keep learning and to explain complex things simply.\nI keep learning continuously: I'm polishing my English (B2) and taking my first steps in German. I've also trained in soft skills — leadership, communication and teamwork — and studied neuroscience and psychology, which helped me understand how emotions, awareness and empathy boost collective performance.\nToday I'm looking for new challenges where I can merge my two main drives: technology and the human factor."
     },
     "experience": {
@@ -311,7 +312,17 @@
       "ecommerce": {
         "title": "Online Store",
         "shortDescription": "Integral platform for product management, sales, and online catalog.",
-        "details": "System composed of an Online Store and a Commercial Management System (SGC). Allows managing a detailed catalog with retail, wholesale, and promotional prices, handling the status of each product. The SGC facilitates sales registration with automatic total calculation and allows applying manual discounts, either by item or on the total operation, being registered in the history. The purchase price is reserved for internal use, ensuring the privacy of costs in front of the final customer. It also includes tools for employee management."
+        "details": "System composed of an Online Store and a Commercial Management System (SGC). Allows managing a detailed catalog with retail, wholesale, and promotional prices, handling the status of each product. The SGC facilitates sales registration with automatic total calculation and allows applying manual discounts, either by item or on the total operation, being registered in the history. The purchase price is reserved for internal use, ensuring the privacy of costs in front of the final customer. It also includes tools for employee management. It is also used in production by a client: https://selfietuc.com.ar"
+      },
+      "qrRedirect": {
+        "title": "QR Redirect",
+        "shortDescription": "Dynamic redirects for QR codes",
+        "details": "A tool built to create and manage dynamic redirects tied to QR codes, so a link's destination can be updated without reprinting the code. Built with OpenCode, Gentle AI and Spec-Driven Development."
+      },
+      "profex": {
+        "title": "Profex",
+        "shortDescription": "Custom institutional website with an admin panel",
+        "details": "We built a custom institutional website to provide a professional digital presence, with a clear structure of services, contact information and a responsive design meant to convey trust and make it easy for new clients to get in touch. Its customized version, \"Letras & Enseñanza\", is currently used by a literature graduate: https://licviollaz.pampasolutionstech.com"
       },
       "pwa": {
         "title": "Progressive Web App",

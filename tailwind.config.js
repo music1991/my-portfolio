@@ -7,6 +7,7 @@ export default {
       fontFamily: {
         sans: ["Archivo", "ui-sans-serif", "system-ui", "sans-serif"],
         heading: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
+        hand: ["Caveat", "cursive"],
       },
       colors: {
         background: "rgb(var(--color-background) / <alpha-value>)",

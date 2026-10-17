@@ -3,7 +3,7 @@ import { Mail, ArrowUp, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { mailTo } from "./Mail";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/sebastian-soraire-developer/";
+const LINKEDIN_URL = "https://www.linkedin.com/in/ingeniero-soraire/";
 const WHATSAPP_URL = "https://wa.me/5493815606434";
 
 function WhatsAppIcon({ className }: { className?: string }) {

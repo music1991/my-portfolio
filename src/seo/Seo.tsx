@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { getPageMeta } from './pages'
 import { SEO_ATTR, renderSeoTags } from './render'
+import { TAB_TITLE } from './site'
 
 /**
  * Keeps the <head> in sync with the current route on client-side navigation.
@@ -18,7 +19,7 @@ export const Seo = () => {
 
     document.head.querySelectorAll(`[${SEO_ATTR}]`).forEach(el => el.remove())
     document.head.append(template.content)
-    document.title = page.title
+    document.title = TAB_TITLE
     document.documentElement.lang = page.lang
   }, [pathname])
 

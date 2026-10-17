@@ -21,10 +21,10 @@ const RULES: { match: RegExp; width: number; small?: number; quality?: number }[
   { match: /^images\//, width: 900 },
 ]
 
-/** Favicons derived from the 2500px logo, which is far too heavy to use as-is. */
+/** Favicons derived from technical-support.png, resized to the small sizes browsers need. */
 const ICONS: Job[] = [
-  { src: 'maletin.png', out: 'favicon.png', width: 64, format: 'png', quality: 100 },
-  { src: 'maletin.png', out: 'apple-touch-icon.png', width: 180, format: 'png', quality: 100 },
+  { src: 'technical-support.png', out: 'favicon.png', width: 64, format: 'png', quality: 100 },
+  { src: 'technical-support.png', out: 'apple-touch-icon.png', width: 180, format: 'png', quality: 100 },
 ]
 
 const SOURCE = /\.(png|jpe?g)$/i
