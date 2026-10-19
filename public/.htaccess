@@ -1,66 +1,20 @@
-# ===== Portafolio ing-soraire.24studio.net - SPA React (Vite) =====
-# Las rutas del sitio NO cambian: /, /about, /contact, /en, /en/about, /en/contact.
-# Este archivo solo agrega cómo servir los HTML pre-renderizados (SEO) y el fallback de la SPA.
-
 Options -Indexes
 DirectoryIndex index.html
-# /en tiene una carpeta en/ y un en.html: sin esto Apache redirige /en -> /en/ antes de servir en.html
 DirectorySlash Off
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # www -> sin www, por si alguien entra con www.ing-soraire.24studio.net
-  RewriteCond %{HTTP_HOST} ^www\.ing-soraire\.24studio\.net$ [NC]
-  RewriteRule ^(.*)$ https://ing-soraire.24studio.net/$1 [R=301,L]
-
-  # No reescribir la API
   RewriteRule ^api/ - [L]
 
-  # Páginas pre-renderizadas en el build (head y contenido propios por ruta, para Google y redes):
-  # /about -> about.html, /en -> en.html, /en/about -> en/about.html. La URL del navegador no cambia.
+  # Serve the pre-rendered HTML for routes such as /about and /en/about.
   RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.+?)/?$ /$1.html [L]
+  RewriteRule ^(.+?)/?$ $1.html [L]
 
-  # SPA: todo lo que no sea un archivo real va a index.html
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
-
-# --- Tipos MIME ---
-<IfModule mod_mime.c>
-  AddType image/webp .webp
-  AddType image/svg+xml .svg
-  AddType video/mp4 .mp4
-  AddType application/xml .xml
-  AddType application/pdf .pdf
-</IfModule>
-
-# --- Compresión ---
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript application/json image/svg+xml
-</IfModule>
-
-# --- Caché ---
-<IfModule mod_headers.c>
-  # Assets de Vite con hash: caché de 1 año
-  <FilesMatch "\.(js|css)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-  # Imágenes y videos: 30 días
-  <FilesMatch "\.(webp|png|jpe?g|svg|mp4|woff2?)$">
-    Header set Cache-Control "public, max-age=2592000"
-  </FilesMatch>
-  # HTML nunca en caché (para que tome cada deploy nuevo); incluye las páginas pre-renderizadas
-  <FilesMatch "\.html$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-  </FilesMatch>
-
-  # Seguridad básica
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Keep real files and directories; send other paths to the SPA.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
 </IfModule>
