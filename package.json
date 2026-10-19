@@ -8,6 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "start": "node server/server.cjs",
+    "postinstall": "npm --prefix server install --omit=dev",
     "og-image": "node scripts/generate-og-image.mjs",
     "tailwind:init": "node ./node_modules/tailwindcss/lib/cli.js init -p"
   },
