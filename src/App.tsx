@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import ContactPage from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import AboutPage from "./pages/AboutMe";
+import BlogPage from "./pages/Blog";
 import { Seo } from "./seo/Seo";
 
 function Layout() {
@@ -36,6 +37,7 @@ export default function App() {
                 <Fragment key={prefix || "es"}>
                   <Route path={prefix || "/"} element={<HomePage />} />
                   <Route path={`${prefix}/about`} element={<AboutPage />} />
+                  <Route path={`${prefix}/blog`} element={<BlogPage />} />
                   <Route path={`${prefix}/contact`} element={<ContactPage />} />
                 </Fragment>
               ))}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { SkillsSection } from '../sections/Skills';
+import { BlogTeaser } from '../sections/BlogTeaser';
 import PortfolioGrid from '../sections/Projects';
 import { DATA } from '../entities/lib/projects';
 import Hero3D from '../components/Hero3D';
@@ -11,6 +12,10 @@ const HomePage: React.FC = () => {
       <div className="w-full">
         <section id="hero" className="w-full">
           <Hero3D />
+        </section>
+
+        <section id="blog" className="w-full">
+          <BlogTeaser />
         </section>
 
         <section id="skills" className="w-full">

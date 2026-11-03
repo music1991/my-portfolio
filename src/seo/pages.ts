@@ -47,6 +47,18 @@ const STATIC_PAGES: Record<string, Record<Language, PageCopy>> = {
         'Six+ years in IT across fintech, logistics and software factories. Software Engineer at 24 Studio and Pampa Solutions Tech and AI lecturer at UTN.',
     },
   },
+  '/blog': {
+    es: {
+      title: 'Sobre Ingeniería (Blog) | Sebastián Soraire',
+      description:
+        'Artículos sobre ingeniería de software: arquitectura, IA aplicada, agentes y RAG, frontend con React y React Native, y la práctica diaria de construir productos.',
+    },
+    en: {
+      title: 'On Engineering (Blog) | Sebastián Soraire',
+      description:
+        'Articles on software engineering: architecture, applied AI, agents and RAG, frontend with React and React Native, and the everyday practice of building products.',
+    },
+  },
   '/contact': {
     es: {
       title: 'Contacto: contame tu proyecto | Sebastián Soraire',

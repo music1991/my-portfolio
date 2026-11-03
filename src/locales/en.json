@@ -36,8 +36,13 @@
     "scroll": "Scroll"
   },
   "profile": {
-    "nav": { "title": "On this page", "intro": "Introduction", "open": "Open navigation", "close": "Close navigation" },
-     "motivations": {
+    "nav": {
+      "title": "On this page",
+      "intro": "Introduction",
+      "open": "Open navigation",
+      "close": "Close navigation"
+    },
+    "motivations": {
       "title": "Motivations",
       "volunteer": {
         "title": "Volunteering",
@@ -296,9 +301,18 @@
     "languages": {
       "title": "Languages",
       "list": [
-        { "name": "Spanish", "level": "Native" },
-        { "name": "English", "level": "B2 – Upper Intermediate" },
-        { "name": "German", "level": "A1 – Basic" }
+        {
+          "name": "Spanish",
+          "level": "Native"
+        },
+        {
+          "name": "English",
+          "level": "B2 – Upper Intermediate"
+        },
+        {
+          "name": "German",
+          "level": "A1 – Basic"
+        }
       ]
     }
   },
@@ -368,7 +382,7 @@
         "title": "Real-Time Tracked",
         "shortDescription": "Following in real-time the routes and deliveries of a logistics company",
         "details": "Spearheaded the development a logistics monitoring solution powered by the Google Maps API. The system enabled real-time tracking of delivery fleets, providing live updates on vehicle location, route progress, and delivery status. This end-to-end visibility facilitated dynamic route optimization, reduced travel times, and offered customers precise tracking, leading to a substantial improvement in shipment timeliness and overall operational efficiency."
-      },      
+      },
       "qr": {
         "title": "QR Tracked",
         "shortDescription": "QR code-based package tracking and management system",
@@ -382,31 +396,60 @@
     }
   },
   "skills": {
-    "title": "Skills",
-    "dragHint": "drag a ring to spin it",
+    "title": "Technical Skills",
+    "hint": "drag a row to move it",
+    "devTitle": "Development stack",
+    "aiTitle": "Artificial Intelligence",
     "frontend": "Frontend",
     "backend": "Backend",
     "database": "Database & Tools",
+    "aiModels": "Assistants & models",
+    "aiCustom": "Custom assistants & own knowledge",
+    "aiAgents": "Agent-driven development",
+    "aiMethods": "Methodologies & techniques",
+    "names": {
+      "agents-office": "3D Agents Office",
+      "multi-agent": "Multi-agent orchestration"
+    },
     "stack": {
       "frontend": {
-        "javascript": "The fundamental language of modern web development. Enables interactive experiences in the browser and connects logic with design.",
-        "typescript": "A superset of JavaScript that adds static typing and advanced tooling. Improves scalability, readability and maintainability in large projects.",
-        "react1": "A declarative library by Meta to build dynamic, reusable UIs for the web. Great for SPAs with high performance through an efficient Virtual DOM.",
-        "react2": "A framework based on React JS to build native mobile apps with JavaScript and React. Compiles to native components for high performance and a near-native experience.",
-        "next": "A React framework that enables SSR and SSG. Optimizes SEO and speeds up page loads.",
-        "html": "Markup language that defines the base structure of any website. Foundation for content, accessibility and document semantics."
+        "javascript": "The language of the web: interactivity and logic in the browser.",
+        "typescript": "JavaScript with static types for scalable, maintainable code.",
+        "react1": "Declarative web interfaces built from reusable components.",
+        "react2": "Native iOS and Android apps built with React.",
+        "next": "React framework with SSR and SSG for fast, SEO-friendly sites.",
+        "html": "Semantic, accessible structure for every page."
       },
       "backend": {
-        "nodejs": "JavaScript runtime for the server side. Great for fast, scalable apps thanks to its asynchronous, event-driven model.",
-        "c-sharp": "Modern, strongly-typed OOP language by Microsoft. Ideal for enterprise apps, APIs and .NET development.",
-        "python": "Versatile, expressive language with simple syntax. Widely used in backend, data analysis, AI and automation.",
-        "php": "Mature, reliable language for dynamic web apps. Popular in LAMP stacks and CMSs such as WordPress or Laravel."
+        "nodejs": "JavaScript on the server: fast, async, scalable APIs.",
+        "c-sharp": "Microsoft's typed language for .NET APIs and enterprise systems.",
+        "python": "Simple syntax for backend, data, automation and AI.",
+        "php": "Mature language for dynamic web apps and CMSs."
       },
       "database": {
-        "sqlServer": "Robust Microsoft solution for database management. High performance, security and built-in analytics tools.",
-        "postgress": "Advanced open-source relational database. Supports complex queries, transactional integrity and powerful extensions.",
-        "git": "Distributed version control to manage code changes, collaborate and keep full development history.",
-        "vite": "Ultra-fast dev tool replacing traditional bundlers. Instant HMR and efficient builds for modern frontend projects."
+        "sqlServer": "Microsoft's robust relational engine with built-in analytics tools.",
+        "postgress": "Powerful, extensible open-source relational database.",
+        "git": "Version control to collaborate and keep the code's history.",
+        "vite": "Lightning-fast frontend tooling with instant reload."
+      },
+      "ai": {
+        "chatgpt": "OpenAI's conversational assistant for writing, analysis and code.",
+        "claude": "Anthropic's model, strong at reasoning, code and long documents.",
+        "gemini": "Google's multimodal model, built into Workspace.",
+        "perplexity": "AI search engine that answers with cited sources.",
+        "gpts": "Custom ChatGPT assistants with their own instructions and knowledge.",
+        "gems": "Custom Gemini assistants for recurring tasks.",
+        "notebooklm": "Research and synthesis grounded in your own documents.",
+        "claude-design": "AI-assisted interface prototyping.",
+        "opencode": "Coding agent that works right in the terminal.",
+        "gentle-ai": "SDD workflow with sub-agents, skills and persistent memory.",
+        "openrouter": "One API for Claude, GPT, Gemini, Qwen, DeepSeek and more.",
+        "agents-office": "24Studio's own system: an agent orchestrator with live 3D visualization.",
+        "sdd": "Explore, propose, specify, design, break into tasks, implement and verify.",
+        "prompt-engineering": "CRAFT framework, zero-shot, few-shot, chain of thought and role prompting.",
+        "rag": "Answers grounded in your own sources to reduce hallucinations.",
+        "multi-agent": "Coordinating specialized agents that split and solve complex tasks.",
+        "claude-code": "Anthropic's coding agent that writes, refactors and runs tasks from the terminal."
       }
     }
   },
@@ -492,6 +535,81 @@
     "mailto": {
       "subjectPrefix": "Project",
       "template": "Hi Sebastián,\n\nI am {{name}} ({{email}}){{company}}.\n\nI’m interested in: {{projectType}}\nBudget: {{budget}}\nTimeline: {{timeline}}\n\nDetails:\n{{message}}\n"
+    }
+  },
+  "blog": {
+    "nav": "On Engineering",
+    "title": "On Engineering",
+    "kicker": "Blog",
+    "subtitle": "Notes, decisions and lessons on building software that lasts: architecture, applied AI, frontend and the everyday practice of engineering.",
+    "featured": "Featured",
+    "readTime": "{minutes} min read",
+    "readMore": "Read article",
+    "readLess": "Close article",
+    "count": "{count} articles",
+    "construction": {
+      "title": "Page under construction",
+      "text": "It'll be ready soon. For now the articles are placeholders (lorem ipsum).",
+      "badge": "Under construction"
+    },
+    "teaser": {
+      "kicker": "New · Blog",
+      "title": "On Engineering",
+      "text": "A space where I write about what doesn't fit in a repository: why I chose an architecture, how I bring AI into real products, what I learned breaking things in production, and the practices that help a team ship better software.",
+      "more": "More"
+    },
+    "categories": {
+      "architecture": "Architecture",
+      "ai": "Artificial Intelligence",
+      "frontend": "Frontend",
+      "practice": "Professional practice"
+    },
+    "posts": {
+      "clean-architecture-react": {
+        "title": "Lorem ipsum dolor sit amet consectetur",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "monolith-first": {
+        "title": "Sed do eiusmod tempor incididunt ut labore",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "rag-in-production": {
+        "title": "Ut enim ad minim veniam quis nostrud",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "agents-spec-driven": {
+        "title": "Duis aute irure dolor in reprehenderit",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "ai-adoption-teams": {
+        "title": "Excepteur sint occaecat cupidatat non proident",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "react-native-performance": {
+        "title": "Sunt in culpa qui officia deserunt mollit",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "design-systems-tokens": {
+        "title": "Nemo enim ipsam voluptatem quia voluptas",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "code-review-culture": {
+        "title": "Neque porro quisquam est qui dolorem",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "from-idea-to-mvp": {
+        "title": "Quis autem vel eum iure reprehenderit",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      }
     }
   }
 }

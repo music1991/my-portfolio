@@ -1,6 +1,7 @@
 import en from '../locales/en.json'
 import es from '../locales/es.json'
 import { DATA } from '../entities/lib/projects'
+import { BLOG_POSTS } from '../entities/lib/blog'
 import { escape } from './render'
 import { localizePath } from './site'
 import type { Language } from './site'
@@ -20,7 +21,8 @@ export const LINKS = {
 
 const SKILLS = [
   'JavaScript', 'TypeScript', 'React', 'React Native', 'Next.js', 'HTML', 'Node.js', 'C#', 'Python', 'PHP',
-  'SQL Server', 'PostgreSQL', 'Git', 'Vite', 'IA generativa / Generative AI', 'RAG', 'AI Agents', 'Scrum',
+  'SQL Server', 'PostgreSQL', 'Git', 'Vite', 'IA generativa / Generative AI', 'ChatGPT', 'Claude', 'Gemini', 'NotebookLM', 'OpenRouter',
+  'Spec-Driven Development', 'Prompt engineering', 'RAG', 'AI Agents', 'Multi-agent orchestration', 'Scrum',
 ]
 
 const UI: Record<Language, Record<string, string>> = {
@@ -86,6 +88,7 @@ const external = (href: string, label: string) => `<a href="${escape(href)}" rel
 const nav = (lang: Language, d: Dict) =>
   `<nav><a href="${localizePath('/', lang)}">${escape(d.general.home)}</a> · ` +
   `<a href="${localizePath('/about', lang)}">${escape(d.aboutMe.text)}</a> · ` +
+  `<a href="${localizePath('/blog', lang)}">${escape(d.blog.nav)}</a> · ` +
   `<a href="${localizePath('/contact', lang)}">${escape(d.general.contact)}</a> · ` +
   `<a href="${localizePath('/', lang === 'es' ? 'en' : 'es')}" hreflang="${lang === 'es' ? 'en' : 'es'}">${lang === 'es' ? 'English' : 'Español'}</a></nav>`
 
@@ -146,6 +149,14 @@ const about = (lang: Language, d: Dict) => {
   ]
 }
 
+const blog = (_lang: Language, d: Dict) => {
+  const posts = BLOG_POSTS.map(post => {
+    const copy = d.blog.posts[post.id as keyof typeof d.blog.posts]
+    return `<article id="post-${post.id}"><h2>${escape(copy.title)}</h2><p><time datetime="${post.date}">${post.date}</time> · ${escape(d.blog.categories[post.category])}</p>${paragraphs(copy.body)}</article>`
+  })
+  return [`<h1>${escape(d.blog.title)}</h1>`, `<p>${escape(d.blog.subtitle)}</p>`, ...posts]
+}
+
 const contact = (lang: Language, d: Dict) => [
   `<h1>${escape(d.contact.hero.title)}</h1>`,
   `<p>${escape(d.contact.hero.subtitle)}</p>`,
@@ -155,6 +166,7 @@ const contact = (lang: Language, d: Dict) => [
 const BUILDERS: Record<string, (lang: Language, d: Dict) => string[]> = {
   '/': home,
   '/about': about,
+  '/blog': blog,
   '/contact': contact,
 }
 

@@ -79,6 +79,7 @@ const Navbar: React.FC = () => {
     { id: 3, title: "LinkedIn", url: "https://www.linkedin.com/in/ingeniero-soraire/" },
     { id: 4, title: "GitHub", url: "https://github.com/music1991" },
     { id: 5, title: t('aboutMe.text'), to: '/about' },
+    { id: 7, title: t('blog.nav'), to: '/blog' },
     { id: 6, title: t("general.contact"), to: "/contact" },
   ];
 
@@ -95,7 +96,7 @@ const Navbar: React.FC = () => {
               {t("general.portfolio")}
             </span>
 
-            <div className="hidden md:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
+            <div className="hidden lg:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
               {navItems.map((item) =>
                 item.url ? (
                   <motion.a
@@ -132,7 +133,7 @@ const Navbar: React.FC = () => {
               </div>
 
               <button
-                className="md:hidden flex flex-col w-11 h-11 justify-center items-center space-y-1 z-50 cursor-pointer"
+                className="lg:hidden flex flex-col w-11 h-11 justify-center items-center space-y-1 z-50 cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -159,7 +160,7 @@ const Navbar: React.FC = () => {
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 z-40 md:hidden">
+          <div className="fixed inset-0 z-40 lg:hidden">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

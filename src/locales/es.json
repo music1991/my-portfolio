@@ -36,8 +36,13 @@
     "scroll": "Desplazate"
   },
   "profile": {
-    "nav": { "title": "En esta página", "intro": "Presentación", "open": "Abrir navegación", "close": "Cerrar navegación" },
-     "motivations": {
+    "nav": {
+      "title": "En esta página",
+      "intro": "Presentación",
+      "open": "Abrir navegación",
+      "close": "Cerrar navegación"
+    },
+    "motivations": {
       "title": "Motivaciones",
       "volunteer": {
         "title": "Voluntariado",
@@ -296,9 +301,18 @@
     "languages": {
       "title": "Idiomas",
       "list": [
-        { "name": "Español", "level": "Nativo" },
-        { "name": "Inglés", "level": "B2 – Intermedio Avanzado" },
-        { "name": "Alemán", "level": "A1 – Básico" }
+        {
+          "name": "Español",
+          "level": "Nativo"
+        },
+        {
+          "name": "Inglés",
+          "level": "B2 – Intermedio Avanzado"
+        },
+        {
+          "name": "Alemán",
+          "level": "A1 – Básico"
+        }
       ]
     }
   },
@@ -348,7 +362,7 @@
         "title": "Automatización Sistema de Compliance",
         "shortDescription": "Plataforma centralizada de automatización para seguridad y cumplimiento",
         "details": "Participé en el desarrollo de una plataforma centralizada para el departamento de Seguridad y Cumplimiento. La solución automatizó flujos de trabajo manuales críticos, incluyendo revisiones de excepciones de políticas, campañas de certificación de acceso y recolección de evidencias de auditoría. Al digitalizar y optimizar estos procesos, redujimos los tiempos promedio de ciclo de revisión y aprobación en un 40%, disminuyendo significativamente el riesgo operativo y asegurando una postura de cumplimiento más ágil y demostrable."
-      },  
+      },
       "productModernizationweb": {
         "title": "Actualización Técnica \nRenovación UI/UX\n Web Billetera",
         "shortDescription": "Lanzamiento de Nuevo Diseño y Funcionalidades Principales",
@@ -383,30 +397,59 @@
   },
   "skills": {
     "title": "Habilidades Técnicas",
-    "dragHint": "arrastrá un anillo para girarlo",
+    "hint": "arrastrá una fila para moverla",
+    "devTitle": "Stack de desarrollo",
+    "aiTitle": "Inteligencia Artificial",
     "frontend": "Frontend",
     "backend": "Backend",
     "database": "Database & Tools",
+    "aiModels": "Asistentes y modelos",
+    "aiCustom": "Asistentes personalizados y conocimiento propio",
+    "aiAgents": "Desarrollo con agentes",
+    "aiMethods": "Metodologías y técnicas",
+    "names": {
+      "agents-office": "Oficina 3D de agentes",
+      "multi-agent": "Orquestación multi-agente"
+    },
     "stack": {
       "frontend": {
-        "javascript": "Lenguaje fundamental del desarrollo web moderno. Permite crear experiencias interactivas en el navegador y conectar la lógica con el diseño de las aplicaciones.",
-        "typescript": "Superset de JavaScript que añade tipado estático y herramientas avanzadas de desarrollo. Mejora la escalabilidad, legibilidad y mantenimiento de proyectos grandes.",
-        "react1": "Biblioteca declarativa desarrollada por Meta para construir interfaces de usuario dinámicas y reutilizables en aplicaciones web. Ideal para Single Page Applications (SPA) con alto rendimiento, utilizando componentes que se actualizan eficientemente mediante el Virtual DOM.",
-        "react2": "Framework basado en React JS para crear aplicaciones móviles nativas con JavaScript y React. Compila a componentes nativos, logrando rendimiento alto y una experiencia similar a las apps tradicionales.",
-        "next": "Framework de React que permite renderizado del lado del servidor (SSR) y generación estática (SSG). Optimiza el SEO y acelera la carga de las aplicaciones web.",
-        "html": "Lenguaje de marcado que define la estructura base de cualquier sitio web. Sirve como cimiento para el contenido, la accesibilidad y la semántica del documento."
+        "javascript": "El lenguaje de la web: interactividad y lógica en el navegador.",
+        "typescript": "JavaScript con tipado estático para código escalable y mantenible.",
+        "react1": "Interfaces web declarativas basadas en componentes reutilizables.",
+        "react2": "Apps móviles nativas para iOS y Android con React.",
+        "next": "Framework de React con SSR y SSG para sitios rápidos y con buen SEO.",
+        "html": "Estructura semántica y accesible de cada página."
       },
       "backend": {
-        "nodejs": "Entorno de ejecución para JavaScript del lado del servidor. Permite construir aplicaciones rápidas y escalables gracias a su modelo asíncrono y basado en eventos.",
-        "c-sharp": "Lenguaje moderno desarrollado por Microsoft, orientado a objetos y altamente tipado. Ideal para aplicaciones empresariales, APIs y desarrollo con .NET.",
-        "python": "Lenguaje versátil y expresivo, conocido por su sintaxis simple. Usado ampliamente en backend, análisis de datos, inteligencia artificial y automatización.",
-        "php": "Lenguaje maduro y confiable para el desarrollo de aplicaciones web dinámicas. Popular en entornos LAMP y CMS como WordPress o Laravel."
+        "nodejs": "JavaScript en el servidor: APIs rápidas, asíncronas y escalables.",
+        "c-sharp": "Lenguaje tipado de Microsoft para APIs y sistemas empresariales en .NET.",
+        "python": "Sintaxis simple para backend, datos, automatización e IA.",
+        "php": "Lenguaje maduro para aplicaciones web dinámicas y CMS."
       },
       "database": {
-        "sqlServer": "Solución robusta de Microsoft para la administración de bases de datos. Ofrece alto rendimiento, seguridad y herramientas de análisis integradas.",
-        "postgress": "Base de datos relacional avanzada y de código abierto. Soporta consultas complejas, integridad transaccional y extensiones potentes para proyectos escalables.",
-        "git": "Sistema de control de versiones distribuido que permite gestionar cambios de código, colaborar en equipo y mantener el historial completo de desarrollo.",
-        "vite": "Herramienta de desarrollo ultrarrápida que sustituye a los bundlers tradicionales. Ofrece recarga instantánea y compilación eficiente para proyectos modernos de frontend."
+        "sqlServer": "Motor relacional de Microsoft, robusto y con herramientas de análisis.",
+        "postgress": "Base relacional open source, potente y extensible.",
+        "git": "Control de versiones para colaborar y mantener el historial del código.",
+        "vite": "Tooling de frontend ultrarrápido con recarga instantánea."
+      },
+      "ai": {
+        "chatgpt": "Asistente conversacional de OpenAI para redactar, analizar y programar.",
+        "claude": "Modelo de Anthropic, fuerte en razonamiento, código y textos largos.",
+        "gemini": "Modelo multimodal de Google integrado al ecosistema Workspace.",
+        "perplexity": "Buscador con IA que responde citando sus fuentes.",
+        "gpts": "Asistentes de ChatGPT a medida, con instrucciones y conocimiento propio.",
+        "gems": "Asistentes personalizados de Gemini para tareas recurrentes.",
+        "notebooklm": "Investigación y síntesis ancladas a tus propios documentos.",
+        "claude-design": "Prototipado de interfaces asistido por IA.",
+        "opencode": "Agente de código que trabaja directamente en la terminal.",
+        "gentle-ai": "Flujo SDD con sub-agentes, skills y memoria persistente.",
+        "openrouter": "Una sola API para Claude, GPT, Gemini, Qwen, DeepSeek y más.",
+        "agents-office": "Sistema propio de 24Studio: orquestador de agentes con visualización 3D en vivo.",
+        "sdd": "Explorar, proponer, especificar, diseñar, dividir en tareas, implementar y verificar.",
+        "prompt-engineering": "Framework CRAFT, zero-shot, few-shot, chain of thought y role prompting.",
+        "rag": "Respuestas ancladas a fuentes propias para reducir alucinaciones.",
+        "multi-agent": "Coordinar agentes especializados que dividen y resuelven tareas complejas.",
+        "claude-code": "Agente de código de Anthropic que programa, refactoriza y ejecuta tareas desde la terminal."
       }
     }
   },
@@ -492,6 +535,81 @@
     "mailto": {
       "subjectPrefix": "Proyecto",
       "template": "Hola Sebastián,\n\nSoy {{name}} ({{email}}){{company}}.\n\nMe interesa trabajar en: {{projectType}}\nPresupuesto: {{budget}}\nTimeline: {{timeline}}\n\nDetalle:\n{{message}}\n"
+    }
+  },
+  "blog": {
+    "nav": "Sobre Ingeniería",
+    "title": "Sobre Ingeniería",
+    "kicker": "Blog",
+    "subtitle": "Notas, decisiones y aprendizajes sobre cómo construir software que dure: arquitectura, IA aplicada, frontend y la práctica diaria de la ingeniería.",
+    "featured": "Destacado",
+    "readTime": "{minutes} min de lectura",
+    "readMore": "Leer artículo",
+    "readLess": "Cerrar artículo",
+    "count": "{count} artículos",
+    "construction": {
+      "title": "Página en construcción",
+      "text": "Estará lista pronto. Por ahora los artículos son de relleno (lorem ipsum).",
+      "badge": "En construcción"
+    },
+    "teaser": {
+      "kicker": "Nuevo · Blog",
+      "title": "Sobre Ingeniería",
+      "text": "Un espacio donde escribo sobre lo que no entra en un repositorio: por qué elegí una arquitectura, cómo integro IA en productos reales, qué aprendí rompiendo cosas en producción y las prácticas que hacen que un equipo entregue mejor software.",
+      "more": "Más"
+    },
+    "categories": {
+      "architecture": "Arquitectura",
+      "ai": "Inteligencia Artificial",
+      "frontend": "Frontend",
+      "practice": "Práctica profesional"
+    },
+    "posts": {
+      "clean-architecture-react": {
+        "title": "Lorem ipsum dolor sit amet consectetur",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "monolith-first": {
+        "title": "Sed do eiusmod tempor incididunt ut labore",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "rag-in-production": {
+        "title": "Ut enim ad minim veniam quis nostrud",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "agents-spec-driven": {
+        "title": "Duis aute irure dolor in reprehenderit",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "ai-adoption-teams": {
+        "title": "Excepteur sint occaecat cupidatat non proident",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "react-native-performance": {
+        "title": "Sunt in culpa qui officia deserunt mollit",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "design-systems-tokens": {
+        "title": "Nemo enim ipsam voluptatem quia voluptas",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "code-review-culture": {
+        "title": "Neque porro quisquam est qui dolorem",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      },
+      "from-idea-to-mvp": {
+        "title": "Quis autem vel eum iure reprehenderit",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\nTotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+      }
     }
   }
 }

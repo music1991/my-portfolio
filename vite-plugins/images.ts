@@ -106,7 +106,12 @@ export const images = (): Plugin => {
     },
     configureServer(server) {
       server.middlewares.use(async (req, res, next) => {
-        const job = jobs.get(decodeURIComponent((req.url ?? '').split('?')[0].slice(1)))
+        const out = decodeURIComponent((req.url ?? '').split('?')[0].slice(1))
+        // Images added while the server runs aren't in the list yet: rescan once on a miss.
+        if (!jobs.has(out) && out.startsWith('images/') && out.endsWith('.webp')) {
+          jobs = new Map((await collectJobs(publicDir)).map(job => [job.out, job]))
+        }
+        const job = jobs.get(out)
         if (!job) return next()
         try {
           const file = await ensure(job)
