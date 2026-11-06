@@ -4,12 +4,14 @@ import { lazy, Suspense, useRef, useState, type MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CalendarClock } from "lucide-react";
 import { ScheduleCallModal } from "./ScheduleCallModal";
+import { CopyScheduleLinkButton } from "./CopyScheduleLinkButton";
 import {
   GOOGLE_CALENDAR_BOOKING_URL,
+  SCHEDULE_QUERY_PARAM,
   buildCalendarInviteUrl,
   isSafeHttpUrl,
 } from "../entities/lib/constants";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useLanguage } from "../context/Language";
 import { useTheme } from "../context/Theme";
 import images from "../images.json";
@@ -39,8 +41,21 @@ export default function Hero3D() {
   const pointer = useRef({ x: 0, y: 0 });
   const layersRef = useRef<Array<HTMLDivElement | null>>([]);
   const photoRef = useRef<HTMLDivElement | null>(null);
-  const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const hasBookingUrl = isSafeHttpUrl(GOOGLE_CALENDAR_BOOKING_URL);
+  const [searchParams, setSearchParams] = useSearchParams();
+  // Deep link: /?agendar (o /en?agendar) abre el modal directamente.
+  const [isScheduleOpen, setIsScheduleOpen] = useState(
+    () => hasBookingUrl && searchParams.has(SCHEDULE_QUERY_PARAM)
+  );
+
+  const closeSchedule = () => {
+    setIsScheduleOpen(false);
+    if (searchParams.has(SCHEDULE_QUERY_PARAM)) {
+      const next = new URLSearchParams(searchParams);
+      next.delete(SCHEDULE_QUERY_PARAM);
+      setSearchParams(next, { replace: true });
+    }
+  };
 
   const openSchedule = () => {
     if (hasBookingUrl) {
@@ -213,21 +228,24 @@ export default function Hero3D() {
             <ArrowUpRight className="w-4 h-4" />
           </Link>
 
+          <div className="flex items-center gap-6">
           <button
             type="button"
             onClick={openSchedule}
-            className="inline-flex items-center gap-2 min-h-[44px] px-6 py-3 border border-accent/60 text-accent font-semibold text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+            className="cta-glow inline-flex items-center gap-2 min-h-[44px] px-6 py-3 border border-accent/60 bg-accent/10 text-accent font-semibold text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
           >
             <CalendarClock className="w-4 h-4" />
             {t("hero.schedule.cta")}
           </button>
+          <CopyScheduleLinkButton />
+          </div>
         </div>
       </div>
 
       {isScheduleOpen && hasBookingUrl && (
         <ScheduleCallModal
           googleCalendarUrl={GOOGLE_CALENDAR_BOOKING_URL}
-          onClose={() => setIsScheduleOpen(false)}
+          onClose={closeSchedule}
         />
       )}
     </div>

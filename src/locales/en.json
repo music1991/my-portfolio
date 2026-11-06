@@ -39,7 +39,9 @@
       "title": "Schedule a meeting",
       "loading": "Loading calendar...",
       "close": "Close",
-      "eventTitle": "Meeting with Sebastián Soraire"
+      "eventTitle": "Meeting with Sebastián Soraire",
+      "shareTooltip": "Copy meeting booking link",
+      "shareCopied": "Link copied!"
     }
   },
   "profile": {

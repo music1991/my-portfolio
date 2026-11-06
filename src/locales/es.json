@@ -39,7 +39,9 @@
       "title": "Agendar reunión",
       "loading": "Cargando calendario...",
       "close": "Cerrar",
-      "eventTitle": "Reunión con Sebastián Soraire"
+      "eventTitle": "Reunión con Sebastián Soraire",
+      "shareTooltip": "Copiar link para agendar reunión",
+      "shareCopied": "¡Link copiado!"
     }
   },
   "profile": {

@@ -12,6 +12,9 @@ export const CONTACT_EMAIL = "sebastians201991@gmail.com";
 export const GOOGLE_CALENDAR_BOOKING_URL =
   "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UUJw_Xau1brKBUteG1Zd-nt3EtWVWCxq2RYr-omGJcqsdca2PC4vs8uh1yh-9gyRXUbIF5Ci1?gv=true";
 
+/** Query param que abre el modal de agenda al entrar: https://<dominio>/?agendar */
+export const SCHEDULE_QUERY_PARAM = "agendar";
+
 export const isSafeHttpUrl = (url: string) => {
   try {
     const { protocol } = new URL(url);

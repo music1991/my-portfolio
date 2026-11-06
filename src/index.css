@@ -66,3 +66,34 @@ h1, h2, h3, h4, h5, h6 {
     scroll-behavior: auto !important;
   }
 }
+
+/* Latido de brillo para el CTA "Agendar reunión". Usa el acento del tema activo. */
+:root {
+  --cta-glow-min: 0.25;
+  --cta-glow-max: 0.55;
+  --cta-glow-spread: 18px;
+}
+:root.dark {
+  --cta-glow-min: 0.3;
+  --cta-glow-max: 0.75;
+  --cta-glow-spread: 26px;
+}
+@keyframes cta-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgb(var(--color-accent) / var(--cta-glow-max)),
+      0 0 8px 0 rgb(var(--color-accent) / var(--cta-glow-min));
+  }
+  50% {
+    box-shadow:
+      0 0 0 6px rgb(var(--color-accent) / 0),
+      0 0 var(--cta-glow-spread) 4px rgb(var(--color-accent) / var(--cta-glow-max));
+  }
+}
+.cta-glow {
+  animation: cta-glow-pulse 2.2s ease-in-out infinite;
+}
+.cta-glow:hover,
+.cta-glow:focus-visible {
+  animation-play-state: paused;
+}
