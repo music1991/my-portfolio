@@ -49,12 +49,12 @@ const STATIC_PAGES: Record<string, Record<Language, PageCopy>> = {
   },
   '/blog': {
     es: {
-      title: 'Sobre Ingeniería (Blog) | Sebastián Soraire',
+      title: 'Sobre Ingeniería y Humanos (Blog) | Sebastián Soraire',
       description:
         'Artículos sobre ingeniería de software: arquitectura, IA aplicada, agentes y RAG, frontend con React y React Native, y la práctica diaria de construir productos.',
     },
     en: {
-      title: 'On Engineering (Blog) | Sebastián Soraire',
+      title: 'On Engineering and Humans (Blog) | Sebastián Soraire',
       description:
         'Articles on software engineering: architecture, applied AI, agents and RAG, frontend with React and React Native, and the everyday practice of building products.',
     },

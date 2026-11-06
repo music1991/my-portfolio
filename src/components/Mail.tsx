@@ -1,6 +1,7 @@
 import { useLanguage } from "../context/Language";
+import { CONTACT_EMAIL } from "../entities/lib/constants";
 
-export const PORTFOLIO_CONTACT_EMAIL = "sebastians201991@gmail.com";
+export const PORTFOLIO_CONTACT_EMAIL = CONTACT_EMAIL;
 
 export const mailTo = () => {
   const { t } = useLanguage();

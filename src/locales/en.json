@@ -33,7 +33,14 @@
     "quote": "I connect sound engineering practices with business goals to solve specific problems and create tangible impact: automating processes, optimizing costs and enhancing decision-making.",
     "ctaProjects": "View projects",
     "ctaContact": "Let's talk",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "schedule": {
+      "cta": "Schedule a meeting",
+      "title": "Schedule a meeting",
+      "loading": "Loading calendar...",
+      "close": "Close",
+      "eventTitle": "Meeting with Sebastián Soraire"
+    }
   },
   "profile": {
     "nav": {
@@ -538,8 +545,9 @@
     }
   },
   "blog": {
-    "nav": "On Engineering",
+    "nav": "Engineering and Humans",
     "title": "On Engineering",
+    "titleNote": "(and the humans who practice it)",
     "kicker": "Blog",
     "subtitle": "Notes, decisions and lessons on building software that lasts: architecture, applied AI, frontend and the everyday practice of engineering.",
     "featured": "Featured",
@@ -554,7 +562,7 @@
     },
     "teaser": {
       "kicker": "New · Blog",
-      "title": "On Engineering",
+      "title": "Engineering & Humans",
       "text": "A space where I write about what doesn't fit in a repository: why I chose an architecture, how I bring AI into real products, what I learned breaking things in production, and the practices that help a team ship better software.",
       "more": "More"
     },

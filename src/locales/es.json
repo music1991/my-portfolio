@@ -33,7 +33,14 @@
     "quote": "Conecto las buenas prácticas técnicas con los objetivos de negocio para resolver problemáticas específicas y generar un impacto tangible: automatizando procesos, optimizando costos y potenciando la toma de decisiones.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Hablemos",
-    "scroll": "Desplazate"
+    "scroll": "Desplazate",
+    "schedule": {
+      "cta": "Agendar reunión",
+      "title": "Agendar reunión",
+      "loading": "Cargando calendario...",
+      "close": "Cerrar",
+      "eventTitle": "Reunión con Sebastián Soraire"
+    }
   },
   "profile": {
     "nav": {
@@ -538,8 +545,9 @@
     }
   },
   "blog": {
-    "nav": "Sobre Ingeniería",
+    "nav": "Ingeniería y Humanos",
     "title": "Sobre Ingeniería",
+    "titleNote": "(y humanos que emplean dicha ingeniería)",
     "kicker": "Blog",
     "subtitle": "Notas, decisiones y aprendizajes sobre cómo construir software que dure: arquitectura, IA aplicada, frontend y la práctica diaria de la ingeniería.",
     "featured": "Destacado",
@@ -554,7 +562,7 @@
     },
     "teaser": {
       "kicker": "Nuevo · Blog",
-      "title": "Sobre Ingeniería",
+      "title": "Ingeniería & Humanos",
       "text": "Un espacio donde escribo sobre lo que no entra en un repositorio: por qué elegí una arquitectura, cómo integro IA en productos reales, qué aprendí rompiendo cosas en producción y las prácticas que hacen que un equipo entregue mejor software.",
       "more": "Más"
     },

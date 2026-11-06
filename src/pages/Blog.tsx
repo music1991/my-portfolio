@@ -332,7 +332,10 @@ const BlogPage: React.FC = () => {
         <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
         <div className="relative">
           <p className="font-mono text-xs tracking-[0.3em] uppercase opacity-80">{t("blog.kicker")}</p>
-          <h1 className="mt-3 text-4xl md:text-5xl font-bold">{t("blog.title")}</h1>
+          <h1 className="mt-3 text-4xl md:text-5xl font-bold">
+            {t("blog.title")}
+            <span className="block mt-2 text-xl md:text-2xl font-medium italic opacity-85">{t("blog.titleNote")}</span>
+          </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg opacity-90">{t("blog.subtitle")}</p>
           <p className="mt-4 font-mono text-xs opacity-70">
             {t("blog.count").replace("{count}", String(BLOG_POSTS.length))}
